@@ -1,16 +1,3 @@
-<<<<<<< Updated upstream
-// app/page.js
-export default function Home() {
-  return (
-    <main style={styles.main}>
-      <h1 style={styles.title}>Welcome to My Homepage</h1>
-      <p style={styles.subtitle}>
-        This is a simple Next.js homepage example.
-      </p>
-    </main>
-  );
-}
-
 // Inline styles for simplicity
 const styles = {
   main: {
@@ -33,7 +20,7 @@ const styles = {
     color: "#666",
   },
 };
-=======
+
 import Link from "next/link";
 import {
   ArrowRight,
@@ -394,4 +381,3 @@ export default function Home() {
     </main>
   );
 }
->>>>>>> Stashed changes
