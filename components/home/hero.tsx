@@ -11,8 +11,8 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:px-8 lg:pb-28 lg:pt-24">
         <div>
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium">
-            <span className="h-2 w-2 rounded-full bg-primary" />
+          <div className="mb-7 inline-flex items-center gap-2 border border-border bg-card px-4 py-2 text-sm font-medium">
+            <span className="h-2 w-2 bg-primary" />
             Microsoft Gold Partner &middot; Dubai AI Seal 2025
           </div>
 
@@ -31,14 +31,14 @@ export function Hero() {
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:gap-3 hover:opacity-90"
+              className="inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:gap-3 hover:opacity-90"
             >
               Start a conversation
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="#services"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-background px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-muted"
+              className="inline-flex items-center justify-center border border-border bg-background px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-muted"
             >
               Explore our services
             </Link>
@@ -58,8 +58,8 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-xl">
-          <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-primary/10 blur-2xl" />
-          <div className="overflow-hidden rounded-[1.75rem] border border-border shadow-2xl">
+          <div className="absolute -inset-4 -z-10 bg-primary/10 blur-2xl" />
+          <div className="overflow-hidden border border-border shadow-2xl">
             <Image
               src="/images/hero-datacenter.png"
               alt="Modern cloud and data center infrastructure managed by Rounak Computers"

@@ -24,7 +24,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
           <div>
             <Link href="#top" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-heading text-lg font-bold text-primary-foreground">
+              <div className="flex h-10 w-10 items-center justify-center bg-primary font-heading text-lg font-bold text-primary-foreground">
                 R
               </div>
               <div className="leading-none">

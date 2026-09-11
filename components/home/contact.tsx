@@ -47,8 +47,8 @@ export function Contact() {
             {contactDetails.map((detail) => {
               const Icon = detail.icon;
               const content = (
-                <div className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="flex items-start gap-4 border border-border bg-card p-5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-primary/10 text-primary">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>
@@ -76,7 +76,7 @@ export function Contact() {
           </div>
         </div>
 
-        <form className="rounded-3xl border border-border bg-card p-7 lg:p-9">
+        <form className="border border-border bg-card p-7 lg:p-9">
           <div className="grid gap-5 sm:grid-cols-2">
             <Field label="First name" name="firstName" required placeholder="John" />
             <Field label="Last name" name="lastName" required placeholder="Doe" />
@@ -110,13 +110,13 @@ export function Contact() {
                 name="message"
                 rows={4}
                 placeholder="Tell us about your project or requirement..."
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="w-full border border-border bg-background px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
             </div>
           </div>
           <button
             type="submit"
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:gap-3 hover:opacity-90"
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:gap-3 hover:opacity-90"
           >
             Submit now
             <ArrowRight className="h-4 w-4" />
@@ -157,7 +157,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20"
+        className="w-full border border-border bg-background px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20"
       />
     </div>
   );
