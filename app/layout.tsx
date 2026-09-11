@@ -1,14 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-heading",
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -36,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1a3fb8",
+  themeColor: "#0a0c0f",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -44,10 +39,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={cn(
-        "h-full bg-background",
+        "dark h-full bg-background",
         "antialiased",
         inter.variable,
-        spaceGrotesk.variable,
         geistMono.variable,
         "font-sans",
       )}
