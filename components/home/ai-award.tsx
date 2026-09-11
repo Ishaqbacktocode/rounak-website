@@ -12,7 +12,7 @@ export function AiAward() {
               Dubai AI Week &middot; 21 April 2025
             </div>
             <h2 className="mt-6 font-heading text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-              Recognized for excellence in AI by the Government of Dubai.
+              Recognized for Excellence in AI by the Government of Dubai
             </h2>
             <p className="mt-5 text-lg leading-8 text-muted-foreground text-pretty">
               Rounak Computers was awarded the{" "}

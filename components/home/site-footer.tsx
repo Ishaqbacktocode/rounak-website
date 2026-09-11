@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const quickLinks = [
@@ -24,15 +25,21 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
           <div>
             <Link href="#top" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center bg-primary font-heading text-lg font-bold text-primary-foreground">
-                R
+              <div className="flex items-center justify-center bg-white p-1.5">
+                <Image
+                  src="/images/rounak-logo.png"
+                  alt="Rounak Computers logo"
+                  width={40}
+                  height={40}
+                  className="h-8 w-8 object-contain"
+                />
               </div>
               <div className="leading-none">
                 <div className="font-heading text-lg font-bold tracking-tight">
-                  Rounak
+                  Rounak Computers
                 </div>
                 <div className="mt-1 text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                  Computers
+                  Cloud &middot; AI &middot; Dubai
                 </div>
               </div>
             </Link>

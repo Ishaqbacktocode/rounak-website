@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
@@ -20,15 +21,22 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6 py-3.5 lg:px-8">
         <Link href="#top" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center bg-primary font-heading text-lg font-bold text-primary-foreground">
-            R
+          <div className="flex items-center justify-center bg-white p-1.5">
+            <Image
+              src="/images/rounak-logo.png"
+              alt="Rounak Computers logo"
+              width={40}
+              height={40}
+              className="h-8 w-8 object-contain"
+              priority
+            />
           </div>
           <div className="leading-none">
             <div className="font-heading text-lg font-bold tracking-tight">
-              Rounak
+              Rounak Computers
             </div>
             <div className="mt-1 text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              Computers
+              Cloud &middot; AI &middot; Dubai
             </div>
           </div>
         </Link>
