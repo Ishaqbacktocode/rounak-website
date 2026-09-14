@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image"
 
 const navLinks = [
   { label: "Solutions", href: "#services" },
@@ -18,19 +19,17 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6 py-3.5 lg:px-8">
-        <Link href="#top" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-heading text-lg font-bold text-primary-foreground">
-            R
-          </div>
-          <div className="leading-none">
-            <div className="font-heading text-lg font-bold tracking-tight">
-              Rounak
-            </div>
-            <div className="mt-1 text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              Computers
-            </div>
-          </div>
-        </Link>
+
+    <Link href="#top" className="flex items-center">
+        <Image
+          src="/brand/192.png"
+          alt="Rounak Computers"
+          width={192}
+          height={192}
+          className="h-10 w-auto object-contain sm:h-31"
+          priority
+        />
+    </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (

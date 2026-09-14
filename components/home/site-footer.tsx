@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Star} from "lucide-react";
+import Image from "next/image"
 
 const quickLinks = [
   { label: "Solutions", href: "#services" },
@@ -23,18 +24,15 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
           <div>
-            <Link href="#top" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-heading text-lg font-bold text-primary-foreground">
-                R
-              </div>
-              <div className="leading-none">
-                <div className="font-heading text-lg font-bold tracking-tight">
-                  Rounak
-                </div>
-                <div className="mt-1 text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                  Computers
-                </div>
-              </div>
+            <Link href="#top" className="flex items-center">
+                <Image
+                  src="/brand/192.png"
+                  alt="Rounak Computers"
+                  width={192}
+                  height={192}
+                  className="h-10 w-auto object-contain sm:h-31"
+                  priority
+                />
             </Link>
             <p className="mt-5 max-w-sm leading-7 text-muted-foreground">
               A leading cloud solutions provider in the UAE, helping businesses
@@ -103,6 +101,18 @@ export function SiteFooter() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 602, 6th Floor, Al Rifaa Plaza, Khalid Bin Al Waleed Road, Dubai, UAE
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/rounakcomputers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 transition-colors hover:text-foreground"
+                >
+                <Star className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  Follow us on Instagram
+                </a>
+                social media links can be added here in the future if needed
               </li>
             </ul>
           </div>
