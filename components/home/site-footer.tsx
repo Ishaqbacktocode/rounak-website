@@ -11,7 +11,7 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  "Microsoft 365 & Copilot",
+  "Microsoft 365 & Copilots",
   "Azure & Cloud Migration",
   "Managed IT & AMC",
   "Cybersecurity",
