@@ -17,5 +17,5 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const slug = (await params).slug.join("/");
   const page = await loadSourcePage(slug);
   if (!page) notFound();
-  return <SitePage content={page} />;
+  return <SitePage content={{ ...page, slug }} />;
 }
