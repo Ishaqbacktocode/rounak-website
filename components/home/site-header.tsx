@@ -6,11 +6,12 @@ import { Menu, X, Phone } from "lucide-react";
 import Image from "next/image"
 
 const navLinks = [
-  { label: "Solutions", href: "#services" },
-  { label: "Cloud", href: "#cloud" },
-  { label: "Security", href: "#security" },
-  { label: "Why Rounak", href: "#about" },
-  { label: "Clients", href: "#testimonials" },
+  { label: "About", href: "/about-us" },
+  { label: "Products", href: "/products" },
+  { label: "IT Services", href: "/it-services" },
+  { label: "Cloud", href: "/cloud-services" },
+  { label: "Security", href: "/security" },
+  { label: "Insights", href: "/blog" },
 ];
 
 export function SiteHeader() {
