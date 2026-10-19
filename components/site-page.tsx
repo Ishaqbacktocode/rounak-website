@@ -1,15 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, Cloud, ShieldCheck, Users, Wrench, Sparkles, LockKeyhole, Network, ChevronRight, Building2, MessageCircle, Quote } from "lucide-react";
+import { ArrowRight, CheckCircle2, Cloud, ShieldCheck, Users, Wrench, Sparkles, LockKeyhole, ChevronRight, Building2, MessageCircle, Quote } from "lucide-react";
 import { SiteHeader } from "@/components/home/site-header";
 import { SiteFooter } from "@/components/home/site-footer";
+
+export type PageSection = {
+  title: string;
+  body: string;
+  bullets?: string[];
+  kind?: "overview" | "department" | "faq" | "testimonial";
+};
 
 export type PageContent = {
   eyebrow: string;
   title: string;
   intro: string;
   image?: string;
-  sections: { title: string; body: string; bullets?: string[] }[];
+  sections: PageSection[];
   slug?: string;
 };
 
@@ -46,32 +53,18 @@ export function SitePage({ content }: { content: PageContent }) {
 function ProductIndex() { return <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24"><div className="mb-10 flex items-end justify-between gap-6"><div><p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Explore the range</p><h2 className="mt-3 font-heading text-4xl font-semibold tracking-tight sm:text-5xl">Products</h2><p className="mt-4 max-w-xl text-muted-foreground">Technology products and solutions selected to help your business work smarter, safer, and faster.</p></div><LockKeyhole className="hidden size-10 text-primary/40 sm:block" /></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{productSlugs.map((slug, index) => <Link key={slug} href={`/products/${slug}`} className="group rounded-3xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl"><span className="text-xs font-semibold text-muted-foreground">0{index + 1}</span><h3 className="mt-14 min-h-14 font-heading text-xl font-semibold tracking-tight">{label(slug)}</h3><span className="mt-8 flex items-center gap-2 text-sm font-semibold text-primary">View product <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" /></span></Link>)}</div></section> }
 function ContentSections({ sections, accent }: { sections: PageContent["sections"]; accent: string }) {
   const meaningful = sections.filter((section) => section.body.trim())
-  const primary = meaningful[0] ?? sections[0]
-  const departments = meaningful.slice(1, Math.min(4, meaningful.length))
-  const faq = meaningful.find((section) => /faq|frequently|question/i.test(section.title))
-  const testimonial = meaningful.find((section) => /testimonial|client|review|success stor/i.test(section.title))
-  const remaining = meaningful.filter((section) => section !== primary && !departments.includes(section) && section !== faq && section !== testimonial)
+  const primary = meaningful.find((section) => section.kind === "overview") ?? meaningful[0]
+  const faq = meaningful.filter((section) => section.kind === "faq")
+  const testimonial = meaningful.find((section) => section.kind === "testimonial")
+  const departments = meaningful.filter((section) => section !== primary && section.kind !== "faq" && section.kind !== "testimonial")
 
   return <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
-    <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-      <article className="rounded-[2rem] border border-border bg-card p-8 shadow-sm lg:p-11">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">01 / overview</span>
-        <h2 className="mt-6 font-heading text-3xl font-semibold tracking-tight sm:text-4xl">{primary?.title}</h2>
-        <p className="mt-5 whitespace-pre-line text-base leading-8 text-muted-foreground">{primary?.body}</p>
-      </article>
-      <div className="rounded-[2rem] bg-primary p-8 text-primary-foreground lg:p-11">
-        <Network className="size-8 opacity-70" />
-        <p className="mt-20 text-2xl font-medium leading-tight">Built around the way your business actually works.</p>
-        <p className="mt-5 text-sm leading-6 opacity-75">Practical expertise, thoughtful technology, and dependable support from one team.</p>
-      </div>
-    </div>
+    {primary && <article className="grid gap-8 rounded-[2rem] border border-border bg-card p-8 shadow-sm lg:grid-cols-[0.85fr_1.15fr] lg:p-12"><div><span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">01 / overview</span><h2 className="mt-5 font-heading text-3xl font-semibold tracking-tight sm:text-4xl">{primary.title}</h2></div><p className="whitespace-pre-line text-base leading-8 text-muted-foreground">{primary.body}</p></article>}
 
-    {departments.length > 0 && <div className="mt-20"><div className="mb-8 flex items-end justify-between gap-4"><div><span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">02 / departments</span><h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-4xl">Explore the capabilities</h2></div><Building2 className="hidden size-8 text-primary/50 sm:block" /></div><div className="grid gap-4 md:grid-cols-2">{departments.map((section, index) => <article key={`${section.title}-${index}`} className="group rounded-3xl border border-border bg-card p-7 transition-colors hover:border-primary/50"><div className="flex items-center justify-between"><span className="text-sm font-semibold text-primary">0{index + 1}</span><ChevronRight className="size-5 text-muted-foreground transition-transform group-hover:translate-x-1" /></div><h3 className="mt-12 font-heading text-2xl font-semibold tracking-tight">{section.title}</h3><p className="mt-4 whitespace-pre-line leading-7 text-muted-foreground">{section.body}</p></article>)}</div></div>}
-
-    {remaining.length > 0 && <div className="mt-6 grid gap-4 md:grid-cols-2">{remaining.map((section, index) => <article key={`${section.title}-${index}`} className="rounded-3xl border border-border bg-muted/30 p-7"><span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{accent}</span><h3 className="mt-5 font-heading text-2xl font-semibold tracking-tight">{section.title}</h3><p className="mt-4 whitespace-pre-line leading-7 text-muted-foreground">{section.body}</p></article>)}</div>}
+    {departments.length > 0 && <div className="mt-20"><div className="mb-8 flex items-end justify-between gap-4"><div><span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">02 / departments</span><h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight sm:text-4xl">Explore the capabilities</h2></div><Building2 className="hidden size-8 text-primary/50 sm:block" /></div><div className="grid gap-4 md:grid-cols-2">{departments.map((section, index) => <article key={`${section.title}-${index}`} className="rounded-3xl border border-border bg-card p-7"><div className="flex items-center justify-between"><span className="text-sm font-semibold text-primary">{String(index + 1).padStart(2, "0")}</span><span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{accent}</span></div><h3 className="mt-10 font-heading text-2xl font-semibold tracking-tight">{section.title}</h3><p className="mt-4 whitespace-pre-line leading-7 text-muted-foreground">{section.body}</p>{section.bullets && <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-muted-foreground">{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}</article>)}</div></div>}
 
     <div className="mt-20 grid gap-6 lg:grid-cols-2">
-      <article className="rounded-[2rem] border border-border bg-card p-8 lg:p-10"><div className="flex items-center gap-3 text-primary"><MessageCircle className="size-5" /><span className="text-xs font-semibold uppercase tracking-[0.2em]">03 / faq</span></div><h2 className="mt-5 font-heading text-3xl font-semibold tracking-tight">Frequently asked questions</h2><p className="mt-4 whitespace-pre-line leading-7 text-muted-foreground">{faq?.body ?? "Speak with our team for clear answers about scope, delivery, support, and the right technology path for your business."}</p></article>
+      <article className="rounded-[2rem] border border-border bg-card p-8 lg:p-10"><div className="flex items-center gap-3 text-primary"><MessageCircle className="size-5" /><span className="text-xs font-semibold uppercase tracking-[0.2em]">03 / faq</span></div><h2 className="mt-5 font-heading text-3xl font-semibold tracking-tight">Frequently asked questions</h2>{faq.length ? <div className="mt-6 flex flex-col gap-5">{faq.map((item) => <div key={item.title}><h3 className="font-semibold">{item.title}</h3><p className="mt-2 whitespace-pre-line leading-7 text-muted-foreground">{item.body}</p></div>)}</div> : <p className="mt-4 leading-7 text-muted-foreground">Contact our team for clear answers about scope, delivery, support, and the right technology path for your business.</p>}</article>
       <article className="rounded-[2rem] bg-foreground p-8 text-background lg:p-10"><Quote className="size-7 opacity-60" /><span className="mt-8 block text-xs font-semibold uppercase tracking-[0.2em] opacity-60">04 / testimonial</span><p className="mt-5 text-xl leading-8">{testimonial?.body ?? "Rounak Computers brings the expertise and responsiveness businesses need from a technology partner."}</p><p className="mt-8 text-sm opacity-60">{testimonial?.title ?? "Rounak Computers client experience"}</p></article>
     </div>
   </section>

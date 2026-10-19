@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import type { PageContent } from "@/components/site-page";
+import type { PageContent, PageSection } from "@/components/site-page";
 
 export const sourcePages = [
   "about-us", "about-us/our-team", "about-us/our-partners", "about-us/clients-and-testimonials", "about-us/faq",
@@ -24,7 +24,7 @@ export async function loadSourcePage(slug: string): Promise<PageContent & { titl
   const description = clean($("meta[name='description']").attr("content") || main.find("p").first().text());
   const image = main.find("img").first().attr("src");
   const imageUrl = image ? new URL(image, "https://rounakcomputers.com").toString() : undefined;
-  const blocks: { title: string; body: string; bullets?: string[] }[] = [];
+  const blocks: PageSection[] = [];
   const headings = main.find("h1, h2, h3").toArray();
   for (const heading of headings) {
     const headingTitle = clean($(heading).text());
@@ -32,16 +32,33 @@ export async function loadSourcePage(slug: string): Promise<PageContent & { titl
     const bodyParts: string[] = [];
     let next = $(heading).next();
     while (next.length && !/^h[1-3]$/i.test(next[0].tagName)) {
-      if (next.is("p")) bodyParts.push(clean(next.text()));
+      if (next.is("p, ul, ol")) {
+        const text = next.is("p") ? clean(next.text()) : next.find("li").toArray().map((item) => clean($(item).text())).filter(Boolean).join("\n");
+        if (text) bodyParts.push(text);
+      }
       next = next.next();
     }
-    if (bodyParts.length) blocks.push({ title: headingTitle, body: bodyParts.join("\n\n") });
+    if (bodyParts.length) {
+      const kind: PageSection["kind"] = /faq|frequently asked|question/i.test(headingTitle)
+        ? "faq"
+        : /testimonial|client|review|success stor/i.test(headingTitle)
+          ? "testimonial"
+          : blocks.length === 0
+            ? "overview"
+            : "department";
+      blocks.push({ title: headingTitle, body: bodyParts.join("\n\n"), kind });
+    }
   }
   const paragraphs = main.find("p").toArray().map((node) => clean($(node).text())).filter(Boolean);
   const captured = new Set(blocks.map((block) => block.body));
-  paragraphs.forEach((body, index) => {
-    if (!captured.has(body)) blocks.push({ title: index === 0 ? title : "More from Rounak Computers", body });
-  });
+  const orphanParagraphs = paragraphs.filter((body) => !captured.has(body));
+  if (orphanParagraphs.length) {
+    blocks.push({
+      title: blocks.length ? "Product description" : title,
+      body: orphanParagraphs.join("\n\n"),
+      kind: blocks.length ? "department" : "overview",
+    });
+  }
   const intro = paragraphs[0] || description;
   return {
     eyebrow: slug.split("/")[0].replaceAll("-", " "),
