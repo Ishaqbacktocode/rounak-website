@@ -31,14 +31,6 @@ export function SiteHeader() {
               priority
             />
           </div>
-          <div className="leading-none">
-            <div className="font-heading text-lg font-bold tracking-tight">
-              Rounak Computers
-            </div>
-            <div className="mt-1 text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              Cloud &middot; AI &middot; Dubai
-            </div>
-          </div>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
