@@ -56,7 +56,7 @@ export function Testimonials() {
           {testimonials.map((testimonial) => (
             <figure
               key={testimonial.author}
-              className="flex flex-col rounded-2xl border border-border bg-background p-7"
+              className="flex flex-col rounded-none border border-border bg-background p-7"
             >
               <Quote className="h-7 w-7 text-primary/40" />
               <blockquote className="mt-4 flex-1 leading-7 text-foreground/90">

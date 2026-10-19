@@ -43,7 +43,7 @@ export function Security() {
             endpoints, we implement top-tier solutions that keep your people and
             data protected.
           </p>
-          <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-border bg-muted/40 px-5 py-4">
+          <div className="mt-8 inline-flex items-center gap-3 rounded-none border border-border bg-muted/40 px-5 py-4">
             <Fingerprint className="h-6 w-6 text-primary" />
             <span className="text-sm font-medium">
               Comprehensive protection built into every solution we deploy.
@@ -57,7 +57,7 @@ export function Security() {
             return (
               <div
                 key={solution.title}
-                className="rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                className="rounded-none border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" />

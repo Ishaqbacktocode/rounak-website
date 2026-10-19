@@ -64,7 +64,7 @@ export function About() {
               return (
                 <div
                   key={item.title}
-                  className="flex gap-5 rounded-2xl border border-border bg-background p-6"
+                  className="flex gap-5 rounded-none border border-border bg-background p-6"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <Icon className="h-6 w-6" />

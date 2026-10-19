@@ -50,8 +50,8 @@ export function CloudSolutions() {
   return (
     <section id="cloud" className="relative overflow-hidden bg-primary text-primary-foreground">
       <div className="pointer-events-none absolute inset-0 opacity-20">
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-white/20 blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute right-0 top-0 h-96 w-96 rounded-none bg-white/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-none bg-white/10 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
@@ -75,7 +75,7 @@ export function CloudSolutions() {
             return (
               <div
                 key={service.title}
-                className="rounded-2xl border border-white/15 bg-white/10 p-7 backdrop-blur-sm transition-colors hover:bg-white/15"
+                className="rounded-none border border-white/15 bg-white/10 p-7 backdrop-blur-sm transition-colors hover:bg-white/15"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
                   <Icon className="h-6 w-6" />
