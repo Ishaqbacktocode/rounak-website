@@ -1,29 +1,21 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SitePage, type PageContent } from "@/components/site-page";
+import { loadSourcePage, sourcePages } from "@/lib/source-content";
+import { SitePage } from "@/components/site-page";
 
-const sourcePages = [
-  "about-us", "about-us/our-team", "about-us/our-partners", "about-us/clients-and-testimonials", "about-us/faq",
-  "products", "products/microsoft-copilot", "products/microsoft-dynamics", "products/microsoft-azure-services", "products/microsoft-365", "products/telephony", "products/cctv-solutions", "products/computer-sales-services", "products/professional-cctv-installation-company-in-dubai",
-  "it-services", "it-services/structured-cabling", "it-services/it-amc-services-get-it-annual-maintenance-contract", "it-services/managed-it-services", "it-services/spla", "it-services/structured-cabling-company-dubai", "it-services/expert-it-support-services-dubai", "it-services/comprehensive-it-managed-services-dubai", "it-services/advanced-website-joomla-based-application",
-  "cloud-services", "cloud-services/alibaba-cloud", "cloud-services/amazon-web-services", "cloud-services/azure-cloud-services", "cloud-services/disaster-recovery-as-service-draas", "cloud-services/migration-services", "cloud-services/best-solutions-to-backup-your-data", "cloud-services/quality-ibm-watson-workspace-in-dubai", "cloud-services/huawei-cloud-services",
-  "security", "security/o365-advance-threat-protection", "security/sophos-security-in-dubai", "security/ibm-mass-360", "security/mimecast-dubai", "security/top-security-solutions-for-ransomware-dubai", "security/barracuda-email-security", "security/guaranteed-information-security-in-dubai",
-  "blog", "blog/uae-e-invoicing-the-it-readiness-checklist-before-your-asp-deadline", "blog/still-running-windows-10-esu-costs-and-your-options-in-2026", "blog/barracuda-vs-mimecast-for-uae-businesses-choosing-an-email-security-layer", "contact-us", "privacy-policy", "tos", "sitemap",
-] as const;
+export function generateStaticParams() {
+  return sourcePages.map((slug) => ({ slug: slug.split("/") }));
+}
 
-const exactPages: Record<string, PageContent> = {
-  "about-us": { eyebrow: "About Rounak Computers", title: "Technology expertise that has earned trust for over 20 years.", intro: "Rounak Computers LLC is a Dubai-based IT partner helping organizations modernize, secure and manage their technology with confidence.", image: "/images/ai-section.png", sections: [{ title: "Who we are", body: "Since 2004, we have supported healthcare, education, government, manufacturing and growing businesses with practical IT sales and services." }, { title: "Our approach", body: "We combine certified expertise, local knowledge and global technology partnerships to deliver reliable, scalable solutions." }] },
-  products: { eyebrow: "Products", title: "Innovative IT solutions to empower your business.", intro: "Explore our range of products, including Microsoft Copilot, CCTV solutions and more, to enhance your business operations.", image: "/images/hero-datacenter.png", sections: [{ title: "Workplace and productivity", body: "Microsoft software, licensing, computers, servers, networking and accessories for modern teams." }, { title: "Security and infrastructure", body: "CCTV, telephony and business hardware sourced, installed and supported by our team." }] },
-  "it-services": { eyebrow: "IT Services", title: "Customized IT solutions that help businesses achieve growth effectively.", intro: "From hardware sales and software licensing to web development, consulting and managed support, Rounak Computers keeps your technology working for your business.", image: "/images/ai-section-2.png", sections: [{ title: "Support and maintenance", body: "Responsive IT support, annual maintenance contracts and managed services for dependable day-to-day operations." }, { title: "Projects and implementation", body: "Structured cabling, office infrastructure, web applications and technology projects delivered with clear ownership." }] },
-  "cloud-services": { eyebrow: "Cloud Services", title: "Cloud solutions in the UAE for a more scalable business.", intro: "Rounak Computers offers reliable and secure cloud solutions in UAE, tailored to the needs of companies in Dubai and across the region.", image: "/images/ai-section-3.png", sections: [{ title: "Cloud transformation", body: "Plan, migrate and manage cloud infrastructure with practical advice from experienced specialists." }, { title: "Continuity and backup", body: "Protect business data with migration, disaster recovery and backup services designed around your operations." }] },
-  security: { eyebrow: "Security", title: "Protect the systems your business depends on.", intro: "Our security solutions help organizations protect identities, endpoints, email, networks and premises from evolving threats.", image: "/images/ai-award.png", sections: [{ title: "Layered protection", body: "Microsoft, Sophos, IBM, Mimecast and Barracuda solutions for modern business security." }, { title: "Security that stays current", body: "Implementation, maintenance and guidance that help your defenses evolve as threats do." }] },
-  "contact-us": { eyebrow: "Contact Us", title: "Tell us what you want your technology to do better.", intro: "Speak with our Dubai team about cloud, managed IT, Microsoft, infrastructure or security services.", sections: [{ title: "Dubai office", body: "602, 6th Floor, Al Rifaa Plaza, Khalid Bin Al Waleed Road, Dubai, UAE", bullets: ["+971 55 475 2832", "+971 4 386 5656", "info@rounakcomputers.com"] }, { title: "What happens next", body: "Share a few details about your current environment and goals. We will connect you with the right specialist." }] },
-};
+export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
+  const slug = (await params).slug.join("/");
+  const page = await loadSourcePage(slug);
+  return page ? { title: page.title, description: page.description } : {};
+}
 
-function titleFromSlug(slug: string) { return slug.split("/").at(-1)!.split("-").map((word) => word.toUpperCase() === "UAE" ? "UAE" : word.charAt(0).toUpperCase() + word.slice(1)).join(" "); }
-function categoryFor(slug: string) { const root = slug.split("/")[0]; return root === "it-services" ? "IT Services" : root === "cloud-services" ? "Cloud Services" : root === "about-us" ? "About Rounak Computers" : root.charAt(0).toUpperCase() + root.slice(1); }
-function getPage(slug: string): PageContent | undefined { if (!sourcePages.includes(slug as never)) return; if (exactPages[slug]) return exactPages[slug]; const title = titleFromSlug(slug); const category = categoryFor(slug); return { eyebrow: category, title, intro: `Rounak Computers provides reliable ${category.toLowerCase()} solutions for businesses in Dubai and across the UAE. Explore our expertise, products and services.`, image: "/images/hero-datacenter.png", sections: [{ title: `About ${title}`, body: `Our experienced team helps organizations plan, implement and support ${title.toLowerCase()} with a clear focus on reliability, security and business value.` }, { title: "Why choose Rounak Computers", body: "We combine local UAE knowledge, certified specialists and trusted technology partners to deliver practical solutions with dependable support." }] }; }
-
-export function generateStaticParams() { return sourcePages.map((slug) => ({ slug: slug.split("/") })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> { const slug = (await params).slug.join("/"); const page = getPage(slug); return page ? { title: `${page.title} | Rounak Computers`, description: page.intro } : {}; }
-export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) { const slug = (await params).slug.join("/"); const page = getPage(slug); if (!page) notFound(); return <SitePage content={page} />; }
+export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
+  const slug = (await params).slug.join("/");
+  const page = await loadSourcePage(slug);
+  if (!page) notFound();
+  return <SitePage content={page} />;
+}
