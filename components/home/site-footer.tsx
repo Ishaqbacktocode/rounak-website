@@ -111,6 +111,18 @@ export function SiteFooter() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 602, 6th Floor, Al Rifaa Plaza, Khalid Bin Al Waleed Road, Dubai, UAE
               </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/rounakcomputers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 transition-colors hover:text-foreground"
+                >
+                <Star className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  Follow us on Instagram
+                </a>
+                social media links can be added here in the future if needed
+              </li>
             </ul>
           </div>
         </div>
