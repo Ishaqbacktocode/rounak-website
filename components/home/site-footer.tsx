@@ -3,11 +3,12 @@ import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const quickLinks = [
-  { label: "Solutions", href: "#services" },
-  { label: "Cloud", href: "#cloud" },
-  { label: "Security", href: "#security" },
-  { label: "Why Rounak", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Products", href: "/products" },
+  { label: "IT Services", href: "/it-services" },
+  { label: "Cloud Services", href: "/cloud-services" },
+  { label: "Security", href: "/security" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 const serviceLinks = [
@@ -121,7 +122,7 @@ export function SiteFooter() {
                 <Star className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   Follow us on Instagram
                 </a>
-                social media links can be added here in the future if needed
+
               </li>
             </ul>
           </div>
