@@ -5,6 +5,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     { url: SITE_URL, lastModified: now, priority: 1 },
+    ...["about-us", "contact-us"].map((p) => ({
+      url: `${SITE_URL}/${p}`,
+      lastModified: now,
+      priority: 0.6,
+    })),
     ...categoryList.map((c) => ({
       url: `${SITE_URL}/${c.slug}`,
       lastModified: now,
