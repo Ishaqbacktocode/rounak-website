@@ -6,6 +6,7 @@ import { ArrowUpRight, ChevronDown, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { categoryList, groupServices, type CategorySlug } from "@/lib/site";
+import { Logo } from "@/components/logo";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,8 +39,8 @@ export function Header() {
             scrolled ? "h-12" : "h-14"
           }`}
         >
-          <Link href="/" className="font-semibold tracking-tight">
-            Rounak<span className="text-[var(--brand)]">.</span>
+          <Link href="/" aria-label="Rounak Computers home">
+            <Logo />
           </Link>
 
           <ul className="hidden items-center gap-1 text-sm text-muted-foreground md:flex">

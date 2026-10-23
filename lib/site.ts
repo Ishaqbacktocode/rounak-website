@@ -109,3 +109,23 @@ export const contact = {
   address: "602, 6th Floor, Al Rifaa Plaza, Khalid Bin Al Waleed Road, Dubai, UAE",
   whatsapp: "https://wa.me/971504752832",
 };
+
+export const companyLinks = [
+  { label: "About us", href: "/about-us" },
+  { label: "Dubai AI Seal", href: "/dubai-ai-seal" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact-us" },
+];
+
+export const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Sitemap", href: "/sitemap.xml" },
+];
+
+// TODO: replace with Rounak's real profile URLs, delete any you don't use
+export const socials = [
+  { label: "LinkedIn", href: "https://in.linkedin.com/company/rounakcomputersllc" },
+  { label: "Facebook", href: "https://www.facebook.com/rounakcomputersllc" },
+  { label: "Instagram", href: "https://www.instagram.com/rounakcloud/" },
+];
