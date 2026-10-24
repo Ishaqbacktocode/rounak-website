@@ -56,8 +56,11 @@ export const services: Service[] = [
   { category: "products", slug: "computer-sales-services", title: "Computer Sales & Services", group: "Infrastructure", summary: "Laptops, desktops and servers from authorised distributors, plus rental for events." },
   { category: "products", slug: "telephony", title: "Telephony Solutions", group: "Infrastructure", summary: "Business phone systems built around how your team works." },
   { category: "products", slug: "cctv-solutions", title: "CCTV Solutions", group: "Infrastructure", summary: "Professional CCTV design, installation and maintenance." },
+  { category: "products", slug: "professional-cctv-installation-company-in-dubai", title: "Professional CCTV Installation", group: "Infrastructure", summary: "Professional CCTV installation for offices, warehouses and retail." },
 
   // IT SERVICES
+  { category: "it-services", slug: "structured-cabling-company-dubai", title: "Structured Cabling Company", group: "Infrastructure", summary: "Certified structured cabling for offices, data rooms and warehouses." },
+  { category: "it-services", slug: "comprehensive-it-managed-services-dubai", title: "Comprehensive IT Managed Services", group: "Support & managed", summary: "End-to-end managed IT services for growing Dubai businesses." },
   { category: "it-services", slug: "managed-it-services", title: "Managed IT Services", group: "Support & managed", summary: "Proactive monitoring, helpdesk and infrastructure management for a predictable monthly cost." },
   { category: "it-services", slug: "it-amc-services-get-it-annual-maintenance-contract", title: "IT AMC Services", group: "Support & managed", summary: "Annual maintenance contracts covering your critical IT infrastructure." },
   { category: "it-services", slug: "expert-it-support-services-dubai", title: "IT Support", group: "Support & managed", summary: "On-site and remote support from certified engineers." },
@@ -82,6 +85,7 @@ export const services: Service[] = [
   { category: "security", slug: "sophos-security-in-dubai", title: "Sophos Firewall", group: "Network & endpoint", summary: "Next-generation firewall and endpoint protection from Sophos." },
   { category: "security", slug: "ibm-mass-360", title: "IBM MaaS360", group: "Network & endpoint", summary: "Unified endpoint and mobile device management." },
   { category: "security", slug: "top-security-solutions-for-ransomware-dubai", title: "Ransomware Protection", group: "Network & endpoint", summary: "Layered defences and recovery planning against ransomware." },
+    { category: "security", slug: "guaranteed-information-security-in-dubai", title: "Guaranteed Information Security", group: "Network & endpoint", summary: "Advanced ICT and information security solutions for UAE businesses." },
 ];
 
 export const allServices = services;

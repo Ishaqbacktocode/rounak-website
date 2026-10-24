@@ -19,6 +19,28 @@ type ProductExtra = {
   faqs: { q: string; a: string }[];
 };
 
+const cctvProductDetails: ProductExtra = {
+  icon: Cctv,
+  tagline: "CCTV designed, installed and maintained by one team.",
+  highlights: ["Site survey", "HD & remote view", "Maintenance"],
+  features: [
+    { title: "Site survey & design", text: "We visit, identify blind spots and design coverage that fits your premises." },
+    { title: "Professional installation", text: "Neat cabling, correct camera placement and full testing." },
+    { title: "Remote viewing", text: "Check cameras from your phone or computer, wherever you are." },
+    { title: "Maintenance & AMC", text: "Regular checks and fast repairs so cameras are working when you need them." },
+  ],
+  benefits: [
+    "Coverage planned, not guessed",
+    "Clean installation that suits your office",
+    "Annual maintenance available",
+    "Works alongside your network and security setup",
+  ],
+  faqs: [
+    { q: "Do you offer a site survey before quoting?", a: "Yes. A survey lets us recommend the right number and type of cameras." },
+    { q: "Can we view cameras remotely?", a: "Yes. Remote access can be set up securely on phones and computers." },
+  ],
+};
+
 const extras: Record<string, ProductExtra> = {
   "microsoft-365": {
     icon: LayoutGrid,
@@ -146,27 +168,8 @@ const extras: Record<string, ProductExtra> = {
       { q: "Do you handle the cabling too?", a: "Yes. Our structured cabling team can wire the office alongside the phone installation." },
     ],
   },
-  "cctv-solutions": {
-    icon: Cctv,
-    tagline: "CCTV designed, installed and maintained by one team.",
-    highlights: ["Site survey", "HD & remote view", "Maintenance"],
-    features: [
-      { title: "Site survey & design", text: "We visit, identify blind spots and design coverage that fits your premises." },
-      { title: "Professional installation", text: "Neat cabling, correct camera placement and full testing." },
-      { title: "Remote viewing", text: "Check cameras from your phone or computer, wherever you are." },
-      { title: "Maintenance & AMC", text: "Regular checks and fast repairs so cameras are working when you need them." },
-    ],
-    benefits: [
-      "Coverage planned, not guessed",
-      "Clean installation that suits your office",
-      "Annual maintenance available",
-      "Works alongside your network and security setup",
-    ],
-    faqs: [
-      { q: "Do you offer a site survey before quoting?", a: "Yes. A survey lets us recommend the right number and type of cameras." },
-      { q: "Can we view cameras remotely?", a: "Yes. Remote access can be set up securely on phones and computers." },
-    ],
-  },
+  "cctv-solutions": cctvProductDetails,
+  "professional-cctv-installation-company-in-dubai": cctvProductDetails,
 };
 
 export type Product = Service & ProductExtra;

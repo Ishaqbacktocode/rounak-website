@@ -207,3 +207,7 @@
 @media (prefers-reduced-motion: reduce) {
   .float-slow, .float-slower { animation: none; }
 }
+
+.marquee-reverse .marquee-track {
+  animation-direction: reverse;
+}
