@@ -2,13 +2,6 @@ export const IMG = "/images";
 
 export type Card = { title: string; href: string; image: string; text?: string };
 
-export const heroSlides = [
-  { title: "Innovative IT Solutions to Empower Your Business", text: "Explore our range of products, including Microsoft Copilot, CCTV Solutions, and more, to enhance your business operations.", cta: "View Products", href: "/products" },
-  { title: "Comprehensive IT Services for Seamless Operations", text: "From structured cabling to managed IT services, we provide expert support to ensure your business runs smoothly.", cta: "View IT Services", href: "/it-services" },
-  { title: "Transform Your Business with Advanced Cloud Solutions", text: "Leverage the power of AWS, Azure, and more with our cloud services, designed for data backup, migration, and disaster recovery.", cta: "View Cloud Services", href: "/cloud-services" },
-  { title: "Protect Your Business with Leading Security Solutions", text: "Stay secure with top-tier solutions like O365 Advanced Threat Protection, Sophos Security, and Barracuda Email Security.", cta: "View Security Solutions", href: "/security" },
-];
-
 export const aboutText = {
   who: "For over 20 years, Rounak Computers LLC has been a trusted provider of IT sales and services in Dubai, recognized as a Microsoft Gold Partner in Cloud Productivity. We have built a solid reputation by offering a wide range of services, including structured cabling, CCTV, Managed IT Services, Onsite support, and AMC services for critical IT infrastructure. We also provide rental solutions for PCs, laptops, and projectors for events. Many of our clients have been with us since the beginning, and we pride ourselves on addressing every customer's needs, no matter the size of the deal, across sectors like healthcare, education, government, manufacturing, and more. We only procure products from authorized distributors, maintaining strong partnerships with leading brands like Microsoft, HP, Dell, Lenovo, and Sophos. Since 2014, we have expanded into cloud services, offering solutions like Microsoft Office 365, Azure, and seamless migrations with zero downtime. Our certified team of professionals is continuously trained to deliver cutting-edge IT solutions, ensuring that we meet the evolving needs of our clients.",
   what: "As a certified Microsoft Cloud Partner, Rounak Computers offers expert solutions for migrating, implementing, and managing your business in the cloud. Our deep expertise in Microsoft technologies like Office 365, Azure, and Dynamics 365 ensures seamless integration, enhanced productivity, and secure cloud operations. Let us help you unlock the full potential of Microsoft's cloud services to drive efficiency and growth for your business.",
