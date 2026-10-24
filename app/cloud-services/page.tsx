@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { ServiceCategoryPage } from "@/components/service-category-page";
 import { getCategory } from "@/lib/site";
+import { getSourceSeo } from "@/lib/source-seo";
 
+const seo = getSourceSeo("/cloud-services");
 export const metadata: Metadata = {
-  title: "Cloud Services in Dubai & UAE | Rounak Computers",
-  description: getCategory("cloud-services").description,
+  title: seo?.title,
+  description: seo?.description ?? getCategory("cloud-services").description,
   alternates: { canonical: "/cloud-services" },
 };
 

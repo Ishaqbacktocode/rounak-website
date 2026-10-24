@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { contact } from "@/lib/site";
+import { getSourceSeo } from "@/lib/source-seo";
 
+const seo = getSourceSeo("/contact-us");
 export const metadata: Metadata = {
-  title: "Contact Rounak Computers | Dubai IT Services",
-  description: "Talk to a certified engineer about cloud, managed IT, security and Microsoft solutions in Dubai.",
+  title: seo?.title,
+  description: seo?.description,
   alternates: { canonical: "/contact-us" },
 };
 
@@ -22,9 +24,13 @@ export default function ContactPage() {
       <div className="aurora" />
       <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-5">
         <div className="md:col-span-2">
-          <h1 className="text-5xl font-semibold tracking-tight">Let&apos;s talk.</h1>
+          <p className="text-sm text-[var(--brand)]">Home / Contact Us</p>
+          <h1 className="mt-3 text-5xl font-semibold tracking-tight">Contact Us</h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            Tell us what you need. A certified engineer will reply, usually within one working day.
+            <span className="block text-2xl font-semibold text-foreground">
+              Let Us Elevate Your Business
+            </span>
+            Ready to start a conversation?
           </p>
           <ul className="mt-10 space-y-6">
             {details.map((d) => (

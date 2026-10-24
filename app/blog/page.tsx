@@ -1,13 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, ArrowUpRight, BookOpen, Clock3 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BookOpen } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { blogPosts } from "@/lib/blog";
+import { getSourceSeo } from "@/lib/source-seo";
 
+const seo = getSourceSeo("/blog");
 export const metadata: Metadata = {
-  title: "IT Insights & Guides | Rounak Computers",
-  description:
-    "Practical guides to Microsoft 365, cloud, cybersecurity and business technology from Rounak Computers in Dubai.",
+  title: seo?.title,
+  description: seo?.description,
   alternates: { canonical: "/blog" },
 };
 
@@ -19,15 +20,12 @@ export default function BlogPage() {
       <section className="relative overflow-hidden px-6 pb-16 pt-44">
         <div className="aurora" />
         <Reveal className="mx-auto max-w-6xl">
-          <p className="text-sm text-[var(--brand)]">The Rounak blog</p>
+          <p className="text-sm text-[var(--brand)]">Our Blog</p>
           <h1 className="mt-3 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-            Practical insight for{" "}
-            <span className="bg-gradient-to-r from-[var(--brand)] to-[var(--brand-2)] bg-clip-text text-transparent">
-              better IT decisions.
-            </span>
+            Our Blog
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Clear, useful guidance on the technology that keeps your business moving.
+            {seo?.description}
           </p>
         </Reveal>
       </section>
@@ -47,24 +45,25 @@ export default function BlogPage() {
               <span className="relative w-fit rounded-full border border-white/15 bg-background/30 px-3 py-1 text-xs uppercase tracking-wider text-muted-foreground">
                 Featured guide
               </span>
-              <span className="relative text-sm text-muted-foreground">01 / 03</span>
+              <span className="relative text-sm text-muted-foreground">
+                01 / {String(blogPosts.length).padStart(2, "0")}
+              </span>
             </div>
 
             <div className="flex flex-col justify-center p-8 md:col-span-3 md:p-12">
               <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-[var(--brand)]">
-                <span>{featuredPost.category}</span>
-                <span className="size-1 rounded-full bg-white/30" />
-                <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Clock3 className="size-3.5" />
-                  {featuredPost.readTime}
-                </span>
+                {featuredPost.category && (
+                  <span>{featuredPost.category}</span>
+                )}
               </div>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight transition-colors group-hover:text-[var(--brand)] md:text-4xl">
                 {featuredPost.title}
               </h2>
-              <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">
-                {featuredPost.excerpt}
-              </p>
+              {(featuredPost.excerpt || featuredPost.intro[0]) && (
+                <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">
+                  {featuredPost.excerpt || featuredPost.intro[0]}
+                </p>
+              )}
               <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium">
                 Read the guide
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -75,12 +74,9 @@ export default function BlogPage() {
 
         <div className="mt-20 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-sm text-[var(--brand)]">More to explore</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight">From our team</h2>
+            <p className="text-sm text-[var(--brand)]">Blog</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight">All articles</h2>
           </div>
-          <p className="max-w-md text-sm text-muted-foreground">
-            Straightforward ideas to help you plan, protect and get more from your technology.
-          </p>
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -91,20 +87,22 @@ export default function BlogPage() {
                 className="group flex h-full min-h-72 flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-colors hover:bg-white/[0.06] md:p-9"
               >
                 <div className="flex items-center justify-between">
-                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-[var(--brand)]">
-                    {post.category}
-                  </span>
+                  {post.category && (
+                    <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-[var(--brand)]">
+                      {post.category}
+                    </span>
+                  )}
                   <ArrowUpRight className="size-5 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
                 </div>
                 <h3 className="mt-8 text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--brand)]">
                   {post.title}
                 </h3>
-                <p className="mt-3 leading-relaxed text-muted-foreground">{post.excerpt}</p>
-                <div className="mt-auto flex items-center gap-2 pt-8 text-xs text-muted-foreground">
-                  <Clock3 className="size-3.5" />
-                  {post.readTime}
-                  <span className="ml-auto text-sm font-medium text-foreground">Read article</span>
-                </div>
+                {(post.excerpt || post.intro[0]) && (
+                  <p className="mt-3 leading-relaxed text-muted-foreground">
+                    {post.excerpt || post.intro[0]}
+                  </p>
+                )}
+                <span className="mt-auto pt-8 text-sm font-medium">Read article</span>
               </Link>
             </Reveal>
           ))}

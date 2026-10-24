@@ -66,24 +66,9 @@ export function ProductsGrid() {
                       <ArrowUpRight className="size-5 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
                     </div>
 
-                    <p className="mt-8 text-xs uppercase tracking-wider text-muted-foreground">
-                      {p.group}
-                    </p>
-                    <h3 className={`mt-2 font-semibold tracking-tight ${big ? "text-3xl" : "text-xl"}`}>
+                    <h3 className={`mt-8 font-semibold tracking-tight ${big ? "text-3xl" : "text-xl"}`}>
                       {p.title}
                     </h3>
-                    <p className="mt-2 text-muted-foreground">{p.tagline}</p>
-
-                    <ul className="mt-auto flex flex-wrap gap-2 pt-6">
-                      {p.highlights.map((h) => (
-                        <li
-                          key={h}
-                          className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted-foreground"
-                        >
-                          {h}
-                        </li>
-                      ))}
-                    </ul>
                   </Link>
                 </SpotlightCard>
               </motion.div>

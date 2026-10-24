@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { CategorySlug } from "@/lib/site";
 import { getCategory, groupServices, type Service } from "@/lib/site";
-import { categoryContent } from "@/lib/service-content";
+import { categoryCopy } from "@/lib/source-page-copy";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 
@@ -10,7 +10,7 @@ type ServiceCategory = Exclude<CategorySlug, "products">;
 
 export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
   const category = getCategory(slug);
-  const content = categoryContent[slug];
+  const content = categoryCopy[slug];
   const groups = groupServices(slug);
   const count = groups.reduce((total, group) => total + group.items.length, 0);
 
@@ -21,8 +21,13 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
         <Reveal className="mx-auto max-w-6xl">
           <p className="text-sm text-[var(--brand)]">{category.tagline}</p>
           <h1 className="mt-3 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-            {content.headline}
+            {content.heading}
           </h1>
+          {content.introHeading && (
+            <h2 className="mt-6 max-w-3xl text-2xl font-semibold tracking-tight">
+              {content.introHeading}
+            </h2>
+          )}
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {content.intro}
           </p>
@@ -42,20 +47,16 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {content.benefits.map((benefit, index) => (
-            <Reveal key={benefit} delay={index * 0.05}>
-              <div className="h-full rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                <span className="flex size-9 items-center justify-center rounded-xl bg-[var(--brand)]/10">
-                  <Check className="size-4 text-[var(--brand)]" />
-                </span>
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{benefit}</p>
-              </div>
-            </Reveal>
+      {content.sections.map((section) => (
+        <section key={section.heading} className="mx-auto max-w-6xl px-6 pb-16">
+          <h2 className="text-3xl font-semibold tracking-tight">{section.heading}</h2>
+          {section.paragraphs?.map((paragraph) => (
+            <p key={paragraph} className="mt-4 max-w-4xl leading-relaxed text-muted-foreground">
+              {paragraph}
+            </p>
           ))}
-        </div>
-      </section>
+        </section>
+      ))}
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
         <div className="mb-10">
@@ -88,7 +89,6 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
           <h2 className="mt-3 text-3xl font-semibold tracking-tight">
             Let&apos;s find the right solution for your business.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">{content.cta}</p>
           <Button
             render={<Link href="/contact-us" />}
             nativeButton={false}

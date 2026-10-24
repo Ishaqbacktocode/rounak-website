@@ -60,7 +60,10 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              Cloud, AI and IT services for Dubai businesses for over 20 years.
+              Rounak Computers is a leading cloud solutions provider in the UAE, helping
+              businesses transform their operations through cloud technology. We specialize in
+              cloud integration, infrastructure management, and IT security, enabling scalable
+              and efficient digital solutions.
             </p>
             {socials.length > 0 && (
               <ul className="mt-6 flex gap-5 text-sm text-muted-foreground">

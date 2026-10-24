@@ -9,9 +9,11 @@ import { Testimonials } from "@/components/home/testimonials";
 import { HomeCta } from "@/components/home/cta";
 import { products, itServices, cloud, security } from "@/lib/home-content";
 import { contact, SITE_URL } from "@/lib/site";
+import { getSourceSeo } from "@/lib/source-seo";
 
+const seo = getSourceSeo("/");
 export const metadata: Metadata = {
-  title: "Rounak Computers LLC: Cloud and AI services company in Dubai",
+  title: seo?.title,
   description:
     "Rounak Computers provides customized IT solutions, including hardware sales, software licensing, web development, and consulting, helping businesses achieve growth effectively.",
   alternates: { canonical: "/" },

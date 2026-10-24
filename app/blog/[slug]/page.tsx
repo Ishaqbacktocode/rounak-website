@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, Clock3 } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
 import { blogPosts, getBlogPost } from "@/lib/blog";
@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: `${post.title} | Rounak Computers`,
-    description: post.excerpt,
+    title: post.metaTitle || post.title,
+    description: post.excerpt || undefined,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
-      title: post.title,
-      description: post.excerpt,
+      title: post.metaTitle || post.title,
+      description: post.excerpt || undefined,
       url: `${SITE_URL}/blog/${post.slug}`,
     },
   };
@@ -50,26 +50,24 @@ export default async function BlogPostPage({ params }: Props) {
             <ArrowLeft className="size-4" />
             All articles
           </Link>
-          <div className="mt-10 flex flex-wrap items-center gap-3 text-xs uppercase tracking-wider">
-            <span className="rounded-full border border-white/10 px-3 py-1 text-[var(--brand)]">
+          {post.category && (
+            <p className="mt-10 text-xs uppercase tracking-wider text-[var(--brand)]">
               {post.category}
-            </span>
-            <span className="flex items-center gap-1.5 text-muted-foreground">
-              <Clock3 className="size-3.5" />
-              {post.readTime}
-            </span>
-          </div>
+            </p>
+          )}
           <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
             {post.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            {post.excerpt}
-          </p>
         </Reveal>
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-12 px-6 pb-24 lg:grid-cols-[minmax(0,1fr)_280px]">
         <article className="max-w-3xl">
+          {post.intro.map((paragraph) => (
+            <p key={paragraph} className="mb-6 leading-relaxed text-muted-foreground">
+              {paragraph}
+            </p>
+          ))}
           {post.sections.map((section) => (
             <Reveal key={section.heading} className="mb-10">
               <h2 className="text-2xl font-semibold tracking-tight">{section.heading}</h2>

@@ -1,18 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowRight, ArrowUpRight, Check, MessageCircle } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Reveal } from "@/components/reveal";
 import { SpotlightCard } from "@/components/spotlight-card";
 import { getProduct, products } from "@/lib/products";
 import { contact, SITE_URL } from "@/lib/site";
+import { getSourceSeo } from "@/lib/source-seo";
+import { getSourcePageCopy } from "@/lib/source-page-copy";
 
 export const dynamicParams = false;
 
@@ -26,23 +22,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = getProduct(slug);
   if (!p) return {};
+  const seo = getSourceSeo(`/products/${slug}`);
   return {
-    title: `${p.title} in Dubai & UAE | Rounak Computers`,
-    description: `${p.tagline} ${p.summary}`,
+    title: seo?.title ?? `${p.title} in Dubai & UAE | Rounak Computers`,
+    description: seo?.description ?? `${p.tagline} ${p.summary}`,
     alternates: { canonical: `/products/${p.slug}` },
   };
 }
-
-const steps = [
-  { n: "01", title: "We understand", text: "A short call to learn your goals, team size and constraints." },
-  { n: "02", title: "We deliver", text: "Deployment with testing and handover, on a clear timeline." },
-  { n: "03", title: "We support", text: "Certified engineers on call after go-live." },
-];
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const p = getProduct(slug);
   if (!p) notFound();
+  const sourceCopy = getSourcePageCopy(`/products/${slug}`);
 
   const related = products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const quoteHref = `/contact-us?service=${encodeURIComponent(p.title)}`;
@@ -65,17 +57,8 @@ export default async function ProductPage({ params }: Props) {
           </div>
 
           <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-            {p.title}
+            {sourceCopy?.heading ?? p.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-xl text-muted-foreground">{p.tagline}</p>
-
-          <ul className="mt-6 flex flex-wrap gap-2">
-            {p.highlights.map((h) => (
-              <li key={h} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-muted-foreground">
-                {h}
-              </li>
-            ))}
-          </ul>
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Button render={<Link href={quoteHref} />} nativeButton={false} size="lg" className="rounded-full">
@@ -94,89 +77,26 @@ export default async function ProductPage({ params }: Props) {
         </Reveal>
       </section>
 
-      {/* Overview + features */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <Reveal>
-          <p className="max-w-3xl text-2xl leading-relaxed tracking-tight">{p.summary}</p>
-        </Reveal>
-
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
-          {p.features.map((f, i) => (
-            <Reveal key={f.title} delay={i * 0.06}>
-              <SpotlightCard>
-                <div className="p-8">
-                  <span className="text-sm text-[var(--brand)]">0{i + 1}</span>
-                  <h3 className="mt-4 text-xl font-semibold">{f.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{f.text}</p>
-                </div>
-              </SpotlightCard>
-            </Reveal>
+      {sourceCopy?.sections.map((section) => (
+        <section key={section.heading} className="mx-auto max-w-5xl px-6 py-10">
+          <h2 className="text-3xl font-semibold tracking-tight">{section.heading}</h2>
+          {section.paragraphs?.map((paragraph) => (
+            <p key={paragraph} className="mt-4 max-w-4xl leading-relaxed text-muted-foreground">
+              {paragraph}
+            </p>
           ))}
-        </div>
-      </section>
-
-      {/* Benefits + sticky quote card */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-5">
-          <div className="md:col-span-3">
-            <h2 className="text-3xl font-semibold tracking-tight">Why choose Rounak</h2>
-            <ul className="mt-8 space-y-5">
-              {p.benefits.map((b) => (
-                <li key={b} className="flex gap-4">
-                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-[var(--brand)]/20">
-                    <Check className="size-3.5 text-[var(--brand)]" />
-                  </span>
-                  <span className="text-muted-foreground">{b}</span>
+          {section.points && (
+            <ul className="mt-5 space-y-3">
+              {section.points.map((point) => (
+                <li key={point} className="flex gap-3 text-muted-foreground">
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[var(--brand)]" />
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
-
-            <h2 className="mt-16 text-3xl font-semibold tracking-tight">How it works</h2>
-            <ol className="mt-8 space-y-6">
-              {steps.map((s) => (
-                <li key={s.n} className="flex gap-5">
-                  <span className="text-3xl font-semibold text-white/20">{s.n}</span>
-                  <div>
-                    <h3 className="font-semibold">{s.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{s.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <aside className="md:col-span-2">
-            <div className="sticky top-28 rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-xl">
-              <h3 className="text-lg font-semibold">Interested in {p.title}?</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Tell us what you need. A certified engineer will reply, usually within one working day.
-              </p>
-              <Button render={<Link href={quoteHref} />} nativeButton={false} className="mt-6 w-full rounded-full">
-                Request a quote
-              </Button>
-              <a
-                href={`tel:${contact.mobile.replace(/\s/g, "")}`}
-                className="mt-4 block text-center text-sm text-muted-foreground hover:text-foreground"
-              >
-                or call {contact.mobile}
-              </a>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-6 py-16">
-        <h2 className="mb-8 text-3xl font-semibold tracking-tight">Questions</h2>
-        <Accordion>
-          {p.faqs.map((f, i) => (
-            <AccordionItem key={i} value={`faq-${i}`}>
-              <AccordionTrigger>{f.q}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
+          )}
+        </section>
+      ))}
 
       {/* Related */}
       <section className="mx-auto max-w-5xl px-6 py-16">
@@ -215,20 +135,11 @@ export default async function ProductPage({ params }: Props) {
             {
               "@context": "https://schema.org",
               "@type": "Service",
-              name: p.title,
-              description: p.summary,
+              name: sourceCopy?.heading ?? p.title,
+              description: getSourceSeo(`/products/${p.slug}`)?.description ?? p.summary,
               url: `${SITE_URL}/products/${p.slug}`,
               areaServed: "AE",
               provider: { "@type": "Organization", name: "Rounak Computers LLC", url: SITE_URL },
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: p.faqs.map((f) => ({
-                "@type": "Question",
-                name: f.q,
-                acceptedAnswer: { "@type": "Answer", text: f.a },
-              })),
             },
           ]),
         }}
