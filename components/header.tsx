@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, ChevronDown, Menu } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { categoryList, groupServices, type CategorySlug } from "@/lib/site";
@@ -11,6 +12,7 @@ import { Logo } from "@/components/logo";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState<CategorySlug | null>(null);
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -72,6 +74,16 @@ export function Header() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Toggle light and dark theme"
+              title="Toggle light and dark theme"
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            >
+              <Moon className="block dark:hidden" aria-hidden="true" />
+              <Sun className="hidden dark:block" aria-hidden="true" />
+            </Button>
             <Button
               render={<Link href="/contact-us" />}
               nativeButton={false}

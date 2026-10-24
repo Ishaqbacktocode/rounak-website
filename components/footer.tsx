@@ -53,7 +53,11 @@ export function Footer() {
         <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Link href="/" aria-label="Rounak Computers home">
-              <Logo src="/logo-footer.png" className="h-10" />
+              <Logo
+                src="/logo-footer.png"
+                darkSrc="/logo-footer-white.png"
+                className="h-10"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               Cloud, AI and IT services for Dubai businesses for over 20 years.

@@ -130,12 +130,34 @@
 }
 
 :root {
+  color-scheme: light;
   --brand: oklch(0.62 0.19 255);
   --brand-2: oklch(0.75 0.14 200);
 }
 
 .dark {
+  color-scheme: dark;
   --background: oklch(0.14 0.02 260);
+}
+
+html:not(.dark) [class*="border-white/"] {
+  border-color: color-mix(in oklab, var(--foreground) 12%, transparent);
+}
+
+html:not(.dark) [class*="bg-white/"] {
+  background-color: color-mix(in oklab, var(--foreground) 3%, transparent);
+}
+
+html:not(.dark) [class*="hover:bg-white/"]:hover {
+  background-color: color-mix(in oklab, var(--foreground) 6%, transparent);
+}
+
+html:not(.dark) [class*="ring-white/"] {
+  --tw-ring-color: color-mix(in oklab, var(--foreground) 16%, transparent);
+}
+
+html:not(.dark) [class*="text-white/"] {
+  color: color-mix(in oklab, var(--foreground) 20%, transparent);
 }
 
 /* Aurora background */
