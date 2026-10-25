@@ -48,8 +48,8 @@ export default function Home() {
       <HomeSolutions />
       <Approach />
       <AiSeal />
-      <Testimonials />
       <HomeCta />
+      <Testimonials />
     </>
   );
 }

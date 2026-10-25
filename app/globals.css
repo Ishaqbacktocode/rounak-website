@@ -236,6 +236,64 @@ html:not(.dark) [class*="text-white/"] {
 .testimonial-card-glow-delay {
   animation-delay: -8s;
 }
+.approach-glow {
+  animation: testimonial-glow-drift 24s ease-in-out infinite alternate;
+}
+.ai-seal-glow {
+  animation: testimonial-glow-drift 20s ease-in-out infinite alternate;
+}
+.ai-seal-photo {
+  animation: ai-seal-photo-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.ai-seal-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ai-seal-ambient::before,
+.ai-seal-ambient::after {
+  content: "";
+  position: absolute;
+  width: min(48vw, 42rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
+  animation: ai-seal-ambient-drift 18s ease-in-out infinite alternate;
+}
+.ai-seal-ambient::before {
+  top: 5%;
+  left: -20%;
+  background: var(--brand);
+}
+.ai-seal-ambient::after {
+  right: -18%;
+  bottom: -10%;
+  background: var(--brand-2);
+  animation-delay: -9s;
+}
+.ai-seal-image-frame {
+  isolation: isolate;
+}
+.ai-seal-image-frame::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in oklab, white 25%, transparent);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  animation: ai-seal-frame-in 1.2s ease-out 250ms both;
+}
+.ai-seal-info {
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+.ai-seal-feature:hover .ai-seal-info {
+  border-color: color-mix(in oklab, var(--brand) 28%, var(--border));
+  box-shadow: 0 24px 80px color-mix(in oklab, var(--brand) 10%, transparent);
+}
 @keyframes home-hero-float {
   50% { transform: translateY(-8px); }
 }
@@ -251,8 +309,22 @@ html:not(.dark) [class*="text-white/"] {
 @keyframes testimonial-card-drift {
   to { transform: translate3d(-12%, 12%, 0) scale(1.15); }
 }
+@keyframes ai-seal-ambient-drift {
+  to { transform: translate3d(10%, 8%, 0) scale(1.12); }
+}
+@keyframes ai-seal-photo-in {
+  from { opacity: 0.55; transform: scale(0.985); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes ai-seal-frame-in {
+  to { opacity: 1; }
+}
 
 html:not(.dark) .home-hero-artwork [class*="text-white/"] {
+  color: color-mix(in oklab, white 75%, transparent);
+}
+
+html:not(.dark) .ai-seal-panel [class*="text-white/"] {
   color: color-mix(in oklab, white 75%, transparent);
 }
 
@@ -264,7 +336,13 @@ html:not(.dark) .home-hero-artwork [class*="text-white/"] {
   .home-hero-orbit,
   .home-hero-photo,
   .testimonial-background-glow,
-  .testimonial-card-glow {
+  .testimonial-card-glow,
+  .approach-glow,
+  .ai-seal-glow,
+  .ai-seal-photo,
+  .ai-seal-ambient::before,
+  .ai-seal-ambient::after,
+  .ai-seal-image-frame::after {
     animation: none;
   }
 }
