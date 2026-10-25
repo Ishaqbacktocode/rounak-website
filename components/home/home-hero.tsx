@@ -20,7 +20,7 @@ export function HomeHero() {
 
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
             Innovative IT Solutions to Empower Your{" "}
-            <span className="bg-gradient-to-r from-[var(--brand)] to-[var(--brand-2)] bg-clip-text text-transparent">
+            <span className="home-hero-accent bg-gradient-to-r from-[var(--brand)] to-[var(--brand-2)] bg-clip-text text-transparent">
               Business
             </span>
           </h1>
