@@ -57,38 +57,49 @@ export function HomeHero() {
           </Link>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+        <div className="home-hero-artwork relative mx-auto w-full max-w-xl lg:max-w-none">
           <div
             aria-hidden="true"
-            className="absolute -inset-8 rounded-full bg-[radial-gradient(ellipse_at_center,var(--brand)_0%,transparent_68%)] opacity-15 blur-3xl"
+            className="home-hero-glow absolute -inset-8 rounded-full bg-[radial-gradient(ellipse_at_center,var(--brand)_0%,transparent_68%)] opacity-20 blur-3xl"
           />
-          <div className="relative rounded-[2rem] border border-foreground/10 bg-background/60 p-2.5 shadow-2xl shadow-[var(--brand)]/10 backdrop-blur-xl sm:rounded-[2.5rem] sm:p-3">
-            <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-[#f4f2ff] sm:rounded-[2rem]">
+          <div
+            aria-hidden="true"
+            className="home-hero-orbit absolute -inset-3 rounded-[2.8rem] border border-dashed border-[var(--brand)]/25 sm:-inset-5"
+          />
+          <div className="relative overflow-hidden rounded-[2rem] border border-foreground/10 bg-background/60 p-2.5 shadow-2xl shadow-[var(--brand)]/15 backdrop-blur-xl sm:rounded-[2.5rem] sm:p-3">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-slate-200 sm:rounded-[2rem]">
               <Image
-                src="/images/category1/prod6.png"
-                alt="Microsoft Copilot for business productivity"
+                src="/images/dubai-ai-seal.png"
+                alt="Rounak Computers team at the Dubai AI Seal recognition event"
                 fill
                 priority
                 sizes="(min-width: 1024px) 44vw, 90vw"
-                className="object-cover"
+                className="home-hero-photo object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/5 to-transparent" />
+              <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 text-white sm:inset-x-7 sm:bottom-7">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/75">
+                    Government of Dubai
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tracking-tight sm:text-xl">
+                    Dubai AI Seal recipient
+                  </p>
+                </div>
+                <span className="hidden rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-xs backdrop-blur sm:inline-flex">
+                  Dubai AI Week · 2025
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="absolute -left-2 top-5 max-w-[12rem] rounded-2xl border border-foreground/10 bg-background/90 p-4 shadow-xl backdrop-blur-xl sm:-left-8 sm:top-10 sm:max-w-[14rem] sm:p-5">
-            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
-              Government of Dubai
+          <div className="absolute -bottom-5 right-4 rounded-2xl border border-foreground/10 bg-background/95 px-4 py-3 shadow-xl backdrop-blur-xl sm:-right-5 sm:px-5">
+            <p className="text-xs font-medium text-muted-foreground">
+              Recognized among
             </p>
-            <p className="mt-1.5 text-sm font-semibold leading-snug">
-              Dubai AI Seal recipient
+            <p className="mt-1 text-2xl font-semibold tracking-tight">
+              9<span className="text-muted-foreground"> of 325</span>
             </p>
-          </div>
-
-          <div className="absolute -bottom-5 right-2 rounded-2xl border border-foreground/10 bg-background/90 px-5 py-4 shadow-xl backdrop-blur-xl sm:-right-5 sm:px-6">
-            <p className="text-3xl font-semibold tracking-tight">
-              9<span className="text-muted-foreground"> / 325</span>
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">certified UAE companies</p>
           </div>
         </div>
       </div>

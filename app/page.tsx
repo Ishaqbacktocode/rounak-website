@@ -44,8 +44,8 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <HomeHero />
       <Partners />
-      <HomeSolutions />
       <AboutIntro />
+      <HomeSolutions />
       <Approach />
       <AiSeal />
       <Testimonials />

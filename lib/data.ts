@@ -39,7 +39,22 @@ export const pillars: Pillar[] = [
   },
 ];
 
-export const partners = ["Microsoft", "HP", "Dell", "Lenovo", "Sophos", "AWS", "Alibaba Cloud", "Huawei", "Mimecast"];
+export type Partner = {
+  name: string;
+  logo: string;
+};
+
+export const partners: Partner[] = [
+  { name: "Microsoft", logo: "/images/partners/microsoft.svg" },
+  { name: "HP", logo: "/images/partners/hp.svg" },
+  { name: "Dell", logo: "/images/partners/dell.svg" },
+  { name: "Lenovo", logo: "/images/partners/lenovo.svg" },
+  { name: "Sophos", logo: "/images/partners/sophos.png" },
+  { name: "AWS", logo: "/images/partners/aws.svg" },
+  { name: "Alibaba Cloud", logo: "/images/partners/alibaba-cloud.svg" },
+  { name: "Huawei", logo: "/images/partners/huawei.svg" },
+  { name: "Mimecast", logo: "/images/partners/mimecast.png" },
+];
 
 export const stats = [
   { value: 20, suffix: "+", label: "Years in Dubai" },

@@ -215,8 +215,38 @@ html:not(.dark) [class*="text-white/"] {
   animation-play-state: paused;
 }
 
+.home-hero-artwork {
+  animation: home-hero-float 8s ease-in-out infinite;
+}
+.home-hero-orbit {
+  animation: home-hero-orbit 48s linear infinite;
+}
+.home-hero-photo {
+  animation: home-hero-zoom 24s ease-in-out infinite alternate;
+}
+@keyframes home-hero-float {
+  50% { transform: translateY(-8px); }
+}
+@keyframes home-hero-orbit {
+  to { transform: rotate(360deg); }
+}
+@keyframes home-hero-zoom {
+  to { transform: scale(1.08); }
+}
+
+html:not(.dark) .home-hero-artwork [class*="text-white/"] {
+  color: color-mix(in oklab, white 75%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .aurora::before, .aurora::after, .marquee-track { animation: none; }
+  .aurora::before,
+  .aurora::after,
+  .marquee-track,
+  .home-hero-artwork,
+  .home-hero-orbit,
+  .home-hero-photo {
+    animation: none;
+  }
 }
 
 /* Floating product icons in the products hero */
