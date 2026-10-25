@@ -294,6 +294,35 @@ html:not(.dark) [class*="text-white/"] {
   border-color: color-mix(in oklab, var(--brand) 28%, var(--border));
   box-shadow: 0 24px 80px color-mix(in oklab, var(--brand) 10%, transparent);
 }
+.faq-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.faq-ambient::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -16rem;
+  width: 32rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--brand);
+  filter: blur(120px);
+  opacity: 0.08;
+  animation: testimonial-glow-drift 22s ease-in-out infinite alternate;
+}
+.faq-item[open] .faq-answer {
+  display: grid;
+  grid-template-rows: 1fr;
+  animation: faq-answer-reveal 300ms ease-out both;
+}
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
 @keyframes home-hero-float {
   50% { transform: translateY(-8px); }
 }
@@ -319,6 +348,10 @@ html:not(.dark) [class*="text-white/"] {
 @keyframes ai-seal-frame-in {
   to { opacity: 1; }
 }
+@keyframes faq-answer-reveal {
+  from { grid-template-rows: 0fr; opacity: 0; }
+  to { grid-template-rows: 1fr; opacity: 1; }
+}
 
 html:not(.dark) .home-hero-artwork [class*="text-white/"] {
   color: color-mix(in oklab, white 75%, transparent);
@@ -342,7 +375,8 @@ html:not(.dark) .ai-seal-panel [class*="text-white/"] {
   .ai-seal-photo,
   .ai-seal-ambient::before,
   .ai-seal-ambient::after,
-  .ai-seal-image-frame::after {
+  .ai-seal-image-frame::after,
+  .faq-ambient::before {
     animation: none;
   }
 }

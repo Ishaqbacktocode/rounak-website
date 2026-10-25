@@ -6,9 +6,11 @@ import { AboutIntro } from "@/components/home/about-intro";
 import { Approach } from "@/components/home/approach";
 import { AiSeal } from "@/components/home/ai-seal";
 import { Testimonials } from "@/components/home/testimonials";
+import { HomeFaq } from "@/components/home/faq";
 import { HomeCta } from "@/components/home/cta";
 import { contact, SITE_URL } from "@/lib/site";
 import { getSourceSeo } from "@/lib/source-seo";
+import { faqJsonLd } from "@/lib/faq";
 
 const seo = getSourceSeo("/");
 export const metadata: Metadata = {
@@ -50,6 +52,11 @@ export default function Home() {
       <AiSeal />
       <HomeCta />
       <Testimonials />
+      <HomeFaq />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </>
   );
 }
