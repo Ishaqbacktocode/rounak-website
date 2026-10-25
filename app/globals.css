@@ -224,6 +224,18 @@ html:not(.dark) [class*="text-white/"] {
 .home-hero-photo {
   animation: home-hero-zoom 24s ease-in-out infinite alternate;
 }
+.testimonial-background-glow {
+  animation: testimonial-glow-drift 22s ease-in-out infinite alternate;
+}
+.testimonial-background-glow-delay {
+  animation-delay: -11s;
+}
+.testimonial-card-glow {
+  animation: testimonial-card-drift 16s ease-in-out infinite alternate;
+}
+.testimonial-card-glow-delay {
+  animation-delay: -8s;
+}
 @keyframes home-hero-float {
   50% { transform: translateY(-8px); }
 }
@@ -232,6 +244,12 @@ html:not(.dark) [class*="text-white/"] {
 }
 @keyframes home-hero-zoom {
   to { transform: scale(1.08); }
+}
+@keyframes testimonial-glow-drift {
+  to { transform: translate3d(12%, 10%, 0) scale(1.12); }
+}
+@keyframes testimonial-card-drift {
+  to { transform: translate3d(-12%, 12%, 0) scale(1.15); }
 }
 
 html:not(.dark) .home-hero-artwork [class*="text-white/"] {
@@ -244,7 +262,9 @@ html:not(.dark) .home-hero-artwork [class*="text-white/"] {
   .marquee-track,
   .home-hero-artwork,
   .home-hero-orbit,
-  .home-hero-photo {
+  .home-hero-photo,
+  .testimonial-background-glow,
+  .testimonial-card-glow {
     animation: none;
   }
 }
