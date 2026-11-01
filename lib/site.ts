@@ -116,7 +116,6 @@ export const contact = {
 
 export const companyLinks = [
   { label: "About us", href: "/about-us" },
-  { label: "Dubai AI Seal", href: "/dubai-ai-seal" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ];
