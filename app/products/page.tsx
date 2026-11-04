@@ -51,7 +51,7 @@ export default function ProductsPage() {
           <div className="relative hidden h-80 md:col-span-2 md:block" aria-hidden>
             <div className="product-hero-image absolute inset-x-4 top-2 overflow-hidden rounded-3xl border border-foreground/10 bg-card/70 p-2 shadow-2xl shadow-[var(--brand)]/10">
               <Image
-                src="/images/category1/prod6.png"
+                src="/images/visuals/microsoft-workplace.jpg"
                 alt=""
                 width={600}
                 height={400}
@@ -60,7 +60,7 @@ export default function ProductsPage() {
             </div>
             <div className="product-hero-float absolute -bottom-2 -left-2 overflow-hidden rounded-2xl border border-foreground/10 bg-background p-1 shadow-xl">
               <Image
-                src="/images/category1/prod5.png"
+                src="/images/visuals/business-laptop.jpg"
                 alt=""
                 width={220}
                 height={140}
@@ -69,7 +69,7 @@ export default function ProductsPage() {
             </div>
             <div className="product-hero-float-delay absolute -right-2 top-8 overflow-hidden rounded-2xl border border-foreground/10 bg-background p-1 shadow-xl">
               <Image
-                src="/images/category1/prod4.png"
+                src="/images/visuals/cloud-server.jpg"
                 alt=""
                 width={220}
                 height={140}
