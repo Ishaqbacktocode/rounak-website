@@ -1,15 +1,22 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
 import { SpotlightCard } from "@/components/spotlight-card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { getServiceDetail } from "@/lib/service-content";
 import { getSourceSeo } from "@/lib/source-seo";
 import { getSourcePageCopy } from "@/lib/source-page-copy";
 import {
   getCategory,
+  getWhatsAppLink,
   getService,
   servicesByCategory,
   type CategorySlug,
@@ -41,9 +48,7 @@ export function ServiceDetailPage({ category: categorySlug, slug }: Props) {
     .filter((item) => item.slug !== service.slug)
     .slice(0, 3);
   const quoteHref = `/contact-us?service=${encodeURIComponent(service.title)}`;
-  const whatsappHref = `https://wa.me/971504752832?text=${encodeURIComponent(
-    `Hello, I'd like to know more about ${service.title}`,
-  )}`;
+  const whatsappHref = getWhatsAppLink(`Hello, I'd like to know more about ${service.title}`);
 
   return (
     <>
@@ -104,6 +109,55 @@ export function ServiceDetailPage({ category: categorySlug, slug }: Props) {
         </section>
       ))}
 
+      <section className="mx-auto max-w-5xl space-y-16 px-6 py-10">
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight">What we deliver</h2>
+          <p className="mt-4 max-w-4xl leading-relaxed text-muted-foreground">{details.overview}</p>
+        </div>
+
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight">Service features</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {details.features.map((feature) => (
+              <SpotlightCard key={feature.title}>
+                <article className="h-full p-6">
+                  <h3 className="font-semibold">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{feature.text}</p>
+                </article>
+              </SpotlightCard>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight">Benefits for your business</h2>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            {details.benefits.map((benefit) => (
+              <li key={benefit} className="flex gap-3 leading-7 text-muted-foreground">
+                <Check aria-hidden="true" className="mt-1 size-5 shrink-0 text-[var(--brand)]" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {details.faqs.length > 0 && (
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight">Frequently asked questions</h2>
+            <Accordion className="mt-6 rounded-2xl border border-foreground/10 px-5">
+              {details.faqs.map((faq, index) => (
+                <AccordionItem key={faq.q} value={`faq-${index}`}>
+                  <AccordionTrigger className="py-5 text-sm sm:text-base">{faq.q}</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="pb-4 leading-7 text-muted-foreground">{faq.a}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        )}
+      </section>
+
       <section className="mx-auto max-w-5xl px-6 py-16">
         <div className="mb-6 flex items-end justify-between gap-4">
           <h2 className="text-2xl font-semibold">More {category.title.toLowerCase()}</h2>
@@ -147,6 +201,23 @@ export function ServiceDetailPage({ category: categorySlug, slug }: Props) {
           </Button>
         </Reveal>
       </section>
+
+      {details.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: details.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: { "@type": "Answer", text: faq.a },
+              })),
+            }),
+          }}
+        />
+      )}
     </>
   );
 }

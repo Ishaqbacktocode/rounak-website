@@ -38,13 +38,6 @@ export const teamCopy: SourcePageCopy = {
   ],
 };
 
-const approachSection: SourceSection = {
-  heading: "Our Approach to Cloud Solutions for Business",
-  paragraphs: [
-    "At Rounak Computers, we combine the experience of working with UAE cloud services and managed IT services, ensuring growth and stability for enterprises. Proven methods and certified experts make implementation simple and effective.",
-  ],
-};
-
 export const categoryCopy: Record<
   string,
   { heading: string; introHeading?: string; intro: string; sections: SourceSection[] }
@@ -53,26 +46,34 @@ export const categoryCopy: Record<
     heading: "Innovative IT Solutions to Empower Your Business",
     intro:
       "Explore our range of products, including Microsoft Copilot, CCTV Solutions, and more, to enhance your business operations.",
-    sections: [approachSection],
+    sections: [],
   },
   "it-services": {
     heading: "Comprehensive IT Services for Seamless Operations",
     intro:
       "From structured cabling to managed IT services, we provide expert support to ensure your business runs smoothly.",
-    sections: [approachSection],
+    sections: [],
   },
   "cloud-services": {
     heading: "Expert Cloud Service Providers",
     introHeading: "Cloud Solutions in The UAE",
     intro:
       "Rounak Computers offers reliable and secure cloud solutions in UAE, tailored to the needs of companies in Dubai and across the region. As one of the leading cloud service providers in Dubai, we help organizations improve their IT infrastructure, increase scalability, and ensure stable system performance. If you need cloud solutions in Dubai or expert advice, our specialists will support the digital transformation processes. The experience gained over the years as one of the recognized IT maintenance companies in Dubai allows us to implement effective cloud computing strategies that increase flexibility, innovation and business productivity.",
-    sections: [approachSection],
+    sections: [],
   },
   security: {
     heading: "Protect Your Business with Leading Security Solutions",
     intro:
       "Stay secure with top-tier solutions like O365 Advanced Threat Protection, Sophos Security, and Barracuda Email Security.",
-    sections: [approachSection],
+    sections: [
+      {
+        heading: "Information Security for Your Business",
+        paragraphs: [
+          "Cyber threats and security violations are the nightmares of every business. Rounak Computers provides reliable information security services to keep your data safe and secure from online hazards, with firewalls, encryption, and proactive threat protection tailored to your business requirements.",
+          "Our security solutions include Mimecast, Sophos, and ransomware protection to help businesses meet security compliance and industry standards.",
+        ],
+      },
+    ],
   },
 };
 
@@ -86,7 +87,24 @@ export const productCopy: Record<string, SourcePageCopy> = {
           "Rounak Computers is an ideal partner for the seamless integration of Microsoft 365 in Dubai for your business. We offer activation and migration services as well as complete support for a streamlined transition to M365 in Dubai. Our tailored solutions cater to businesses of all sizes, offering comprehensive assistance at every step. We offer affordable packages for Microsoft 365 so you can have control over your privacy, data security, and transparency. Furthermore, our team of certified professionals leverages their in-depth expertise to maximize the potential of Microsoft 365, enabling you to harness its full capabilities effortlessly. Join us in unlocking the power of M365 and revolutionizing the way you work. As one of the best IT maintenance companies besides Microsoft 365, we also provide services related to other products, such as Microsoft Azure and Amazon Web Services in Dubai.",
         ],
       },
-      { heading: "Features You Get with Microsoft 365 in Dubai" },
+      {
+        heading: "Features You Get with Microsoft 365 in Dubai",
+        points: [
+          "Comprehensive Office Suite — Access Microsoft applications from any device to boost productivity and efficiency.",
+          "Business-Class Email — Manage official emails through Outlook or the web-based email interface.",
+          "Online Document Storage and File Sharing — Share and store different file types through Microsoft 365 file-sharing capabilities.",
+          "Online Meetings + Voice Options — Coordinate tasks with voice notes and online meetings.",
+          "Effortless Communication Tools — Integrate email and messaging tools for team collaboration.",
+          "Efficient File Sharing and Collaboration — Use file sharing and co-authoring capabilities to improve workflows and teamwork.",
+          "Advantages of Using M365 — Enhanced collaboration, access from any device, advanced security features, and simplified IT management.",
+          "Expert Support — Dedicated support for transition and onboarding.",
+          "Tailored Consultancy Service — Consultancy designed around the requirements of your business.",
+          "Guidance on Advanced Features — Expert guidance to help you use M365's advanced features.",
+          "Cost-Effective Solutions — Microsoft 365 solutions tailored to your budget.",
+          "Access to Latest Innovations — Access to the latest Microsoft 365 updates and innovations.",
+          "Financially Backed SLA — Consistent services with a 99.9% uptime and a financially backed SLA from Microsoft.",
+        ],
+      },
     ],
   },
   "microsoft-copilot": {
@@ -117,7 +135,19 @@ export const productCopy: Record<string, SourcePageCopy> = {
           "Looking to implement Microsoft Copilot quickly? Download our functional scenario kits, scenario guides, and day-in-the-life guides. These resources are designed to help you realize the full value of your Microsoft Copilot investment efficiently.",
         ],
       },
-      { heading: "Optimize Every Department with Microsoft Copilot" },
+      {
+        heading: "Optimize Every Department with Microsoft Copilot",
+        points: [
+          "Customer Service — Enhance customer interactions with intelligent assistance.",
+          "Finance — Streamline financial operations and improve accuracy.",
+          "Human Resources — Optimize HR processes and employee engagement.",
+          "Information Technology — Simplify IT management and support.",
+          "Legal — Facilitate legal research and document management.",
+          "Marketing — Boost marketing strategies with data-driven insights.",
+          "Operations — Optimize operations and increase efficiency.",
+          "Sales — Drive sales performance with intelligent insights.",
+        ],
+      },
     ],
   },
   "microsoft-dynamics": {
@@ -332,7 +362,17 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "As an established IT AMC company Dubai, we cover the areas businesses rely on most, including:",
         ],
       },
-      { heading: "Reasons to Choose Rounak Computers" },
+      {
+        heading: "Reasons to Choose Rounak Computers",
+        points: [
+          "Proven Expertise — A reliable provider of IT AMC services Dubai, supporting businesses across industries and sizes.",
+          "Customer-Centric Approach — Clear communication, quick response, and practical solutions aligned with business outcomes.",
+          "Comprehensive Solutions — Support for hardware, software, network, security, and cloud systems under one service model.",
+          "Affordable Prices — Flexible packages that match your requirements and budget.",
+          "Reliable Support — Consistent service delivery under SLA terms, with structured escalation and accountability.",
+          "Technological Edge — Modern tools for monitoring and support that improve visibility, stability, and response quality.",
+        ],
+      },
       {
         heading: "Partner with Us Today!",
         paragraphs: [
@@ -350,7 +390,19 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "Managed IT services are a vital component of modern business infrastructure, providing comprehensive IT support tailored to meet diverse organizational needs. At Rounak Computers, we specialize in proactive monitoring, system maintenance, and seamless IT integration to enhance operational efficiency. With customizable plans, businesses can access services like Office 365 management, antivirus solutions, telephony setup, and disaster recovery. Our expertise ensures robust data security and uninterrupted workflows, empowering businesses to focus on growth. Experience reliable IT solutions with one of the IT maintenance companies Dubai that keep your operations ahead in a dynamic digital landscape.",
         ],
       },
-      { heading: "Comprehensive IT Managed Services in Dubai" },
+      {
+        heading: "Comprehensive IT Managed Services in Dubai",
+        points: [
+          "Cost-Effective IT Solutions — Predictable monthly pricing helps businesses optimize budgets and minimize unexpected IT expenses.",
+          "Proactive Monitoring and Maintenance — 24/7 system monitoring helps detect and resolve issues before they disrupt operations.",
+          "Expert IT Support — Skilled professionals deliver tailored solutions without requiring in-house IT staff.",
+          "Enhanced Efficiency — Managed IT enables teams to focus on core objectives and boost productivity.",
+          "Scalable IT Services — Services scale with business growth and IT infrastructure needs.",
+          "Business Continuity — Data backup, disaster recovery, and redundancy help safeguard operations.",
+          "Robust Cybersecurity — Advanced security protocols help protect businesses from cyber threats and data breaches.",
+          "24/7 Support — Dedicated support helps maintain systems and resolve issues promptly.",
+        ],
+      },
     ],
   },
   spla: {
@@ -403,7 +455,12 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "Rounak Computers offers top-quality structured cabling solutions for businesses in Dubai. As one of the reputed IT maintenance companies in the UAE, we specialize in designing, implementing, and maintaining reliable network cabling infrastructure. Our experienced team can handle projects of all sizes and ensure reduced downtime and maximum efficiency. Trust us to meet your complex requirements with cost-effective solutions that cater to your immediate needs and future scalability. Whether it's new installations, upgrades, or relocations, our experts are here to enhance your network connectivity. Contact us now for the top-notch services of a structured cabling company. Furthermore, we also offer CCTV installation and Huawei cloud service in Dubai.",
         ],
       },
-      { heading: "Installation Process of Structured Network Cabling" },
+      {
+        heading: "Advantages of Network Cabling",
+        paragraphs: [
+          "Structured cabling makes changes and additions easier because most work takes place in the main distribution area. The architecture reduces tangled and exposed wires, helping avoid common mishaps associated with a large cable supply.",
+        ],
+      },
     ],
   },
   "expert-it-support-services-dubai": {
@@ -427,9 +484,31 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "What sets us apart as an IT managed service provider is our unwavering commitment to comprehensive ownership and delivering premium organizational efficiency and business performance. Furthermore, we offer highly competitive rates to support your organization's growth and success. Contact us today to discover how we can drive your business forward. As one of the best IT maintenance companies in Dubai, we pride ourselves on offering an extensive range of specialized solutions alongside our exceptional managed services. Whether it's offering cloud solutions, fortifying your systems with robust information security measures, or providing data backup services, we have got you covered.",
         ],
       },
-      { heading: "Variety of Managed IT Services We Offer" },
-      { heading: "Why Choose Us?" },
-      { heading: "Tailored Managed IT Services for Every Business Need" },
+      {
+        heading: "Variety of Managed IT Services We Offer",
+        points: [
+          "24/7 Support Call — Experts are available around the clock to provide prompt assistance.",
+          "Efficient Server Management — Monitoring, maintenance, installations, data security, and troubleshooting keep servers running smoothly.",
+          "Seamless Software Installation — Licensed software installations help minimize downtime and protect systems from malware.",
+          "Printer Repair Solutions — Hardware and software maintenance and repairs for printers.",
+          "Smooth Office Shifting — Server-room relocation, structured cabling, and data protection for network moves.",
+          "Reliable Network Management — Routine maintenance, server and network monitoring help minimize downtime.",
+          "Reliable Desktop & Laptop Repair — Technicians diagnose and resolve desktop and laptop issues.",
+          "Expert Consultancy Services — Consultants help design network infrastructure and servers and manage data backup.",
+          "Annual Support Contract — IT AMC services provide support and savings throughout the year.",
+          "Efficient Workstation Management — Install and update MS Office, Windows, and other server applications.",
+          "PABX Setup and Structured Cabling — Traditional PBX and IP PBX setup with structured cabling for connectivity.",
+        ],
+      },
+      {
+        heading: "Why Choose Us?",
+        points: [
+          "Unmatched Professionalism — Extensive knowledge and experience support professional service delivery.",
+          "Affordable Rates — Cost-effective IT managed services with a commitment to quality.",
+          "End to End service — A complete suite of IT services tailored to business needs.",
+          "Swift Turnaround Time — Fast response and resolution with support available 24/7.",
+        ],
+      },
     ],
   },
   "advanced-website-joomla-based-application": {
@@ -439,7 +518,7 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
         heading: "Advanced Website & Joomla-based Application",
         paragraphs: [
           "Providing tailored, high-performance website design and development services, specializing in complex Joomla-based applications and solutions that meet your business needs.",
-          "At Rounak Computers, we offer advanced website design and development services with a focus on Joomla-based applications. Whether you're looking for a dynamic website or a complex, custom solution, our expert team is equipped to handle it all. From seamless integrations to robust functionalities, we create tailored websites that not only meet your needs but also drive results. Stay tuned as we're in the process of updating and enhancing our services to offer even more cutting-edge solutions. Exciting updates are coming soon!",
+          "At Rounak Computers, we offer advanced website design and development services with a focus on Joomla-based applications. Whether you're looking for a dynamic website or a complex, custom solution, our expert team is equipped to handle it all. From seamless integrations to robust functionalities, we create tailored websites that meet your needs.",
         ],
       },
     ],
@@ -506,6 +585,45 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
         heading: "Call Us Today for AWS Excellence",
         paragraphs: [
           "Whether new to AWS or aiming to improve your cloud configuration, Rounak Computers is here to assist you every step of the way. With extensive experience and a client-centric approach, we guarantee a smooth and successful migration to the AWS cloud. To receive exceptional services and see your business flourish, get in touch with us now!",
+        ],
+      },
+    ],
+  },
+  "alibaba-cloud": {
+    heading: "Alibaba Cloud Services in Dubai",
+    sections: [
+      {
+        heading: "Alibaba Cloud Services in Dubai",
+        paragraphs: [
+          "Businesses in Dubai need cloud solutions that are quick, safe, and easy to scale. We offer Alibaba Cloud Services, a global leader in AI and cloud computing, to help companies work more efficiently, cut expenses, and grow without worries.",
+        ],
+      },
+      {
+        heading: "Why Choose Alibaba Cloud?",
+        points: [
+          "Global Leader in AI & Innovation — Use AI services such as the Qwen family of foundation models, AI coding assistants, and video generation tools.",
+          "Extensive Global Infrastructure — Use Alibaba Cloud's global regions, availability zones, and CDN infrastructure for low latency and high performance.",
+          "End-to-End AI & Cloud Solutions — Use computing, storage, Model Studio, and Platform for AI in an integrated environment.",
+          "High-Level Security & Compliance — Use data encryption, Web Application Firewall, and security and compliance tools.",
+        ],
+      },
+      {
+        heading: "Our Alibaba Cloud Service Offerings in Dubai",
+        points: [
+          "AI & Machine Learning — Build and deploy custom models with Qwen models, AI coding assistants, and Platform for AI.",
+          "Cloud Computing & Storage — Use Elastic Compute Service, Object Storage Service, and managed databases.",
+          "China Gateway Solutions — Connect with the Chinese market through networking and compliance support.",
+          "Industry-Specific Solutions — Use tailored solutions for financial services, retail and e-commerce, gaming, and media.",
+          "Enterprise Security & Compliance — Protect infrastructure with Anti-DDoS, Web Application Firewall, and security frameworks.",
+          "Hybrid Cloud & Networking — Build secure hybrid architectures and global networks.",
+        ],
+      },
+      {
+        heading: "Why Choose Us for Alibaba Cloud Services?",
+        points: [
+          "Expertise — Rounak Computers helps Dubai businesses use Alibaba Cloud's global infrastructure and AI innovations.",
+          "Customized Solutions — We design Alibaba Cloud environments around operational needs, performance goals, and budget.",
+          "Dedicated Support — We provide monitoring, maintenance, security hardening, and technical support from consultation through ongoing management.",
         ],
       },
     ],
@@ -656,7 +774,22 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "We also offer several other services and are among the best cloud service providers. You can get in touch if you are looking for AWS Cloud Services or Huawei Cloud Solutions in Dubai.",
         ],
       },
-      { heading: "Key Features of IBM Watson" },
+      {
+        heading: "Key Features of IBM Watson",
+        points: [
+          "Persistent Group Chat — Collaborate through persistent group chats.",
+          "One-On-One Direct Messaging — Communicate privately through direct messaging.",
+          "File Sharing and Storage — Store and share important files.",
+          "Unlimited Searchable History with Modifiers — Search conversation history using modifiers.",
+          "Push and Email Notifications — Stay updated with notifications and real-time metrics.",
+          "Built-In Watson Cognitive Technology — Use AI-powered cognitive technology.",
+          "Native Apps for MacOS, Windows, iOS and Android — Access apps suited to your system.",
+          "Open APIs and Third-Party Apps — Open other apps and use APIs in the workspace.",
+          "Managed Guest User Access — Maintain information security with managed guest access.",
+          "SAML-Based Single Sign-On (SSO) — Log in securely without passwords based on sessions.",
+          "Enterprise Security and Controls — Maintain control over your team in a secure system.",
+        ],
+      },
     ],
   },
   "huawei-cloud-services": {
@@ -668,8 +801,25 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "Finding the correct cloud service is critical for organizations seeking to grow while improving security. Huawei Cloud offers unique creative solutions suited to fit your company's needs. Here's why you should use Huawei Cloud services to power up your business:",
         ],
       },
-      { heading: "Our Huawei Cloud Service Offerings in Dubai" },
-      { heading: "Why Choose Us for Huawei Cloud Services?" },
+      {
+        heading: "Our Huawei Cloud Service Offerings in Dubai",
+        points: [
+          "Huawei Cloud Infrastructure (IaaS) — Flexible infrastructure that grows with your business.",
+          "Huawei Cloud Platform (PaaS) — Ready-to-use solutions for faster application development and deployment.",
+          "Huawei Cloud Software (SaaS) — Cloud-based software options to increase efficiency.",
+          "Database Development for Data Centers — Data centers designed for operational efficiency, security, and future development.",
+          "Blockchain Services (BCS) — Scalable blockchain solutions including smart contracts and decentralized apps.",
+          "Huawei Cloud Gaming — High-performance, low-latency gaming experiences.",
+        ],
+      },
+      {
+        heading: "Why Choose Us for Huawei Cloud Services?",
+        points: [
+          "Expertise — An experienced team provides Huawei Cloud technology expertise.",
+          "Customized Solutions — Cost-efficient Huawei Cloud solutions tailored to business requirements.",
+          "Dedicated Support — Technical support and maintenance help maintain the performance of your Huawei Cloud environment.",
+        ],
+      },
       {
         heading: "Huawei Cloud Services",
         paragraphs: [
@@ -680,7 +830,43 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
   },
   "o365-advance-threat-protection": {
     heading: "O365 Advance Threat Protection",
-    sections: [{ heading: "Three Functions Offered by ATP" }],
+    sections: [
+      {
+        heading: "Advanced Threat Protection Service",
+        paragraphs: [
+          "Rounak Computers is a comprehensive IT service provider in Dubai. Our extensive lineup of solutions includes the O365 ATP service. In layman terms, it is essentially a cloud-based software that sifts emails, further safeguarding the organization from any unknown virus. It offers comprehensive zero-day security and provides features to shield your email in real-time.",
+        ],
+      },
+      {
+        heading: "Three Functions Offered by ATP",
+        points: [
+          "Awareness of Data — In order to formulate the right response to data malware, you must be aware of your enterprise's data, its importance, and its sensitivity.",
+          "Visibility in Real-Time — Continuous monitoring is mandatory because late detection of threats can harm resources and credibility.",
+          "Gather Information — Information gathering allows the security team to evaluate malware and find quick solutions.",
+        ],
+      },
+      {
+        heading: "The Importance of O365 ATP",
+        paragraphs: [
+          "Office 365 ATP safeguards emails and data found within Office 365 and aims to offer zero-day protection against virus or malware attacks. It deeply analyzes files and the action that would follow upon opening a file, blocking it if suspicious activity is detected.",
+        ],
+        points: [
+          "It safeguards your organization against high-end threats such as zero-day malware, automatically investigating and remediating attacks.",
+          "It offers robust defense by using Microsoft Intelligent Security graph signals and analyzing emails every day.",
+          "Actionable insights help identify, prioritize, and resolve emerging threats such as phishing and ransomware.",
+          "Enhanced automated response tools help speed up investigations and resolve attacks immediately.",
+        ],
+      },
+      {
+        heading: "How ATP Helps?",
+        points: [
+          "Anti-Phishing — The software uses business machine learning to diagnose malicious emails and help prevent attacks.",
+          "Spoof Intelligence — This identifies senders who send emails on behalf of accounts using your domain and allows them to be permitted or blocked.",
+          "Safe Links — ATP checks hyperlinks in emails and documents, helping identify unsafe destinations and alert users.",
+          "Safe Attachments — Suspicious messages and attachments are redirected to an environment where ATP detects malicious activity before delivery.",
+        ],
+      },
+    ],
   },
   "sophos-security-in-dubai": {
     heading: "Sophos Firewall in Dubai",
@@ -691,8 +877,27 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "Rounak Computers proudly stands as an official partner of Sophos, a leading name in email security service and cybersecurity solutions. As a certified partner, we provide the powerful and state-of-the-art Sophos XG Firewall. Use our experience to defend your IT infrastructure, guaranteeing unmatched defense against changing online threats. Discover the powerful features of Sophos XG Firewall, an email security solution designed to strengthen your network's defenses. With Sophos XG Firewall, you can count on the best IT maintenance companies in Dubai to be your committed ally while you navigate the digital world safely. We provide Ransomware and Mimecast in addition to Sophos security in Dubai.",
         ],
       },
-      { heading: "Key Features of Sophos Firewall in Dubai" },
-      { heading: "What our IT AMC Services Includes" },
+      {
+        heading: "Key Features of Sophos Firewall in Dubai",
+        points: [
+          "Advanced Threat Protection — Sophos Security in Dubai offers proactive defense against sophisticated cyber threats.",
+          "User-Based Policy Control — Tailor access permissions and policies based on user profiles.",
+          "SSL/TLS Inspection — Uncover hidden threats within encrypted traffic.",
+          "VPN Connectivity — Establish secure connections for remote users and branch offices.",
+          "Centralized Management — Control and monitor security policies across your IT infrastructure.",
+          "Sandstorm Technology — Analyze potentially harmful files in a virtual environment before they reach your network.",
+          "Reporting and Analytics — Review network activity to support security compliance and informed decisions.",
+        ],
+      },
+      {
+        heading: "What Our Sophos Firewall Service Includes",
+        points: [
+          "Robust Security — Sophos Firewall provides a multi-layered defense system against evolving cyber threats.",
+          "Reduced Operational Complexity — Simplify complex tasks and maintain consistent security policies.",
+          "Secure Remote Connectivity — Connect remote users and branch offices with encryption and protection.",
+          "User-Friendly Interface — Sophos XG Firewall helps IT teams manage security effectively.",
+        ],
+      },
       {
         heading: "Why Choose Rounak Computers?",
         points: [
@@ -705,7 +910,12 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "Continuous Monitoring and Updates",
         ],
       },
-      { heading: "Secure Your Business with Sophos Security in Dubai!" },
+      {
+        heading: "Secure Your Business with Sophos Security in Dubai!",
+        paragraphs: [
+          "Protect your network, data, and communications with Sophos Firewall in Dubai and Sophos Security in Dubai solutions. From next-generation firewalls to advanced email security services, these solutions provide protection against cyber threats, ransomware, and unauthorized access.",
+        ],
+      },
     ],
   },
   "ibm-mass-360": {
@@ -716,13 +926,46 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
         paragraphs: [
           "IBM MASS 360 is a trusted enterprise mobility management solution that makes working in a mobile world more simpler and safer. Use powerful mobile device management with comprehensive, integrated protection to enable applications, content, email and devices, without compromising the user experience, data security or privacy.",
         ],
+        points: [
+          "Embrace BYOD with MDM",
+          "Contain corporate data on mobile devices",
+          "Enable secure content collaboration",
+          "Stop mobile malware and rogue devices",
+          "Get instant insights and take action",
+          "Manage devices out-of-the-box",
+          "Secure all PCs and Macs",
+          "Use a trusted MDM platform",
+        ],
       },
     ],
   },
   "mimecast-dubai": {
     heading: "Mimecast Dubai",
     sections: [
-      { heading: "Mimecast Archiving, Recovery, and Security Features" },
+      {
+        heading: "Mimecast Email Security Solutions Dubai",
+        paragraphs: [
+          "Mimecast protects your company from online risks by helping business information move through email inboxes securely. It offers complete email security solutions that guard against illegal access and data leaks, while integrating with Office 365 and other email servers.",
+          "Advanced capabilities include sending and receiving emails during a system outage, real-time warning and prevention of sensitive data transmission, and extensive auditing tools.",
+        ],
+      },
+      {
+        heading: "Key Features and Integration Benefits of Mimecast",
+        points: [
+          "Prevention of Data Leakage and Antivirus Scanning — Mimecast blocks sensitive data transmission and scans emails for potential dangers.",
+          "Beneficial Coordination — Mimecast connects with Office 365 and other email servers, sorting and archiving emails and supporting continuity during an outage.",
+          "Auditing Tools — Robust auditing provides visibility and control over email activity.",
+        ],
+      },
+      {
+        heading: "Mimecast Archiving, Recovery, and Security Features",
+        points: [
+          "Instant Access to Email Archives — Protected, scalable storage makes it easier to find old emails quickly.",
+          "Dependable Recovery After Disasters — Mailbox Continuity helps maintain email access during a calamity.",
+          "Security First — Anti-spam, anti-malware, secure file and message exchange, real-time protection, and data leak prevention help secure email.",
+          "Simple Access at Any Time or Anyplace — Cloud-based access supports email use from laptops and mobile devices.",
+        ],
+      },
       {
         heading: "How Mimecast Enhances Regulatory Compliance and Data Governance?",
         points: [
@@ -745,9 +988,34 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "However, detecting the presence of ransomware is challenging, and once your files are encrypted, attackers demand ransom payments for data retrieval. Don't take any risks with your critical data and operations. We are committed to ensuring the security of your devices and the integrity of your data. Protect your business from the devastating effects of ransomware by acting proactively. In addition to ransomware protection, we provide various cloud solutions and Amazon web services in UAE. We are committed to ensuring the security of your devices and the integrity of your data.",
         ],
       },
-      { heading: "Common Infection Sources for Ransomware in Dubai" },
-      { heading: "Multi-Layer Defense and Protection Against Ransomware Dubai" },
-      { heading: "Ransomware Dubai Precautions" },
+      {
+        heading: "Common Infection Sources for Ransomware in Dubai",
+        points: [
+          "Email Attachments — Attackers deceive victims into opening authentic-looking attachments that lead to malicious websites.",
+          "Memory Sticks — USB disks received in the mail can infect a computer with malware.",
+          "Unidentified Websites — Visiting susceptible websites can put a computer at risk of cyberattacks and ransomware.",
+          "Software Downloaded — Software downloaded from dubious sites can infect data and systems.",
+          "Links — Links in emails, blogs, and webpages can lead to malware attacks.",
+          "Pop-Ups — Unwanted pop-ups may trigger an internet ransomware attack.",
+          "Social Media — Social platforms may contain files, links, attachments, or URLs that point to malicious websites.",
+        ],
+      },
+      {
+        heading: "Multi-Layer Defense and Protection Against Ransomware Dubai",
+        paragraphs: [
+          "Ransomware protection requires layered security and careful protection of systems, data, and backups.",
+        ],
+      },
+      {
+        heading: "Ransomware Dubai Precautions",
+        points: [
+          "Regularly Make File Backups — Back up information frequently to reduce the impact of a ransomware attack.",
+          "Verify Your Restore Points — Protect backup systems with multi-layered protection so data remains secure and uncompromised.",
+          "Defend Yourself from Phishing Attacks — Use firewalls, SSL, antivirus software, and two-factor authentication to protect email systems, websites, and applications.",
+          "Trust But Verify — Confirm the legitimacy of websites before downloading software or documents.",
+          "Turn On Windows to Display File Extensions — Enable file extensions to help locate files that might contain malware.",
+        ],
+      },
       {
         heading: "Protect Your Business with Advanced Ransomware Solution",
         paragraphs: [
@@ -758,7 +1026,34 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
   },
   "barracuda-email-security": {
     heading: "Barracuda Email Security",
-    sections: [{ heading: "How Does Barracuda Email Protection Help Your Business?" }],
+    sections: [
+      {
+        heading: "Barracuda Email Security Service in Dubai",
+        paragraphs: [
+          "Barracuda Email Security safeguards digital communication with advanced threat protection, meticulous email filtering, and robust encryption. It helps ensure the security, confidentiality, and integrity of your organization's communication.",
+        ],
+      },
+      {
+        heading: "How Does Barracuda Email Protection Help Your Business?",
+        points: [
+          "Unparalleled Protection — Barracuda Email Security shields your business against diverse cyber threats and helps keep sensitive information safe.",
+          "Advanced Threat Detection — Advanced threat detection and email filtering help create a secure environment and prevent phishing attacks.",
+          "Productivity Enhancement — Reducing email-related disruptions supports productivity within your organization.",
+          "Robust Encryption — Encryption adds another layer of confidentiality for business communications.",
+          "Adaptability — Barracuda Email Security adapts to the evolving threat landscape.",
+        ],
+      },
+      {
+        heading: "Why Choose Us?",
+        points: [
+          "Proven Expertise",
+          "Continuous Monitoring and Support",
+          "Seamless Integration",
+          "Compliance Assurance",
+          "Transparent Communication",
+        ],
+      },
+    ],
   },
   "guaranteed-information-security-in-dubai": {
     heading: "Advanced ICT Solutions Dubai",
@@ -770,7 +1065,41 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
           "As your trusted partner, we understand that every business deserves strong ICT solutions for efficient functioning. That's why we offer professional IT security services through a skilled team.",
         ],
       },
-      { heading: "FAQs" },
+      {
+        heading: "Our Approach to Information Security in Dubai",
+        points: [
+          "Customized Solutions — Our competent team develops personalized solutions to safeguard your data and protect your business from cyber threats.",
+          "Specialized Services — Our specialized ICT solutions offer protection against cyber threats and help you stay compliant.",
+          "Proactive Threat Detection — Our proactive threat detection system identifies risks early and neutralizes them before they cause damage.",
+        ],
+      },
+      {
+        heading: "Innovative IT Security Products We Offer",
+        points: [
+          "O365 Advanced Threat Protection — Cloud-based email filtering designed to secure organizations from phishing, malware, and zero-day exploits.",
+          "Sophos Firewall — Advanced firewalls protect networks, data, and communications from cyber threats and unauthorized access.",
+          "IBM MaaS 360 — A solution for securing and managing mobile devices, laptops, content, and apps.",
+          "Mimecast — A cloud-based email security platform that protects against email-borne threats and supports email continuity and data loss prevention.",
+          "Barracuda Email Security — A solution for secure and compliant email communication, including email continuity and encryption.",
+        ],
+      },
+      {
+        heading: "Our Information Security Dubai Services",
+        points: [
+          "Network Planning and Strategy — Guidance on devising network plans and strategies to strengthen infrastructure against cyber threats.",
+          "Data Encryption in the Cloud — Encrypt data while it is stored in the cloud, with the capability to decrypt sensitive data as needed.",
+          "Manage File Access Permissions — Ensure that only authorized users have access to specific folders.",
+          "Protection of Data for Apps & Devices — Fortify applications and devices against cyber threats, data loss, viruses, and unauthorized access.",
+          "Identify Sensitive Data — Identify sensitive data within operating systems to support information security.",
+          "Regular Data Backup — Provide routine data protection and frequent backups for critical and non-critical information.",
+        ],
+      },
+      {
+        heading: "FAQs",
+        paragraphs: [
+          "Businesses face many cyber threats, such as ransomware, phishing attacks, internal threats, network breaches, malware and viruses, and cloud security issues. Therefore, it is important to secure your business with information security solutions in Dubai.",
+        ],
+      },
     ],
   },
 };

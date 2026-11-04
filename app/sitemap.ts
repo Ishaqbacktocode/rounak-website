@@ -11,6 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       priority: 0.6,
     })),
+    ...["privacy-policy", "terms"].map((p) => ({
+      url: `${SITE_URL}/${p}`,
+      lastModified: now,
+      priority: 0.3,
+    })),
     ...blogPosts.map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
       lastModified: now,

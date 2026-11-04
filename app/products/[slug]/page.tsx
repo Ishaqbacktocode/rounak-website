@@ -1,12 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowRight, ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
 import { SpotlightCard } from "@/components/spotlight-card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { getProduct, products } from "@/lib/products";
-import { contact, SITE_URL } from "@/lib/site";
+import { getWhatsAppLink, SITE_URL } from "@/lib/site";
 import { getSourceSeo } from "@/lib/source-seo";
 import { getSourcePageCopy } from "@/lib/source-page-copy";
 
@@ -38,7 +44,7 @@ export default async function ProductPage({ params }: Props) {
 
   const related = products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const quoteHref = `/contact-us?service=${encodeURIComponent(p.title)}`;
-  const waHref = `${contact.whatsapp}?text=${encodeURIComponent(`Hello, I'd like to know more about ${p.title}`)}`;
+  const waHref = getWhatsAppLink(`Hello, I'd like to know more about ${p.title}`);
 
   return (
     <>
@@ -98,6 +104,64 @@ export default async function ProductPage({ params }: Props) {
         </section>
       ))}
 
+      <section className="mx-auto max-w-5xl space-y-16 px-6 py-10">
+        <div>
+          <p className="text-sm text-[var(--brand)]">{p.tagline}</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {p.highlights.map((highlight) => (
+              <span
+                key={highlight}
+                className="rounded-full border border-foreground/10 bg-card/70 px-3.5 py-2 text-xs font-medium text-muted-foreground"
+              >
+                {highlight}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight">What we provide</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {p.features.map((feature) => (
+              <SpotlightCard key={feature.title}>
+                <article className="h-full p-6">
+                  <h3 className="font-semibold">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{feature.text}</p>
+                </article>
+              </SpotlightCard>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight">Benefits for your business</h2>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            {p.benefits.map((benefit) => (
+              <li key={benefit} className="flex gap-3 leading-7 text-muted-foreground">
+                <Check aria-hidden="true" className="mt-1 size-5 shrink-0 text-[var(--brand)]" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {p.faqs.length > 0 && (
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight">Frequently asked questions</h2>
+            <Accordion className="mt-6 rounded-2xl border border-foreground/10 px-5">
+              {p.faqs.map((faq, index) => (
+                <AccordionItem key={faq.q} value={`faq-${index}`}>
+                  <AccordionTrigger className="py-5 text-sm sm:text-base">{faq.q}</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="pb-4 leading-7 text-muted-foreground">{faq.a}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        )}
+      </section>
+
       {/* Related */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="mb-6 text-2xl font-semibold">More products</h2>
@@ -141,6 +205,17 @@ export default async function ProductPage({ params }: Props) {
               areaServed: "AE",
               provider: { "@type": "Organization", name: "Rounak Computers LLC", url: SITE_URL },
             },
+            ...(p.faqs.length > 0
+              ? [{
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  mainEntity: p.faqs.map((faq) => ({
+                    "@type": "Question",
+                    name: faq.q,
+                    acceptedAnswer: { "@type": "Answer", text: faq.a },
+                  })),
+                }]
+              : []),
           ]),
         }}
       />
