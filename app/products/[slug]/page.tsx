@@ -62,7 +62,7 @@ export default async function ProductPage({ params }: Props) {
             <p.icon className="size-8 text-[var(--brand)]" />
           </div>
 
-          <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             {sourceCopy?.heading ?? p.title}
           </h1>
 
