@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     { url: SITE_URL, lastModified: now, priority: 1 },
-    ...["about-us", "contact-us", "blog"].map((p) => ({
+    ...["about-us", "about-us/our-team", "contact-us", "blog"].map((p) => ({
       url: `${SITE_URL}/${p}`,
       lastModified: now,
       priority: 0.6,

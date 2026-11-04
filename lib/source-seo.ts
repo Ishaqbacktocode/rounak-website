@@ -12,6 +12,11 @@ export const sourceSeo: Record<string, SourceSeo> = {
     description:
       "Offering IT solutions, hardware sales, software licensing, and consulting in Dubai. Trusted for top-notch digital solutions and business support.",
   },
+  "/about-us/our-team": {
+    title: "Our IT Team in Dubai | Rounak Computers",
+    description:
+      "Meet the experienced IT specialists at Rounak Computers. Our full-time team brings practical expertise, continuous training, and a commitment to helping Dubai businesses succeed.",
+  },
   "/contact-us": {
     title: "Contact Rounak Computers for IT Solutions and Support in Dubai",
     description:
