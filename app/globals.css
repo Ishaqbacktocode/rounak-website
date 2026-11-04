@@ -242,6 +242,9 @@ html:not(.dark) [class*="text-white/"] {
 .product-hero-float-delay {
   animation: product-hero-float 7s ease-in-out -5s infinite;
 }
+.product-detail-image {
+  animation: product-detail-float 9s ease-in-out infinite;
+}
 .testimonial-background-glow {
   animation: testimonial-glow-drift 22s ease-in-out infinite alternate;
 }
@@ -363,6 +366,9 @@ html:not(.dark) [class*="text-white/"] {
 }
 @keyframes product-hero-float {
   50% { transform: translateY(-8px) rotate(1deg); }
+}
+@keyframes product-detail-float {
+  50% { transform: translateY(-6px); }
 }
 @keyframes testimonial-glow-drift {
   to { transform: translate3d(12%, 10%, 0) scale(1.12); }
