@@ -81,7 +81,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Bento grid */}
-      <section className="mx-auto max-w-6xl px-6 pb-24">
+      <section className="mx-auto max-w-6xl px-6 pb-24 pt-10 md:pt-16">
         <ProductsGrid />
       </section>
 
