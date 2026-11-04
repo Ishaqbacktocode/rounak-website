@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { servicesByCategory, type Service } from "@/lib/site";
 
-type ProductExtra = {
+export type ProductExtra = {
   icon: LucideIcon;
   tagline: string;
   highlights: string[];

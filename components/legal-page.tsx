@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { contact, getTelLink } from "@/lib/site";
 
 export type LegalSection = {
   heading: string;
@@ -69,19 +70,19 @@ export function LegalPage({ title, updated, intro, sections }: LegalPageProps) {
                   <p>
                     Email:{" "}
                     <a
-                      href="mailto:info@rounakcomputers.com"
+                      href={`mailto:${contact.email}`}
                       className="underline decoration-foreground/20 underline-offset-4 transition-colors hover:text-foreground"
                     >
-                      info@rounakcomputers.com
+                      {contact.email}
                     </a>
                   </p>
                   <p>
                     Phone:{" "}
                     <a
-                      href="tel:+97143865656"
+                      href={getTelLink(contact.landline)}
                       className="underline decoration-foreground/20 underline-offset-4 transition-colors hover:text-foreground"
                     >
-                      +971 4 386 5656
+                      {contact.landline}
                     </a>
                   </p>
                 </address>
