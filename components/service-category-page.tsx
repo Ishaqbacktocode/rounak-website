@@ -20,7 +20,7 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
         <div className="aurora" />
         <Reveal className="mx-auto max-w-6xl">
           <p className="text-sm text-[var(--brand)]">{category.tagline}</p>
-          <h1 className="mt-3 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             {content.heading}
           </h1>
           {content.introHeading && (
@@ -107,7 +107,7 @@ function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/${service.category}/${service.slug}`}
-      className="group flex h-full min-h-44 flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-colors hover:bg-white/[0.06]"
+      className="group flex h-full min-h-44 flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-colors hover:bg-white/[0.06]"
     >
       <div className="flex items-start justify-between gap-4">
         <h4 className="text-xl font-semibold tracking-tight transition-colors group-hover:text-[var(--brand)]">

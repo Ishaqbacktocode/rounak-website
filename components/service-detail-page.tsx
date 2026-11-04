@@ -63,7 +63,7 @@ export function ServiceDetailPage({ category: categorySlug, slug }: Props) {
             <span>{sourceCopy?.heading ?? service.title}</span>
           </nav>
           <p className="text-sm text-[var(--brand)]">{category.tagline}</p>
-          <h1 className="mt-3 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             {sourceCopy?.heading ?? service.title}
           </h1>
           <div className="mt-9 flex flex-wrap gap-3">

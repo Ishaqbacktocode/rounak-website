@@ -36,7 +36,11 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
 
   useEffect(() => {
     if (!state.message) return;
-    state.ok ? toast.success(state.message) : toast.error(state.message);
+    if (state.ok) {
+      toast.success(state.message);
+    } else {
+      toast.error(state.message);
+    }
   }, [state]);
 
   const v = state.values ?? {};
@@ -76,13 +80,15 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
           defaultValue={v.service ?? defaultService}
           className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
         >
-          <option value="" className="bg-background">Select a service…</option>
+          <option value="" className="bg-background">Select a service...</option>
           {allServices.map((s) => (
             <option key={s.slug} value={s.title} className="bg-background">
               {s.title}
             </option>
           ))}
-          <option value="Something else" className="bg-background">Something else</option>
+          <option value="Something else" className="bg-background">
+            Something else
+          </option>
         </select>
       </Field>
 
