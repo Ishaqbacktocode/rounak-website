@@ -122,12 +122,13 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       <nav className="sticky top-0 z-30 border-y border-foreground/10 bg-background/85 px-6 py-3 backdrop-blur-xl" aria-label="Product page sections">
-        <div className="mx-auto flex max-w-6xl items-center gap-5 overflow-x-auto whitespace-nowrap text-sm text-muted-foreground">
-          <a href="#overview" className="font-medium text-foreground hover:text-[var(--brand)]">Overview</a>
-          <a href="#features" className="hover:text-foreground">What we provide</a>
-          <a href="#benefits" className="hover:text-foreground">Benefits</a>
-          {p.faqs.length > 0 && <a href="#faqs" className="hover:text-foreground">FAQs</a>}
-          <Link href={quoteHref} className="ml-auto shrink-0 rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background">
+        <div className="mx-auto grid max-w-6xl grid-cols-4 items-center gap-1 text-center text-[10px] text-muted-foreground sm:flex sm:gap-5 sm:whitespace-nowrap sm:text-sm">
+          <a href="#overview" className="rounded-lg px-1 py-2 font-medium text-foreground hover:text-[var(--brand)] sm:px-0 sm:py-1">Overview</a>
+          <a href="#features" className="rounded-lg px-1 py-2 hover:text-foreground sm:px-0 sm:py-1">What we provide</a>
+          <a href="#benefits" className="rounded-lg px-1 py-2 hover:text-foreground sm:px-0 sm:py-1">Benefits</a>
+          <a href={quoteHref} className="rounded-lg bg-foreground px-1 py-2 font-medium text-background hover:opacity-90 sm:hidden">Get a quote</a>
+          {p.faqs.length > 0 && <a href="#faqs" className="hidden hover:text-foreground sm:inline sm:py-1">FAQs</a>}
+          <Link href={quoteHref} className="hidden shrink-0 rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background sm:ml-auto sm:inline-flex">
             Get a quote
           </Link>
         </div>
