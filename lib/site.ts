@@ -116,6 +116,7 @@ export const contact = {
 
 export const companyLinks = [
   { label: "About us", href: "/about-us" },
+  { label: "Our Team", href: "/about-us/our-team" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ];

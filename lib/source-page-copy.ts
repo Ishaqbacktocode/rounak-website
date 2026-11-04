@@ -9,6 +9,35 @@ export type SourcePageCopy = {
   sections: SourceSection[];
 };
 
+export const teamCopy: SourcePageCopy = {
+  heading: "Meet Our IT Specialists",
+  sections: [
+    {
+      heading: "A team committed to your success",
+      paragraphs: [
+        "All our employees at Rounak Computers are full-time employees with vast experience in their respective domains. We keep our team engaged in new product training so we can serve our clients with the latest products and technology.",
+        "Every team member shares a genuine desire to help clients improve their businesses through practical, dependable IT solutions.",
+      ],
+    },
+    {
+      heading: "Our Vision",
+      points: [
+        "To be recognised as one of the leading IT-enabled services providers in Dubai.",
+        "To be recognised as one of the top cloud computing services providers in Dubai.",
+        "To be recognised as a one-stop shop for corporate IT support services in Dubai.",
+        "To be an extension of our customers' teams for their information technology requirements and help improve their ROI with the latest technologies, cloud computing, and IoT.",
+      ],
+    },
+    {
+      heading: "Our Values",
+      points: [
+        "Be transparent with customers.",
+        "Always advise the right technology.",
+      ],
+    },
+  ],
+};
+
 const approachSection: SourceSection = {
   heading: "Our Approach to Cloud Solutions for Business",
   paragraphs: [
@@ -91,10 +120,154 @@ export const productCopy: Record<string, SourcePageCopy> = {
       { heading: "Optimize Every Department with Microsoft Copilot" },
     ],
   },
-  "microsoft-dynamics": { heading: "Microsoft Dynamics 365", sections: [] },
-  "microsoft-azure-services": { heading: "Microsoft Azure Services", sections: [] },
-  telephony: { heading: "Telephony Solutions", sections: [] },
-  "cctv-solutions": { heading: "CCTV Solutions", sections: [] },
+  "microsoft-dynamics": {
+    heading: "Microsoft Dynamics 365",
+    sections: [
+      {
+        heading: "Microsoft Dynamics 365",
+        paragraphs: [
+          "With the help of social insights, business intelligence, and campaign management in the cloud, on-premises, or in a hybrid setting, Microsoft Dynamics 365 Dubai, CRM is our customer relationship management (CRM) business solution.",
+          "By organising and automating corporate operations that foster customer happiness and loyalty in the sales, marketing, and customer support industries, customer relationship management (CRM) may assist in lowering costs and increasing profitability. CRM solutions may increase revenue through automated marketing, customer support, and sales forces. This is the best software for smooth and finest features",
+          "Rounak Computers is hailed to be the Microsoft dynamic partner in UAE.",
+        ],
+      },
+      {
+        heading: "Your Trusted Cloud Partner",
+        paragraphs: [
+          "As a certified Microsoft Cloud Partner, Rounak Computers offers expert solutions for migrating, implementing, and managing your business in the cloud. Our deep expertise in Microsoft technologies like Office 365, Azure, and Dynamics 365 ensures seamless integration, enhanced productivity, and secure cloud operations. Let us help you unlock the full potential of Microsoft's cloud services to drive efficiency and growth for your business.",
+        ],
+      },
+      {
+        heading: "Cloud Migration UAE - Microsoft Dynamics 365",
+        paragraphs: [
+          "Enterprise software frequently has foundational components, such as data processing methods and database formats, that are unique to the program with which they will be utilized, which limits the application's interoperability with other external apps that you may prefer utilizing.",
+          "Microsoft appears to be attempting to change course and move to standardized and consistent database schematics because customized databases are difficult to integrate and upgrade. Any new solution Microsoft introduces under the Dynamics 365 umbrella is accessible to all customers. The main distinction of this is that consumers will now explore programs through Microsoft AppSource, a brand-new marketplace. It's the best and most updated software that will help you with your business. Undoubtedly Microsoft Dynamic 365 Dubai is your ultimate choice all you need is to get in touch with authentic and reliable Microsoft dynamic partner Dubai for a genuine product.",
+          "As a result, the Common Data Model will enable integration with all programs developed by Microsoft as well as any other apps that make use of a common API.",
+        ],
+      },
+      {
+        heading: "Uses for Microsoft Dynamics 365 include",
+        points: [
+          "Linking people, processes, and data from many apps, such as Microsoft Dynamics 365, Office 365, LinkedIn, and Azure, to help your organization work as a cohesive whole.",
+          "Using built-in AI, analytics, and guided action suggestions to make better decisions.",
+          "Modifying the program to suit your demands as opposed to altering your company model. The majority of programs may be customized using Microsoft Power Platform or integrated with current systems.",
+          "For progressive company innovation, modernize your strategy by combining AI, mixed reality, social media, and mobile capabilities.",
+        ],
+      },
+      {
+        heading: "Customer perceptions",
+        paragraphs: [
+          "This module helps users get actionable insights from the data by integrating customer data from Office 365, Microsoft Dynamics 365, and other data sources. The module also includes Power BI for data analytics and visualisation. By applying artificial intelligence algorithms to identify trends and patterns in customer behaviour, predictive data may be gathered.",
+        ],
+      },
+      { heading: "Consumer Assistance", paragraphs: ["Dynamics 365 offers support agent tools, self-service / self-care portal tools, community engagement tools, and multichannel customer interaction capabilities."] },
+      { heading: "Field Service", paragraphs: ["The Field Service Component of Dynamics 365 is primarily used for client communication capabilities, contract administration, inventory management, resource planning, and scheduling."] },
+      { heading: "Finance and Operations", paragraphs: ["Dynamics 365 offers all the reporting and analytics features in this module, as well as financial management. Additionally, it provides supply chain management, warehouse and inventory control, project, production, scheduling, and cost management manufacturing tools."] },
+      { heading: "Sales & Marketing", paragraphs: ["Dynamics 365 provides campaign management and specialised, targeted marketing solutions that are catered to your unique needs by combining Dynamics CRM with Adobe Marketing Cloud."] },
+      { heading: "Service Automation for Projects", paragraphs: ["Automates project planning, service analytics, time and expense management, and resource scheduling all at once. offers what you need while managing operations more efficiently."] },
+      { heading: "Retail", paragraphs: ["Inventory management, personnel management, operational analytics, and integrated business tools."] },
+      { heading: "Human Resource Operations", paragraphs: ["LinkedIn and talent cloud services are connected to handle all parts of HR. Recruitment, selection, and integration of new personnel are all part of managing HR activities."] },
+      {
+        heading: "Why Microsoft Dynamics 365 Modules Should Be Your First Choice?",
+        paragraphs: [
+          "When Dynamics 365 and ERP's CRM and ERP modules are linked with Microsoft's productivity tools, users obtain an integrated and intelligent perspective of data about customer records, transactions, behaviours, and preferences. This includes information about orders, inventory, and deliveries. Dynamics 365 partner UAE offers excellent functionality and enhanced analytical insight capabilities for decision-makers who still need more. By far, the most significant advantage of Dynamics 365 being the best software is the extensive integration it provides with other Microsoft business programmes.",
+          "For firms that heavily rely on Office 365, Outlook, or Azure, Dynamics 365 offers more favourable interaction with sister products than the bulk of competing CRM solutions. Microsoft is expanding its portfolio of external programmes that interact with Dynamics through the AppSource app store.",
+        ],
+      },
+    ],
+  },
+  "microsoft-azure-services": {
+    heading: "Microsoft Azure Services",
+    sections: [
+      {
+        heading: "Microsoft Azure Services",
+        paragraphs: [
+          "While previously considered a high-end feature only used by people who knew their way around software technology and applications, cloud computing and storage have become mainstream, with programs like Dropbox adding several new users daily. This shift is driving a need for better technology to manage software systems and cut down costs and more useful compression algorithms, making this a staple.",
+        ],
+      },
+      {
+        heading: "Your Trusted Cloud Partner",
+        paragraphs: [
+          "As a certified Microsoft Cloud Partner, Rounak Computers offers expert solutions for migrating, implementing, and managing your business in the cloud. Our deep expertise in Microsoft technologies like Office 365, Azure, and Dynamics 365 ensures seamless integration, enhanced productivity, and secure cloud operations. Let us help you unlock the full potential of Microsoft's cloud services to drive efficiency and growth for your business.",
+        ],
+      },
+      {
+        heading: "Microsoft Azure",
+        paragraphs: [
+          "More than 200 products and cloud services are available on the Azure cloud platform, which may be used to develop new solutions, address present problems, and foresee problems in the future. Using the frameworks and tools of your choosing, you can develop, run, and manage apps across multiple clouds, on-premises, and at the edge. Azure supports multiple programming languages and third-party software, offering infrastructure, platform, and software as a service.",
+        ],
+      },
+      {
+        heading: "Computing Using Azure Cloud Services",
+        paragraphs: [
+          "Azure cloud services in Dubai use several functions that are key to the work done by software, backend, and frontend professionals. In computing, this includes hosting websites, allowing web developers to combine sites using many of the top tools, including PHP and Python, making uploading possible through user portals. WebJobs allows users to run applications and processing in the background, either on a schedule or continuously.",
+        ],
+      },
+      {
+        heading: "How Microsoft Azure Can Benefit Your Business",
+        points: [
+          "Apply sophisticated coding and linguistic models to a range of application cases.",
+          "Use safe, ready-to-code workstations in the cloud to accelerate development.",
+          "Instantly create Linux and Windows virtual machines.",
+          "Use an enterprise-grade service to handle the entire machine-learning lifecycle.",
+          "Track work, share code, and release applications with modern development services.",
+          "Create app infrastructure environments quickly using project-based templates.",
+        ],
+      },
+      {
+        heading: "Management And Messaging Through Azure Cloud Services",
+        paragraphs: [
+          "In the management and enterprise setting, Azure cloud services in UAE provide several key functions that reduce time, errors, processing hiccups, and forgetting to schedule events. The system offers several tasks common to enterprise situations based in a cloud setting, allowing it to do them automatically when needed. The service bus allows even devices not on the platform to integrate and communicate with Azure.",
+        ],
+      },
+    ],
+  },
+  telephony: {
+    heading: "Telephony Solutions",
+    sections: [
+      {
+        heading: "Telephony Solutions in UAE",
+        paragraphs: [
+          "Telephony is the backbone of your network- it serves communicative purposes within and outside any organization. For a smooth and unhindered collaboration telephone serves a great purpose and ensures communication among employees and for marketing collateral.",
+          "This telephony integration is a cost-effective and smooth telecommunication system promoting and propagating convenient services by renowned service providers. It can be efficiently integrated with the already set management system such as emails and Instant Messaging.",
+          "Whether you are running a small-scale business or a large-scale one, communication among employees or with customers is essential.",
+          "We through Rounak Computers are providing wonderful solutions all over in UAE for all of your telephony needs. We deal with different brands of PABX installations like Panasonic, Yeastar, NEC, Avaya, and Cisco.",
+        ],
+      },
+      { heading: "Single-Number Reach", paragraphs: ["The integration of various devices into a single number, independent of the platform (cellular, analog, digital, or IP), enables simultaneous search and ring of a desk phone, mobile phone, smartphone, and other devices."] },
+      { heading: "Softphone", paragraphs: ["A telephony program known as a softphone adds telephone capability to your laptop. You may use all of your desk phone's features, including making and taking calls, checking voicemail, seeing call logs, and starting and taking part in conference calls."] },
+      { heading: "Voice and Data Services", paragraphs: ["Both wired and wireless lines may access voice and data communications. Planning a telephone solution is the perfect opportunity to review your current coverage, plan alternatives, and tariffs in order to increase efficiency and save costs."] },
+      { heading: "Conferencing", paragraphs: ["A crucial part of a telephone system is conferencing, which combines Web-based, audio, and video technology for peer-to-peer communication, room-to-room communication, or high-definition conferencing."] },
+      { heading: "Reporting Analytics and Management", paragraphs: ["Organizations may use these telephony tools to monitor telephony systems and perform thorough call reports."] },
+      { heading: "How can your Organization Benefit from Telephony?", points: ["Connect your users regardless of their locations", "Add phone lines more efficiently and conveniently", "Communication is faster and easier", "Get rid of conventional PBX-based systems", "Make in-bound and out-bound calls"] },
+      { heading: "What Does Private Automatic Branch Exchange (PABX) Mean?", paragraphs: ["Call centers and other big companies employ private automatic branch exchange (PABX), a technology that enables a single access number to deliver several lines to external callers while giving a variety of external lines to internal callers or personnel."] },
+    ],
+  },
+  "cctv-solutions": {
+    heading: "CCTV Solutions",
+    sections: [
+      {
+        heading: "CCTV Camera Installation Needs",
+        paragraphs: [
+          "The home and office are two places perhaps the most in need of avid and advanced security systems that can help detect and prevent mishaps.",
+          "Both of these places house several valuable items, including money, commodities, files, and important documentation, all of which are prone to misuse if they fall in the wrong hands.",
+        ],
+      },
+      {
+        heading: "Security And Protection Needs",
+        paragraphs: [
+          "Work spaces and corporate headquarters have a need to protect everything that is kept on site, including paperwork, intellectual property, hardware systems and components, and other important items. All of these needs have made the security and surveillance abilities of offices and homes very important, as users look for a cost effective and practical way to use technology to prevent unfortunate events, specifically theft.",
+        ],
+      },
+      {
+        heading: "CCTV Security",
+        paragraphs: [
+          "One surveillance mechanism that is not only perfect for monitoring the office space, but extremely practical for security needs at home is the installation of CCTV cameras in the vicinity.",
+          "CCTV installation companies in Dubai will not only help with the technical aspects of hooking the hardware up, but may also provide it themselves, if users choose not to make use of their own purchased components.",
+        ],
+      },
+    ],
+  },
   "computer-sales-services": {
     heading: "Computer Sales & Services",
     sections: [
@@ -110,7 +283,22 @@ export const productCopy: Record<string, SourcePageCopy> = {
   },
   "professional-cctv-installation-company-in-dubai": {
     heading: "Professional CCTV Installation Company in Dubai",
-    sections: [],
+    sections: [
+      {
+        heading: "Best CCTV Installation Services",
+        paragraphs: [
+          "Welcome to Rounak Computer, your trusted IT maintenance company offering top-of-the-line CCTV camera installation services. Our skilled technicians provide tailored surveillance solutions for commercial and residential properties. We use high-quality cameras and advanced equipment to ensure optimal performance and reliability. Your safety is our priority, and we take pride in delivering cutting-edge surveillance systems for offices, warehouses, retail stores, and homes.",
+        ],
+      },
+      { heading: "High-Quality Camera Selection", paragraphs: ["We provide top-quality cameras and cutting-edge equipment to ensure clear and high-resolution footage, even in challenging lighting conditions."] },
+      { heading: "Expert Consultation and Site Assessment", paragraphs: ["Our experienced technicians offer expert advice and conduct thorough site assessments to determine the most effective camera placement for maximum coverage."] },
+      { heading: "Professional Installation and Setup", paragraphs: ["Trust our skilled team to handle the installation and setup process with precision and efficiency, ensuring seamless functionality of your CCTV system."] },
+      { heading: "Integration with Existing Security Systems", paragraphs: ["If you already have a security system in place, we can integrate CCTV cameras seamlessly to enhance overall security and surveillance capabilities."] },
+      { heading: "Maintenance and Support Services", paragraphs: ["Count on our reliable maintenance and support services to keep your CCTV system running smoothly. We offer timely repairs and proactive monitoring for continuous protection."] },
+      { heading: "Residential CCTV Camera Setup", paragraphs: ["Protect your home and loved ones with our reliable residential CCTV installation. We offer a range of camera options to enhance the security of your property."] },
+      { heading: "Our CCTV Installation Process", points: ["Site assessment: Evaluating the location and security requirements.", "System design: Planning camera placement and network setup.", "Equipment setup: Mounting cameras and configuring hardware.", "Wiring and cabling: Establishing connections for power and data.", "Network configuration: Setting up the CCTV system on the network.", "DVR/NVR setup: Configuring the recording and storage device.", "Camera calibration: Adjusting settings for optimal performance.", "Testing and troubleshooting: Ensuring all cameras function correctly.", "Client training: Instruct users on operating the CCTV system.", "Handover: Completing documentation and finalizing the installation."] },
+      { heading: "Why Choose Us?", points: ["Dubai Police Approved", "2-Year Warranty", "24-Hour Replacement", "30 Days of Recording", "Extended Storage", "British Standards Compliance", "Trusted and Reputable", "24/7 Support"] },
+    ],
   },
 };
 
@@ -165,7 +353,47 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
       { heading: "Comprehensive IT Managed Services in Dubai" },
     ],
   },
-  spla: { heading: "SPLA", sections: [] },
+  spla: {
+    heading: "SPLA",
+    sections: [
+      {
+        heading: "What is SPLA?",
+        paragraphs: [
+          "SPLA is a specialized licensing program crafted for service providers and independent software vendors (ISVs). It grants businesses the ability to license Microsoft software products, enabling them to offer cutting-edge software services and hosted applications to their end customers. This flexible model eliminates the need for upfront investments or lengthy commitments, allowing you to stay current with the latest Microsoft software offerings hassle-free.",
+        ],
+      },
+      {
+        heading: "How Does It Work?",
+        paragraphs: [
+          "Consultation: Our dedicated team collaborates closely with you to grasp your software needs, recommending the most suitable licensing options tailored specifically to your business requirements.",
+          "Setup: Once you've chosen your desired licenses, we guide you through the setup process, assisting with the establishment of your SPLA agreement and provisioning your software subscriptions.",
+          "Usage Monitoring: Track your software usage effortlessly through our user-friendly dashboard, enabling you to optimize your licensing strategy and manage costs effectively.",
+          "Support & Maintenance: Benefit from ongoing support and maintenance provided by our experienced team, ensuring a seamless and stress-free SPLA journey for your business.",
+        ],
+      },
+      {
+        heading: "Advantages of SPLA",
+        paragraphs: [
+          "Here are the key benefits you'll enjoy by opting for SPLA services with Rounak Computers:",
+        ],
+        points: [
+          "Flexibility — Whether you operate in a dedicated or shared hosting environment, SPLA grants you the flexibility to seamlessly deliver customized IT services to your customers.",
+          "Cost-Effectiveness — You only pay for the licenses based on your monthly utilization, ensuring cost-effectiveness and budget control.",
+          "Access to the Latest Microsoft Products — Keep your customers up-to-date with the latest Microsoft platform offerings without the hassle of physical media.",
+          "Global Reach — Expand your business horizons by delivering software services to end customers worldwide, wherever distribution is legally permitted.",
+          "Collaboration Opportunities — Extend your market reach by partnering with small and midsize businesses through additional resellers and affiliate partnerships.",
+          "Scalability — Focus on hosting your application solutions while leveraging infrastructure as a service from data center providers like Microsoft Azure.",
+          "Outsourcing Support — Entrust day-to-day server management to outsourcing companies while retaining ownership of your software services.",
+          "Product Testing and Evaluation — Conduct internal testing of Microsoft products to ensure quality and reliability before offering them as services.",
+          "On-Premises Deployment — Install Microsoft products on servers located at your end customer's premises under your management and control.",
+          "Demo and Trial Opportunities — Conduct up to 50 user product demos and provide your customers with a complimentary 60-day trial period.",
+          "Affiliate Inclusion — Include your affiliates under a single agreement for simplified management.",
+          "Academic Offerings — Expand your business with special price offerings tailored to academic end customers.",
+          "Simplified Licensing Process — Streamline licensing with the Microsoft Business and Services Agreement (MBSA), reducing paperwork and facilitating support service purchases.",
+        ],
+      },
+    ],
+  },
   "structured-cabling-company-dubai": {
     heading: "Structured Cabling Company Dubai",
     sections: [
@@ -311,9 +539,75 @@ export const serviceCopy: Record<string, SourcePageCopy> = {
   },
   "disaster-recovery-as-service-draas": {
     heading: "Disaster Recovery as Service (DRaaS)",
-    sections: [],
+    sections: [
+      {
+        heading: "Disaster Recovery as Service (DRaaS)",
+        paragraphs: [
+          "Your business data is invaluable. Protecting it from potential disasters is paramount to ensuring continuity and safeguarding your operations. At Rounak Computers, one of the top-notch IT maintenance companies in Dubai, we specialize in offering diverse disaster recovery solutions to mitigate data loss risks from cyberattacks, equipment failures, or human errors. Our seasoned professionals devise robust business continuity and disaster recovery (BCDR) strategies tailored to shield your business from various disaster scenarios. These strategies thereby help minimize downtime, mitigate potential data breaches, and prevent revenue loss.",
+        ],
+      },
+      {
+        heading: "Our Tailored Solutions",
+        paragraphs: [
+          "Each project we undertake is approached with a focus on custom solutions aligned with the client's specific needs. We start with an initial consultation, collaborating closely with key stakeholders to identify critical systems and potential failure points. Subsequently, we draft a comprehensive business continuity plan ensuring seamless business operations even under adverse circumstances.",
+        ],
+      },
+      {
+        heading: "Advantages of DRaaS",
+        points: [
+          "Reduced Downtime — Our business continuity and disaster recovery solutions are tailored to ensure minimized downtime in the event of a disaster.",
+          "Increased Security — Integrating security measures into disaster recovery plans ensures data remains secure and compliant with industry standards.",
+          "24/7 Operation — A well-crafted disaster recovery plan enables your business to function round the clock, 365 days a year.",
+        ],
+      },
+      {
+        heading: "Azure Recovery Services: Enhancing Your BCDR Strategy",
+        paragraphs: [
+          "Azure Site Recovery (ASR), a DRaaS offering by Microsoft, plays a crucial role in safeguarding data and applications during disasters. By leveraging ASR, you can replicate workloads and applications from a primary site to a secondary location, ensuring seamless continuity in the event of an outage. Azure Backup further enhances data protection by securely storing your business data in the Microsoft Cloud.",
+        ],
+      },
+      {
+        heading: "Features of ASR",
+        points: [
+          "Simple BCDR Solution — Set up and manage replication, failover, and failback from a single location in the Azure portal.",
+          "Azure VM Replication — Set up disaster recovery of Azure VMs from a primary site to a secondary location.",
+          "On-Premises VM Replication — Replicate on-premises VMs and physical servers to Azure or a secondary physical datacenter.",
+          "Workload Replication — Replicate workloads running on supported Azure VMs, on-premises Hyper-V and VMware VMs, and Windows/Linux physical servers.",
+          "Data Resilience — Site Recovery orchestrates replication without tampering with application data.",
+          "RTO and RPO Targets — Keep recovery time objectives and recovery point objectives within the desired limits.",
+          "Testing Without Disruption — Run disaster recovery drills without affecting ongoing replication.",
+          "Flexible Failovers — Run planned failovers for expected outages or unplanned failovers for unexpected disasters, then fail back when the primary site is available.",
+        ],
+      },
+    ],
   },
-  "migration-services": { heading: "Migration Services", sections: [] },
+  "migration-services": {
+    heading: "Migration Services",
+    sections: [
+      {
+        heading: "Migration Services",
+        paragraphs: [
+          "Rounak Computers offers Office 365 Migration services in Dubai and other Emirates. Rounak has Microsoft Certified Office 365 Engineers with hands of experience. Rounak is specialized in Office 365 Migration and deployment services. It has carried out more than 100 complex migrations. Office 365 Migrations include On-premises Exchange to Office 365, Hybrid deployment, cutover migrations etc.",
+        ],
+      },
+      {
+        heading: "Office 365 Migration- Cloud Migration UAE",
+        paragraphs: [
+          "Our certified Engineers ensure the Office 365 migration with zero downtime to the end users. If your company does not have a dedicated IT or tech support department, chances are it will call in an office 365 migration company to help sort things out with the transition.",
+        ],
+      },
+      {
+        heading: "Migrate to the Cloud",
+        paragraphs: [
+          "Planning to migrate your infrastructure and data to the cloud, but not sure where to start? Your business workloads don't have to be difficult or daunting to move from on-premises to the cloud. Microsoft is providing two free Cloud Migration Assessments aimed to help you understand what actions you need to take to start moving your apps, data, and infrastructure to the Microsoft Azure Cloud.",
+        ],
+        points: [
+          "Free Datacenter Migration Assessment — Assessment of on-premises applications and servers; identification of application and server dependencies; configuration, TCO and ROI analysis reports.",
+          "Free Modern Data Estate Assessment — Transform business applications with Analytics; reimagine your data platforms in the Cloud; gain insights and resources to help you modernize.",
+        ],
+      },
+    ],
+  },
   "best-solutions-to-backup-your-data": {
     heading: "Backup Your Data with The Best Solutions in Dubai",
     sections: [
