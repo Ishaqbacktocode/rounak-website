@@ -10,13 +10,13 @@ import { productGroups, products } from "@/lib/products";
 const span = { 2: "md:col-span-2", 3: "md:col-span-3", 4: "md:col-span-4" } as const;
 const bento = [4, 2, 2, 2, 2, 3, 3] as const;
 const productImages: Record<string, string> = {
-  "microsoft-365": "/images/visuals/microsoft-workplace.jpg",
-  "microsoft-copilot": "/images/visuals/it-applications.jpg",
-  "microsoft-dynamics": "/images/visuals/business-laptop.jpg",
-  "microsoft-azure-services": "/images/visuals/cloud-server.jpg",
-  "computer-sales-services": "/images/visuals/business-laptop.jpg",
-  telephony: "/images/visuals/telephony.jpg",
-  "cctv-solutions": "/images/visuals/security-camera.jpg",
+  "microsoft-365": "/images/category1/prod4.png",
+  "microsoft-copilot": "/images/category1/prod6.png",
+  "microsoft-dynamics": "/images/category1/prod5.png",
+  "microsoft-azure-services": "/images/category1/prod10.png",
+  "computer-sales-services": "/images/category1/prod7.png",
+  telephony: "/images/category1/prod2.png",
+  "cctv-solutions": "/images/category1/prod9.png",
 };
 
 export function ProductsGrid() {
