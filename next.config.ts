@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["192.168.56.1"],
   async redirects() {
     return [
       { source: "/it-services/structured-cabling-company-dubai", destination: "/it-services/structured-cabling", permanent: true },
@@ -10,9 +11,5 @@ const nextConfig: NextConfig = {
     ];
   },
 };
-
-module.exports = {
-  allowedDevOrigins: ['192.168.56.1'],
-}
 
 export default nextConfig;

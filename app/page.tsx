@@ -8,7 +8,7 @@ import { AiSeal } from "@/components/home/ai-seal";
 import { Testimonials } from "@/components/home/testimonials";
 import { HomeFaq } from "@/components/home/faq";
 import { HomeCta } from "@/components/home/cta";
-import { contact, SITE_URL } from "@/lib/site";
+import { contact, SITE_URL, socials } from "@/lib/site";
 import { getSourceSeo } from "@/lib/source-seo";
 import { faqJsonLd } from "@/lib/faq";
 
@@ -26,18 +26,14 @@ const jsonLd = {
   name: "Rounak Computers LLC",
   url: SITE_URL,
   email: contact.email,
-  telephone: "+971554752832",
+  telephone: contact.mobile.replace(/\s/g, ""),
   address: {
     "@type": "PostalAddress",
     streetAddress: "602, 6th Floor, Al Rifaa Plaza, Khalid Bin Al Waleed Road",
     addressLocality: "Dubai",
     addressCountry: "AE",
   },
-  sameAs: [
-    "https://www.facebook.com/rounakcomputersllc",
-    "https://in.linkedin.com/company/rounakcomputersllc",
-    "https://www.instagram.com/rounakcloud/",
-  ],
+  sameAs: socials.map(({ href }) => href),
 };
 
 export default function Home() {

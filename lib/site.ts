@@ -88,7 +88,13 @@ export const services: Service[] = [
     { category: "security", slug: "guaranteed-information-security-in-dubai", title: "Guaranteed Information Security", group: "Network & endpoint", summary: "Advanced ICT and information security solutions for UAE businesses." },
 ];
 
-export const allServices = services;
+export const redirectedServiceSlugs = new Set([
+  "structured-cabling-company-dubai",
+  "comprehensive-it-managed-services-dubai",
+  "professional-cctv-installation-company-in-dubai",
+  "guaranteed-information-security-in-dubai",
+]);
+export const allServices = services.filter((s) => !redirectedServiceSlugs.has(s.slug));
 
 export const getCategory = (slug: string) => categories[slug as CategorySlug];
 
@@ -96,7 +102,7 @@ export const getService = (category: string, slug: string) =>
   services.find((s) => s.category === category && s.slug === slug);
 
 export const servicesByCategory = (c: CategorySlug) =>
-  services.filter((s) => s.category === c);
+  services.filter((s) => s.category === c && !redirectedServiceSlugs.has(s.slug));
 
 export function groupServices(c: CategorySlug) {
   const map = new Map<string, Service[]>();
@@ -111,8 +117,13 @@ export const contact = {
   mobile: "+971 55 4752 832",
   landline: "+971 4 386 5656",
   address: "602, 6th Floor, Al Rifaa Plaza, Khalid Bin Al Waleed Road, Dubai, UAE",
-  whatsapp: "https://wa.me/971504752832",
+  whatsapp: "https://wa.me/971554752832",
 };
+
+export const getWhatsAppLink = (message?: string) =>
+  message ? `${contact.whatsapp}?text=${encodeURIComponent(message)}` : contact.whatsapp;
+
+export const getTelLink = (phone: string) => `tel:${phone.replace(/\s/g, "")}`;
 
 export const companyLinks = [
   { label: "About us", href: "/about-us" },
@@ -127,7 +138,7 @@ export const legalLinks = [
   { label: "Sitemap", href: "/sitemap.xml" },
 ];
 
-// TODO: replace with Rounak's real profile URLs, delete any you don't use
+// These profile URLs should be verified by the site owner.
 export const socials = [
   { label: "LinkedIn", href: "https://in.linkedin.com/company/rounakcomputersllc" },
   { label: "Facebook", href: "https://www.facebook.com/rounakcomputersllc" },
