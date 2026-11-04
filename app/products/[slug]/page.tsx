@@ -20,13 +20,13 @@ import { getSourcePageCopy } from "@/lib/source-page-copy";
 export const dynamicParams = false;
 
 const productImages: Record<string, string> = {
-  "microsoft-365": "/images/category1/prod4.png",
-  "microsoft-copilot": "/images/category1/prod6.png",
-  "microsoft-dynamics": "/images/category1/prod5.png",
-  "microsoft-azure-services": "/images/category1/prod10.png",
-  "computer-sales-services": "/images/category1/prod7.png",
-  telephony: "/images/category1/prod2.png",
-  "cctv-solutions": "/images/category1/prod8.png",
+  "microsoft-365": "/images/visuals/microsoft-workplace.jpg",
+  "microsoft-copilot": "/images/visuals/it-applications.jpg",
+  "microsoft-dynamics": "/images/visuals/business-laptop.jpg",
+  "microsoft-azure-services": "/images/visuals/cloud-server.jpg",
+  "computer-sales-services": "/images/visuals/business-laptop.jpg",
+  telephony: "/images/visuals/telephony.jpg",
+  "cctv-solutions": "/images/visuals/security-camera.jpg",
 };
 
 export function generateStaticParams() {
@@ -108,7 +108,7 @@ export default async function ProductPage({ params }: Props) {
                   width={900}
                   height={560}
                   priority
-                  className="h-72 w-full rounded-[1.5rem] object-cover sm:h-96"
+                  className="h-72 w-full rounded-[1.5rem] object-cover object-center sm:h-96"
                 />
                 <div className="absolute inset-2 rounded-[1.5rem] bg-gradient-to-t from-background/45 via-transparent to-white/10" />
                 <div className="absolute bottom-7 left-7 rounded-2xl border border-white/20 bg-background/75 px-4 py-3 shadow-lg backdrop-blur-xl">
@@ -238,9 +238,9 @@ export default async function ProductPage({ params }: Props) {
                   <Image
                     src={productImages[r.slug]}
                     alt=""
-                    width={480}
-                    height={220}
-                    className="mb-5 h-28 w-full rounded-xl object-cover"
+                    width={800}
+                    height={450}
+                    className="mb-5 h-32 w-full rounded-xl object-cover object-center"
                   />
                 )}
                 <div className="flex items-start justify-between">

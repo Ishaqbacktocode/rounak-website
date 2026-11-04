@@ -13,8 +13,8 @@ const groupDescriptions: Record<(typeof productGroups)[number], string> = {
 };
 
 const groupImages = {
-  Microsoft: "/images/category1/prod6.png",
-  Infrastructure: "/images/category1/prod7.png",
+  Microsoft: "/images/visuals/microsoft-workplace.jpg",
+  Infrastructure: "/images/visuals/it-infrastructure.jpg",
 } as const;
 
 const process = [
@@ -78,9 +78,9 @@ export function ProductPageSections() {
                       <Image
                         src={groupImage}
                         alt=""
-                        width={720}
-                        height={360}
-                        className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        width={1200}
+                        height={675}
+                        className="h-44 w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
                     </div>

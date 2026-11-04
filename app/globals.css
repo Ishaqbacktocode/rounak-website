@@ -245,6 +245,9 @@ html:not(.dark) [class*="text-white/"] {
 .product-detail-image {
   animation: product-detail-float 9s ease-in-out infinite;
 }
+.service-category-visual {
+  animation: product-detail-float 10s ease-in-out -2s infinite;
+}
 .testimonial-background-glow {
   animation: testimonial-glow-drift 22s ease-in-out infinite alternate;
 }
