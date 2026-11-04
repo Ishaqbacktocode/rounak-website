@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ProductsGrid } from "@/components/products-grid";
+import { ProductPageSections } from "@/components/product-page-sections";
 import { Reveal } from "@/components/reveal";
-import { products } from "@/lib/products";
 import { contact } from "@/lib/site";
 import { getSourceSeo } from "@/lib/source-seo";
 import { categoryCopy } from "@/lib/source-page-copy";
@@ -47,24 +48,34 @@ export default function ProductsPage() {
             </div>
           </Reveal>
 
-          {/* Floating icon cluster */}
-          <div className="relative hidden h-72 md:col-span-2 md:block" aria-hidden>
-            {products.slice(0, 6).map((p, i) => {
-              const pos = [
-                "left-2 top-2", "right-4 top-10", "left-20 top-32",
-                "right-0 top-44", "left-0 top-52", "right-24 top-0",
-              ][i];
-              return (
-                <div
-                  key={p.slug}
-                  className={`absolute ${pos} ${i % 2 ? "float-slower" : "float-slow"}`}
-                >
-                  <div className="flex size-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
-                    <p.icon className="size-7 text-[var(--brand)]" />
-                  </div>
-                </div>
-              );
-            })}
+          <div className="relative hidden h-80 md:col-span-2 md:block" aria-hidden>
+            <div className="product-hero-image absolute inset-x-4 top-2 overflow-hidden rounded-3xl border border-foreground/10 bg-card/70 p-2 shadow-2xl shadow-[var(--brand)]/10">
+              <Image
+                src="/images/category1/prod6.png"
+                alt=""
+                width={600}
+                height={400}
+                className="h-64 w-full rounded-2xl object-cover"
+              />
+            </div>
+            <div className="product-hero-float absolute -bottom-2 -left-2 overflow-hidden rounded-2xl border border-foreground/10 bg-background p-1 shadow-xl">
+              <Image
+                src="/images/category1/prod5.png"
+                alt=""
+                width={220}
+                height={140}
+                className="h-24 w-36 rounded-xl object-cover"
+              />
+            </div>
+            <div className="product-hero-float-delay absolute -right-2 top-8 overflow-hidden rounded-2xl border border-foreground/10 bg-background p-1 shadow-xl">
+              <Image
+                src="/images/category1/prod4.png"
+                alt=""
+                width={220}
+                height={140}
+                className="h-24 w-36 rounded-xl object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -84,6 +95,8 @@ export default function ProductsPage() {
           ))}
         </section>
       ))}
+
+      <ProductPageSections />
     </>
   );
 }

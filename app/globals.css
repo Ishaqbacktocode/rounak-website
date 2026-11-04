@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-mono);
-  --font-heading: var(--font-mono);
+  --font-heading: var(--font-geist-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -125,7 +125,7 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-mono;
+    @apply font-sans;
   }
 }
 
@@ -146,11 +146,11 @@ html:not(.dark) {
 
 html:not(.dark) [class*="border-white/"],
 html:not(.dark) [class*="border-foreground/"] {
-  border-color: color-mix(in oklab, var(--foreground) 16%, transparent);
+  border-color: color-mix(in oklab, var(--foreground) 14%, transparent);
 }
 
 html:not(.dark) [class*="bg-white/"] {
-  background-color: color-mix(in oklab, var(--foreground) 5%, transparent);
+  background-color: color-mix(in oklab, var(--foreground) 6%, transparent);
 }
 
 html:not(.dark) [class*="hover:bg-white/"]:hover {
@@ -163,6 +163,10 @@ html:not(.dark) [class*="ring-white/"] {
 
 html:not(.dark) [class*="text-white/"] {
   color: color-mix(in oklab, var(--foreground) 20%, transparent);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--brand) 28%, transparent);
 }
 
 /* Aurora background */
@@ -228,6 +232,15 @@ html:not(.dark) [class*="text-white/"] {
 }
 .home-hero-photo {
   animation: home-hero-zoom 24s ease-in-out infinite alternate;
+}
+.product-hero-image {
+  animation: product-hero-float 8s ease-in-out infinite;
+}
+.product-hero-float {
+  animation: product-hero-float 7s ease-in-out -2s infinite;
+}
+.product-hero-float-delay {
+  animation: product-hero-float 7s ease-in-out -5s infinite;
 }
 .testimonial-background-glow {
   animation: testimonial-glow-drift 22s ease-in-out infinite alternate;
@@ -328,6 +341,17 @@ html:not(.dark) [class*="text-white/"] {
   min-height: 0;
   overflow: hidden;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 @keyframes home-hero-float {
   50% { transform: translateY(-8px); }
 }
@@ -336,6 +360,9 @@ html:not(.dark) [class*="text-white/"] {
 }
 @keyframes home-hero-zoom {
   to { transform: scale(1.08); }
+}
+@keyframes product-hero-float {
+  50% { transform: translateY(-8px) rotate(1deg); }
 }
 @keyframes testimonial-glow-drift {
   to { transform: translate3d(12%, 10%, 0) scale(1.12); }

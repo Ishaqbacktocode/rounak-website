@@ -134,7 +134,7 @@ export const companyLinks = [
 
 export const legalLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms", href: "/terms" },
+  { label: "Terms of Use", href: "/terms" },
   { label: "Sitemap", href: "/sitemap.xml" },
 ];
 
