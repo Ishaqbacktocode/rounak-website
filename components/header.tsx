@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, ChevronDown, Menu, Moon, Sun } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown, ChevronRight, Menu, Moon, Plus, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
@@ -12,6 +12,7 @@ import { Logo } from "@/components/logo";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState<CategorySlug | null>(null);
+  const [mobileOpen, setMobileOpen] = useState<CategorySlug | null>(null);
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -99,29 +100,98 @@ export function Header() {
               >
                 <Menu />
               </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetTitle className="sr-only">Menu</SheetTitle>
-                <div className="mt-10 space-y-8 px-6">
-                  {categoryList.map((c) => (
-                    <div key={c.slug}>
-                      <Link href={`/${c.slug}`} className="text-lg font-semibold">
-                        {c.title}
-                      </Link>
-                      <ul className="mt-3 space-y-2 border-l border-white/10 pl-4 text-sm text-muted-foreground">
-                        {groupServices(c.slug).flatMap((g) =>
-                          g.items.map((s) => (
-                            <li key={s.slug}>
-                              <Link href={`/${s.category}/${s.slug}`}>{s.title}</Link>
-                            </li>
-                          ))
-                        )}
-                      </ul>
+              <SheetContent className="w-[min(100%-1rem,28rem)] overflow-y-auto border-l border-foreground/10 bg-background/95 p-0 backdrop-blur-2xl">
+                <SheetTitle className="sr-only">Mobile navigation</SheetTitle>
+                <div className="flex min-h-full flex-col">
+                  <div className="border-b border-foreground/10 px-6 pb-6 pt-16">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
+                      Explore Rounak
+                    </p>
+                    <p className="mt-2 max-w-xs text-2xl font-semibold tracking-tight">
+                      Technology that moves your business forward.
+                    </p>
+                  </div>
+
+                  <nav className="flex-1 px-4 py-6" aria-label="Mobile navigation">
+                    <div className="space-y-2">
+                      {categoryList.map((c) => {
+                        const expanded = mobileOpen === c.slug;
+                        return (
+                          <div key={c.slug} className="rounded-2xl border border-transparent transition-colors data-[expanded=true]:border-foreground/10 data-[expanded=true]:bg-foreground/[0.03]" data-expanded={expanded}>
+                            <div className="flex items-center gap-2">
+                              <Link
+                                href={`/${c.slug}`}
+                                className="flex min-h-14 flex-1 items-center gap-3 rounded-2xl px-4 text-lg font-semibold tracking-tight hover:text-[var(--brand)]"
+                              >
+                                <span className="size-1.5 rounded-full bg-[var(--brand)]" />
+                                {c.title}
+                              </Link>
+                              <button
+                                type="button"
+                                aria-label={`${expanded ? "Collapse" : "Expand"} ${c.title}`}
+                                aria-expanded={expanded}
+                                onClick={() => setMobileOpen(expanded ? null : c.slug)}
+                                className="mr-2 flex size-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-foreground/10 hover:text-foreground"
+                              >
+                                <Plus className={`size-5 transition-transform duration-300 ${expanded ? "rotate-45" : ""}`} />
+                              </button>
+                            </div>
+                            <AnimatePresence initial={false}>
+                              {expanded && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="px-4 pb-4 pl-9">
+                                    <Link
+                                      href={`/${c.slug}`}
+                                      className="mb-3 inline-flex items-center gap-1 text-sm font-medium text-[var(--brand)]"
+                                    >
+                                      View all {c.title}
+                                      <ArrowUpRight className="size-3.5" />
+                                    </Link>
+                                    <ul className="space-y-2 border-l border-foreground/10 pl-4 text-sm text-muted-foreground">
+                                      {groupServices(c.slug).flatMap((g) =>
+                                        g.items.map((s) => (
+                                          <li key={s.slug}>
+                                            <Link
+                                              href={`/${s.category}/${s.slug}`}
+                                              className="flex items-center justify-between gap-3 py-1.5 hover:text-foreground"
+                                            >
+                                              {s.title}
+                                              <ChevronRight className="size-3.5 opacity-50" />
+                                            </Link>
+                                          </li>
+                                        ))
+                                      )}
+                                    </ul>
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        );
+                      })}
                     </div>
-                  ))}
-                  <div className="space-y-3 text-lg">
-                    <Link href="/about-us" className="block">About</Link>
-                    <Link href="/blog" className="block">Blog</Link>
-                    <Link href="/contact-us" className="block">Contact</Link>
+
+                    <div className="mt-8 grid grid-cols-3 gap-2 border-t border-foreground/10 pt-6 text-center text-sm font-medium">
+                      <Link href="/about-us" className="rounded-xl bg-foreground/5 px-3 py-3 hover:bg-foreground/10">About</Link>
+                      <Link href="/blog" className="rounded-xl bg-foreground/5 px-3 py-3 hover:bg-foreground/10">Blog</Link>
+                      <Link href="/contact-us" className="rounded-xl bg-foreground/5 px-3 py-3 hover:bg-foreground/10">Contact</Link>
+                    </div>
+                  </nav>
+
+                  <div className="sticky bottom-0 border-t border-foreground/10 bg-background/90 p-4 backdrop-blur-xl">
+                    <Link
+                      href="/contact-us"
+                      className="flex items-center justify-between rounded-2xl bg-foreground px-5 py-4 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+                    >
+                      Ready to improve your IT?
+                      <ArrowRight className="size-4" />
+                    </Link>
                   </div>
                 </div>
               </SheetContent>
