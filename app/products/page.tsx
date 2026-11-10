@@ -21,7 +21,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-16 pt-44">
+      <section className="site-hero relative overflow-hidden px-6 pb-16 pt-44">
         <div className="aurora" />
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-5">
           <Reveal className="md:col-span-3">

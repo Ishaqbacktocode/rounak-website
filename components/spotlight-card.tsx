@@ -10,7 +10,7 @@ export function SpotlightCard({
 }) {
   const x = useMotionValue(-999);
   const y = useMotionValue(-999);
-  const bg = useMotionTemplate`radial-gradient(360px circle at ${x}px ${y}px, color-mix(in oklch, var(--brand) 24%, transparent), transparent 70%)`;
+  const bg = useMotionTemplate`radial-gradient(360px circle at ${x}px ${y}px, color-mix(in oklch, var(--brand) 16%, transparent), transparent 70%)`;
 
   return (
     <div
@@ -19,7 +19,11 @@ export function SpotlightCard({
         x.set(e.clientX - r.left);
         y.set(e.clientY - r.top);
       }}
-      className={`group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-colors hover:border-white/20 ${className}`}
+      onMouseLeave={() => {
+        x.set(-999);
+        y.set(-999);
+      }}
+      className={`site-card group relative h-full overflow-hidden rounded-3xl border border-foreground/10 bg-card/70 transition-colors hover:border-[var(--brand)]/30 ${className}`}
     >
       <motion.div
         aria-hidden

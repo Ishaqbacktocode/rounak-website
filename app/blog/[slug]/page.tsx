@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-16 pt-40">
+      <section className="site-hero relative overflow-hidden px-6 pb-16 pt-40">
         <div className="aurora" />
         <Reveal className="mx-auto max-w-4xl">
           <Link
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
           ))}
         </article>
 
-        <aside className="h-fit rounded-3xl border border-white/10 bg-white/[0.03] p-7 lg:sticky lg:top-24">
+        <aside className="site-card h-fit rounded-3xl border border-foreground/10 bg-card/70 p-7 lg:sticky lg:top-24">
           <p className="text-sm text-[var(--brand)]">Need a hand?</p>
           <h2 className="mt-3 text-xl font-semibold">Put the right plan into practice.</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

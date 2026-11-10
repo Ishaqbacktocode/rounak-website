@@ -17,7 +17,7 @@ const [featuredPost, ...otherPosts] = blogPosts;
 export default function BlogPage() {
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-16 pt-44">
+      <section className="site-hero relative overflow-hidden px-6 pb-16 pt-44">
         <div className="aurora" />
         <Reveal className="mx-auto max-w-6xl">
           <p className="text-sm text-[var(--brand)]">Our Blog</p>
@@ -34,7 +34,7 @@ export default function BlogPage() {
         <Reveal>
           <Link
             href={`/blog/${featuredPost.slug}`}
-            className="group grid overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition-colors hover:bg-white/[0.05] md:min-h-[360px] md:grid-cols-5"
+            className="site-card group grid overflow-hidden rounded-[2rem] border border-foreground/10 bg-card/70 transition-colors hover:bg-card md:min-h-[360px] md:grid-cols-5"
           >
             <div className="relative flex min-h-64 flex-col justify-between overflow-hidden bg-gradient-to-br from-[var(--brand)]/25 via-[var(--brand-2)]/10 to-transparent p-8 md:col-span-2 md:p-10">
               <div className="absolute -right-12 -top-16 size-64 rounded-full border border-white/10" />
@@ -84,7 +84,7 @@ export default function BlogPage() {
             <Reveal key={post.slug} delay={index * 0.07}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex h-full min-h-72 flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-colors hover:bg-white/[0.06] md:p-9"
+                className="site-card group flex h-full min-h-72 flex-col rounded-3xl border border-foreground/10 bg-card/70 p-7 transition-colors hover:bg-card md:p-9"
               >
                 <div className="flex items-center justify-between">
                   {post.category && (

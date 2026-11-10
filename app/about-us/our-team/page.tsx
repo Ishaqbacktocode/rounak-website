@@ -19,7 +19,7 @@ export default function OurTeamPage() {
 
   return (
     <main className="relative isolate overflow-hidden">
-      <section className="relative overflow-hidden px-6 pb-16 pt-36 md:pb-24 md:pt-48">
+      <section className="site-hero relative overflow-hidden px-6 pb-16 pt-36 md:pb-24 md:pt-48">
         <div className="aurora" />
         <div className="mx-auto max-w-7xl">
           <Reveal>
@@ -82,7 +82,7 @@ export default function OurTeamPage() {
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-2">
           {[vision, values].map((section, index) => (
             <Reveal key={section.heading} delay={index * 0.08} className="h-full">
-              <article className="h-full rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm sm:p-9">
+              <article className="site-card h-full rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm sm:p-9">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
                   0{index + 1}
                 </p>
@@ -102,7 +102,7 @@ export default function OurTeamPage() {
       </section>
 
       <section className="px-6 pb-24 pt-8 md:pb-32">
-        <Reveal className="mx-auto max-w-7xl rounded-[2rem] border border-foreground/10 bg-card/80 p-8 text-center shadow-xl shadow-[var(--brand)]/5 sm:p-14">
+        <Reveal className="site-cta-panel mx-auto max-w-7xl rounded-[2rem] border p-8 text-center sm:p-14">
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Ready to work with our team?</h2>
           <p className="mx-auto mt-4 max-w-xl leading-7 text-muted-foreground">
             Tell us what your business needs and our specialists will help you find the right way forward.

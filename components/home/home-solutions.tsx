@@ -55,7 +55,7 @@ export function HomeSolutions() {
             <Reveal key={slug} delay={index * 0.05} className="h-full">
               <Link
                 href={`/${slug}`}
-                className="group relative flex h-full min-h-[19rem] flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/70 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:bg-card hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-7"
+                className="site-card group relative flex h-full min-h-[19rem] flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/70 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:bg-card hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-7"
               >
                 <div
                   aria-hidden="true"

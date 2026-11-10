@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function HomeHero() {
   return (
-    <section className="relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
+    <section className="site-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
       <div className="aurora" />
       <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div className="relative z-10">
@@ -64,7 +64,7 @@ export function HomeHero() {
           />
           <div
             aria-hidden="true"
-            className="home-hero-orbit absolute -inset-3 rounded-[2.8rem] border border-dashed border-[var(--brand)]/25 sm:-inset-5"
+            className="home-hero-orbit absolute -inset-3 rounded-[2.8rem] border border-[var(--brand)]/15 sm:-inset-5"
           />
           <div className="relative overflow-hidden rounded-[2rem] border border-foreground/10 bg-background/60 p-2.5 shadow-2xl shadow-[var(--brand)]/15 backdrop-blur-xl sm:rounded-[2.5rem] sm:p-3">
             <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-slate-200 sm:rounded-[2rem]">
