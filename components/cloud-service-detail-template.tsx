@@ -23,7 +23,7 @@ const cloudPartners = [
 const cloudBrandImages: Record<string, string> = {
   "amazon-web-services": "/images/partners/aws.svg",
   "azure-cloud-services": "/images/partners/microsoft.svg",
-  "alibaba-cloud": "/images/partners/alibaba-cloud.svg",
+  "alibaba-cloud": "/images/2026/02/17/alibaba-cloud-logo.webp",
   "huawei-cloud-services": "/images/partners/huawei.svg",
 };
 
@@ -56,6 +56,7 @@ export function CloudServiceDetailTemplate({ slug }: { slug: string }) {
         image="/images/visuals/cloud-server.jpg"
         imageAlt="Earth at night, illustrating connected cloud infrastructure."
         brandImage={cloudBrandImages[slug]}
+        brandImageFit={slug === "alibaba-cloud" ? "wordmark" : "icon"}
         visualTitle="Cloud, connected."
         visualNote="Designed around your workloads."
         visualTags={["Cloud migration", "Data protection", "Recovery planning"]}

@@ -69,6 +69,7 @@ export function ServiceDetailHero({
   image,
   imageAlt,
   brandImage,
+  brandImageFit = "icon",
   visualTitle,
   visualNote,
   visualTags,
@@ -78,6 +79,7 @@ export function ServiceDetailHero({
   image: string;
   imageAlt: string;
   brandImage?: string;
+  brandImageFit?: "icon" | "wordmark";
   visualTitle: string;
   visualNote: string;
   visualTags: string[];
@@ -171,18 +173,29 @@ export function ServiceDetailHero({
               </div>
 
               <div className="service-detail-brand-panel">
-                <span className="service-detail-brand-icon" aria-hidden="true">
-                  <VisualIcon />
-                </span>
+                {brandImage ? (
+                  <span
+                    className="service-detail-brand-logo"
+                    data-brand-logo={brandImageFit}
+                    aria-hidden="true"
+                  >
+                    <Image
+                      src={brandImage}
+                      alt=""
+                      width={160}
+                      height={56}
+                      className="service-detail-brand-logo-image"
+                    />
+                  </span>
+                ) : (
+                  <span className="service-detail-brand-icon" aria-hidden="true">
+                    <VisualIcon />
+                  </span>
+                )}
                 <div className="service-detail-brand-copy">
                   <span>{data.service.group}</span>
                   <strong>{data.service.title}</strong>
                 </div>
-                {brandImage && (
-                  <span className="service-detail-brand-logo">
-                    <Image src={brandImage} alt="" width={136} height={48} />
-                  </span>
-                )}
               </div>
 
               <div className="service-detail-visual-note">
