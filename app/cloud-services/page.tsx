@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServiceCategoryPage } from "@/components/service-category-page";
+import { CloudServicesLanding } from "@/components/cloud-services-landing";
 import { getCategory } from "@/lib/site";
 import { getSourceSeo } from "@/lib/source-seo";
 
@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function CloudServicesPage() {
-  return <ServiceCategoryPage slug="cloud-services" />;
+  return <CloudServicesLanding />;
 }

@@ -52,7 +52,7 @@ export function ServiceDetailPage({ category: categorySlug, slug }: Props) {
 
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-20 pt-44">
+      <section className="site-hero relative overflow-hidden px-6 pb-20 pt-44">
         <div className="aurora" />
         <Reveal className="mx-auto max-w-5xl">
           <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
@@ -184,7 +184,7 @@ export function ServiceDetailPage({ category: categorySlug, slug }: Props) {
       </section>
 
       <section className="px-6 pb-32 pt-8">
-        <Reveal className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-gradient-to-br from-[var(--brand)]/20 to-transparent p-10 text-center md:p-14">
+        <Reveal className="site-cta-panel mx-auto max-w-5xl rounded-[2rem] border p-10 text-center md:p-14">
           <h2 className="text-3xl font-semibold tracking-tight">
             Ready to talk about {service.title}?
           </h2>

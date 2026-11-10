@@ -57,7 +57,7 @@ const approachIcons = [Laptop, Cloud, Headset];
 export default function AboutPage() {
   return (
     <main className="relative isolate overflow-hidden">
-      <section className="relative overflow-hidden px-6 pb-16 pt-36 md:pb-24 md:pt-48">
+      <section className="site-hero relative overflow-hidden px-6 pb-16 pt-36 md:pb-24 md:pt-48">
         <div className="aurora" />
         <div className="mx-auto max-w-7xl">
           <Reveal>
@@ -160,7 +160,7 @@ export default function AboutPage() {
 
           <div className="mt-10 grid gap-5 lg:grid-cols-[0.7fr_1.3fr]">
             <Reveal className="h-full">
-              <div className="relative flex h-full min-h-64 flex-col justify-between overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm sm:p-9">
+              <div className="site-card relative flex h-full min-h-64 flex-col justify-between overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm sm:p-9">
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-[var(--brand)] opacity-[0.07] blur-3xl"
@@ -180,7 +180,7 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <div className="h-full rounded-[1.75rem] border border-foreground/10 bg-card/70 p-7 sm:p-9">
+              <div className="site-card h-full rounded-[1.75rem] border border-foreground/10 bg-card/70 p-7 sm:p-9">
                 <div className="space-y-5 leading-7 text-muted-foreground">
                   <p>
                     Founded in a modest 250 sq. ft. room within a struggling mall,
@@ -239,7 +239,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {capabilities.map(({ title, description, icon: Icon }, index) => (
               <Reveal key={title} delay={index * 0.05} className="h-full">
-                <article className="group relative flex h-full min-h-60 flex-col overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-card/75 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-7">
+                <article className="site-card group relative flex h-full min-h-60 flex-col overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-card/75 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-7">
                   <div className="flex items-center justify-between">
                     <span className="flex size-11 items-center justify-center rounded-2xl border border-[var(--brand)]/20 bg-[var(--brand)]/5 text-[var(--brand)]">
                       <Icon aria-hidden="true" className="size-5" />
@@ -321,7 +321,7 @@ export default function AboutPage() {
 
               return (
                 <Reveal key={step.title} delay={index * 0.1} className="h-full">
-                  <article className="group relative flex h-full min-h-64 flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-8">
+                  <article className="site-card group relative flex h-full min-h-64 flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-8">
                     <div className="relative flex items-center justify-between">
                       <span className="flex size-12 items-center justify-center rounded-2xl border border-[var(--brand)]/20 bg-[var(--brand)]/5 text-[var(--brand)]">
                         <Icon aria-hidden="true" className="size-5" />
@@ -344,7 +344,7 @@ export default function AboutPage() {
 
       <section className="px-6 py-20 md:py-28">
         <Reveal className="mx-auto max-w-7xl">
-          <div className="relative isolate grid gap-8 overflow-hidden rounded-[2rem] border border-foreground/10 bg-card/80 p-7 shadow-xl shadow-[var(--brand)]/5 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:p-14">
+          <div className="site-card relative isolate grid gap-8 overflow-hidden rounded-[2rem] border border-foreground/10 bg-card/80 p-7 shadow-xl shadow-[var(--brand)]/5 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:p-14">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-20 -top-32 -z-10 size-96 rounded-full bg-[var(--brand)] opacity-[0.08] blur-[110px]"

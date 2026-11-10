@@ -29,16 +29,18 @@ export function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 120, damping: 18 }}
-      className="fixed inset-x-0 top-4 z-40 flex justify-center px-4"
+      className="site-header fixed inset-x-0 top-4 z-40 flex justify-center px-4"
     >
       <div
-        className={`relative w-full transition-all duration-300 ${
+        className={`site-header-container relative w-full transition-all duration-300 ${
+
           scrolled ? "max-w-4xl" : "max-w-5xl"
         }`}
         onMouseLeave={() => setOpen(null)}
       >
         <nav
-          className={`flex items-center justify-between gap-6 rounded-full border border-white/10 bg-background/70 px-5 backdrop-blur-xl transition-all duration-300 ${
+          className={`site-header-nav flex items-center justify-between gap-6 border border-foreground/10 bg-background/70 px-5 backdrop-blur-xl transition-all duration-300 ${
+
             scrolled ? "h-12" : "h-14"
           }`}
         >
@@ -52,7 +54,7 @@ export function Header() {
                 <Link
                   href={`/${c.slug}`}
                   className={`flex items-center gap-1 rounded-full px-3 py-1.5 transition-colors hover:text-foreground ${
-                    open === c.slug ? "bg-white/10 text-foreground" : ""
+                    open === c.slug ? "bg-foreground/5 text-foreground" : ""
                   }`}
                 >
                   {c.navLabel}
@@ -209,7 +211,7 @@ export function Header() {
               transition={{ duration: 0.18 }}
               className="absolute inset-x-0 top-full hidden pt-3 md:block"
             >
-              <div className="grid grid-cols-[1fr_2fr] gap-8 rounded-3xl border border-white/10 bg-background/90 p-8 backdrop-blur-2xl">
+              <div className="site-mega-menu grid grid-cols-[1fr_2fr] gap-8 rounded-3xl border border-foreground/10 bg-background/90 p-8 backdrop-blur-2xl">
                 <div>
                   <h3 className="text-xl font-semibold">{active.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{active.tagline}</p>

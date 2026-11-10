@@ -20,7 +20,7 @@ const details = [
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden px-6 pb-32 pt-44">
+    <section className="site-hero relative overflow-hidden px-6 pb-32 pt-44">
       <div className="aurora" />
       <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-5">
         <div className="md:col-span-2">
@@ -49,7 +49,7 @@ export default function ContactPage() {
           </ul>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur md:col-span-3">
+        <div className="site-contact-panel rounded-3xl border border-border p-8 backdrop-blur md:col-span-3">
           <ContactForm />
         </div>
       </div>

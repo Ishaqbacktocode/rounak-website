@@ -61,7 +61,7 @@ export default async function ProductPage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-16 pt-40 md:pb-24 md:pt-44">
+      <section className="site-hero relative overflow-hidden px-6 pb-16 pt-40 md:pb-24 md:pt-44">
         <div className="aurora" />
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
@@ -257,7 +257,7 @@ export default async function ProductPage({ params }: Props) {
 
       {/* CTA */}
       <section className="px-6 pb-32 pt-8">
-        <Reveal className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-gradient-to-br from-[var(--brand)]/20 to-transparent p-12 text-center">
+        <Reveal className="site-cta-panel mx-auto max-w-5xl rounded-[2rem] border p-12 text-center">
           <h2 className="text-3xl font-semibold tracking-tight">Let&apos;s talk about {p.title}</h2>
           <Button render={<Link href={quoteHref} />} nativeButton={false} size="lg" className="mt-8 rounded-full">
             Contact us

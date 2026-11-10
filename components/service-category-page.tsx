@@ -53,7 +53,7 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
 
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-16 pt-44 md:pb-24">
+      <section className="site-hero relative overflow-hidden px-6 pb-16 pt-44 md:pb-24">
         <div className="aurora" />
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
@@ -218,7 +218,7 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
       )}
 
       <section className="px-6 pb-32 pt-8">
-        <Reveal className="mx-auto max-w-5xl rounded-3xl border border-foreground/10 bg-gradient-to-br from-[var(--brand)]/20 to-transparent p-10 text-center md:p-14">
+        <Reveal className="site-cta-panel mx-auto max-w-5xl rounded-3xl border p-10 text-center md:p-14">
           <p className="text-sm text-[var(--brand)]">Work with Rounak</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight">{isItServices ? "Not sure which IT service you need?" : "Let's find the right solution for your business."}</h2>
           <p className="mx-auto mt-4 max-w-xl leading-7 text-muted-foreground">Tell us what your business needs and our team will help you identify the right next step.</p>
@@ -236,7 +236,7 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
 
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <Link href={`/${service.category}/${service.slug}`} className="group flex h-full min-h-44 flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:bg-white/[0.06]">
+    <Link href={`/${service.category}/${service.slug}`} className="site-card group flex h-full min-h-44 flex-col rounded-2xl border border-foreground/10 bg-card/70 p-7 transition hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:bg-card">
       <div className="flex items-start justify-between gap-4">
         <h4 className="text-xl font-semibold tracking-tight transition-colors group-hover:text-[var(--brand)]">{service.title}</h4>
         <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />

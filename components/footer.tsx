@@ -16,10 +16,10 @@ const linkClass = "transition-colors hover:text-foreground";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 px-6 pb-8 pt-20">
+    <footer className="site-footer relative border-t border-foreground/10 px-6 pb-8 pt-20">
       {/* CTA band */}
       <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-[2rem] border border-white/10 bg-gradient-to-br from-[var(--brand)]/20 to-transparent p-10 md:flex-row md:items-center">
+        <div className="site-footer-cta flex flex-col items-start justify-between gap-6 rounded-[2rem] border border-foreground/10 p-8 md:flex-row md:items-center md:p-10">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight">
               Ready to simplify your IT?
@@ -117,7 +117,7 @@ export function Footer() {
         </div>
 
         {/* Service columns, generated from lib/site.ts */}
-        <div className="mt-16 grid gap-10 border-t border-white/10 pt-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-10 border-t border-foreground/10 pt-12 sm:grid-cols-2 lg:grid-cols-4">
           {categoryList.map((c) => (
             <nav key={c.slug} aria-label={c.title}>
               <Link href={`/${c.slug}`} className="text-sm font-semibold hover:text-[var(--brand)]">
@@ -139,7 +139,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-muted-foreground">
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-foreground/10 pt-6 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Rounak Computers LLC. All rights reserved.</p>
           <ul className="flex flex-wrap items-center gap-5">
             {legalLinks.map((l) => (
@@ -166,7 +166,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-4 z-40 flex size-12 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg transition-transform hover:scale-110 sm:bottom-5 sm:right-5 sm:size-14"
+      className="site-whatsapp fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-4 z-40 flex size-12 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg transition-transform hover:scale-110 sm:bottom-5 sm:right-5 sm:size-14"
     >
       <MessageCircle />
     </a>
