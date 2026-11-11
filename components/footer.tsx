@@ -51,11 +51,11 @@ export function Footer() {
 
         {/* Brand, company, contact */}
         <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+          <div className="site-footer-brand-panel rounded-3xl border border-foreground/10 p-6 lg:col-span-5">
             <Link href="/" aria-label="Rounak Computers home">
               <Logo
                 src="/logo-footer.png"
-                darkSrc="/logo-footer-white.png"
+                darkSrc="/logo-footer.png"
                 className="h-10"
               />
             </Link>
