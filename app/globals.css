@@ -342,8 +342,10 @@ button {
 .marquee-track {
   animation: marquee 30s linear infinite;
 }
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 .home-hero-artwork {
@@ -572,6 +574,25 @@ html:not(.dark) .ai-seal-panel [class*="text-white/"] {
   .ai-seal-image-frame::after,
   .faq-ambient::before {
     animation: none;
+  }
+
+  .marquee {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    mask-image: none;
+    -webkit-mask-image: none;
+    touch-action: pan-x;
+  }
+
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .marquee-track > ul[aria-hidden="true"] {
+    display: none;
   }
 }
 

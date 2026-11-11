@@ -33,7 +33,12 @@ export function Partners() {
       >
         Technology partners
       </h2>
-      <div className="marquee overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+      <div
+        role="region"
+        aria-label="Technology partners. Scroll horizontally to browse."
+        tabIndex={0}
+        className="marquee overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand)]"
+      >
         <div className="marquee-track flex w-max">
           <ul className="flex w-max gap-4 pr-4">{renderPartners()}</ul>
           <ul aria-hidden="true" className="flex w-max gap-4 pr-4">
