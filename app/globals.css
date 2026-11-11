@@ -342,12 +342,6 @@ button {
 .marquee-track {
   animation: marquee 30s linear infinite;
 }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .marquee:hover .marquee-track {
-    animation-play-state: paused;
-  }
-}
-
 .home-hero-artwork {
   animation: home-hero-float 8s ease-in-out infinite;
 }
