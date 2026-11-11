@@ -45,7 +45,7 @@ export function Header() {
           }`}
         >
           <Link href="/" aria-label="Rounak Computers home">
-            <Logo />
+            <Logo darkSrc="/logo.png" className="h-8" />
           </Link>
 
           <ul className="hidden items-center gap-1 text-sm text-muted-foreground md:flex">

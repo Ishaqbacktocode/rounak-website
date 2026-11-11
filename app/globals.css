@@ -189,7 +189,31 @@ button {
 }
 
 .dark .site-header-nav {
-  box-shadow: 0 1px 0 color-mix(in oklab, white 8%, transparent) inset;
+  border-color: color-mix(in oklab, oklch(0.3 0.04 255) 20%, transparent);
+  background: color-mix(in oklab, oklch(0.96 0.025 240) 94%, white);
+  color: oklch(0.24 0.04 255);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 85%, transparent) inset,
+    0 16px 40px color-mix(in oklab, black 18%, transparent);
+}
+
+.dark .site-header-nav ul {
+  color: oklch(0.42 0.035 255);
+}
+
+.dark .site-header-nav ul a:hover,
+.dark .site-header-nav ul a.text-foreground {
+  color: oklch(0.2 0.04 255);
+}
+
+.dark .site-header-nav button[aria-label="Toggle light and dark theme"],
+.dark .site-header-nav button[aria-label="Open menu"] {
+  color: oklch(0.28 0.04 255);
+}
+
+.dark .site-header-nav button[aria-label="Toggle light and dark theme"]:hover,
+.dark .site-header-nav button[aria-label="Open menu"]:hover {
+  background: color-mix(in oklab, var(--brand) 10%, white);
 }
 
 .site-mega-menu {
