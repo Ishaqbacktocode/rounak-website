@@ -135,7 +135,7 @@ export const companyLinks = [
 export const legalLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Use", href: "/terms" },
-  { label: "Sitemap", href: "/sitemap.xml" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 // These profile URLs should be verified by the site owner.
