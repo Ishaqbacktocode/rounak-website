@@ -270,6 +270,23 @@ button {
   background: linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand) 3%, var(--background)) 20rem);
 }
 
+.dark .site-footer-brand-panel {
+  border-color: color-mix(in oklab, oklch(0.25 0.04 255) 10%, transparent);
+  background:
+    radial-gradient(ellipse at 12% 0%, color-mix(in oklab, var(--brand) 8%, transparent), transparent 70%),
+    linear-gradient(145deg, oklch(0.96 0.018 245), oklch(0.92 0.025 245));
+  color: oklch(0.24 0.04 255);
+  box-shadow: 0 16px 44px color-mix(in oklab, black 12%, transparent);
+}
+
+.dark .site-footer-brand-panel .text-muted-foreground {
+  color: oklch(0.43 0.035 255);
+}
+
+.dark .site-footer-brand-panel a:hover {
+  color: oklch(0.28 0.17 258);
+}
+
 .site-footer-cta {
   border-color: color-mix(in oklab, var(--brand) 16%, var(--border));
   background:
