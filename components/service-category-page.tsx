@@ -102,7 +102,7 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
 
       {isItServices && (
         <>
-          <nav className="sticky top-0 z-30 border-y border-foreground/10 bg-background/85 px-6 py-3 backdrop-blur-xl" aria-label="IT services sections">
+          <nav className="sticky top-0 z-30 mt-6 border-y border-foreground/10 bg-background/85 px-6 py-3 backdrop-blur-xl" aria-label="IT services sections">
             <div className="mx-auto grid max-w-6xl grid-cols-5 gap-1 text-center text-[10px] text-muted-foreground sm:flex sm:items-center sm:gap-6 sm:whitespace-nowrap sm:text-sm">
               <a href="#services" className="rounded-lg px-1 py-2 font-medium text-foreground hover:text-[var(--brand)] sm:px-0">Services</a>
               <a href="#choose-service" className="rounded-lg px-1 py-2 hover:text-foreground sm:px-0">Find your service</a>

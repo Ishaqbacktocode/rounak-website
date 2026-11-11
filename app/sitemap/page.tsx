@@ -64,7 +64,7 @@ export default function SitemapPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-24 md:grid-cols-2">
+      <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-24 pt-8 md:grid-cols-2 md:pt-12">
         <Reveal>
           <section className="site-card h-full rounded-3xl border p-6 sm:p-8">
             <div className="flex items-center gap-3">
