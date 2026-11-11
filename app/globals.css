@@ -225,6 +225,15 @@ button {
   outline-offset: 3px;
 }
 
+.blog-carousel-track {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.blog-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
 .site-cta-panel {
   border-color: color-mix(in oklab, var(--brand) 17%, var(--border));
   background:
@@ -274,6 +283,10 @@ button {
 
 @media (prefers-reduced-motion: reduce) {
   html {
+    scroll-behavior: auto;
+  }
+
+  .blog-carousel-track {
     scroll-behavior: auto;
   }
 }
