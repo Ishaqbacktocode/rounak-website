@@ -176,7 +176,7 @@ export function SolutionPartnerStrip({
   brands: PartnerBrand[];
 }) {
   return (
-    <section className="solution-partner-strip px-6" aria-label={label}>
+    <section className="solution-partner-strip mt-6 px-6" aria-label={label}>
       <div className="mx-auto flex max-w-7xl flex-col gap-5 py-7 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
         <p className="solution-partner-label">{label}</p>
         <div className="solution-partner-list">
