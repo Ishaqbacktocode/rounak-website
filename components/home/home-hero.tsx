@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ export function HomeHero() {
   return (
     <section className="site-hero relative isolate overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-44">
       <div className="aurora" />
-      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="mx-auto max-w-4xl">
         <div className="relative z-10">
           <Link
             href="/#dubai-ai-seal"
@@ -57,51 +56,7 @@ export function HomeHero() {
           </Link>
         </div>
 
-        <div className="home-hero-artwork relative mx-auto w-full max-w-xl lg:max-w-none">
-          <div
-            aria-hidden="true"
-            className="home-hero-glow absolute -inset-8 rounded-full bg-[radial-gradient(ellipse_at_center,var(--brand)_0%,transparent_68%)] opacity-20 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="home-hero-orbit absolute -inset-3 rounded-[2.8rem] border border-[var(--brand)]/15 sm:-inset-5"
-          />
-          <div className="relative overflow-hidden rounded-[2rem] border border-foreground/10 bg-background/60 p-2.5 shadow-2xl shadow-[var(--brand)]/15 backdrop-blur-xl sm:rounded-[2.5rem] sm:p-3">
-            <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-slate-200 sm:rounded-[2rem]">
-              <Image
-                src="/images/dubai-ai-seal.png"
-                alt="Rounak Computers team at the Dubai AI Seal recognition event"
-                fill
-                priority
-                sizes="(min-width: 1024px) 44vw, 90vw"
-                className="home-hero-photo object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/5 to-transparent" />
-              <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 text-white sm:inset-x-7 sm:bottom-7">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/75">
-                    Government of Dubai
-                  </p>
-                  <p className="mt-1 text-lg font-semibold tracking-tight sm:text-xl">
-                    Dubai AI Seal recipient
-                  </p>
-                </div>
-                <span className="hidden rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-xs backdrop-blur sm:inline-flex">
-                  Dubai AI Week · 2025
-                </span>
-              </div>
-            </div>
-          </div>
 
-          <div className="absolute -bottom-5 right-4 rounded-2xl border border-foreground/10 bg-background/95 px-4 py-3 shadow-xl backdrop-blur-xl sm:-right-5 sm:px-5">
-            <p className="text-xs font-medium text-muted-foreground">
-              Recognized among
-            </p>
-            <p className="mt-1 text-2xl font-semibold tracking-tight">
-              9<span className="text-muted-foreground"> of 325</span>
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
