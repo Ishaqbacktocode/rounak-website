@@ -38,7 +38,7 @@ export function AboutIntro() {
           <p className="mt-6 text-base leading-7 text-muted-foreground">{aboutText.who}</p>
 
           <div className="mt-8 border-t border-foreground/10 pt-6">
-            <h3 className="text-lg font-semibold tracking-tight">What we do</h3>
+            <h3 className="text-lg font-semibold tracking-tight">Our story</h3>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">{aboutText.what}</p>
           </div>
 
@@ -55,7 +55,7 @@ export function AboutIntro() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Find us in SAP <ArrowUpRight className="size-4" />
+              Find us on SAP Ariba <ArrowUpRight className="size-4" />
             </a>
           </div>
         </Reveal>

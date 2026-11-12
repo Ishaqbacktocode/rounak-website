@@ -291,7 +291,7 @@ export default function AboutPage() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-card/70 px-5 py-3 text-sm font-medium transition-colors hover:border-[var(--brand)]/30 hover:text-[var(--brand)]"
               >
-                Find us in SAP <ArrowUpRight aria-hidden="true" className="size-4" />
+                Find us on SAP Ariba <ArrowUpRight aria-hidden="true" className="size-4" />
               </a>
             </div>
           </Reveal>

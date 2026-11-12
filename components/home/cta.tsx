@@ -8,7 +8,7 @@ export function HomeCta() {
       <Reveal className="home-cta-panel site-cta-panel mx-auto max-w-6xl rounded-[2rem] border p-10 text-center md:p-16">
         <p className="text-sm text-[var(--brand)]">Let Us Elevate Your Business</p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
-          Let Us Help You Succeed
+          Let us help you succeed
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
           Transform your business into a future-ready digital enterprise with our comprehensive
@@ -20,7 +20,7 @@ export function HomeCta() {
           size="lg"
           className="mt-8 rounded-full"
         >
-          Contact Us Now
+          Enquire now
         </Button>
       </Reveal>
     </section>

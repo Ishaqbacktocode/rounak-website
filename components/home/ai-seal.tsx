@@ -4,7 +4,7 @@ import { ArrowRight, Award, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { aiSeal } from "@/lib/home-content";
 
-export function AiSeal() {
+export function AiSeal({ title = aiSeal.title }: { title?: string }) {
   return (
     <section
       id="dubai-ai-seal"
@@ -58,7 +58,7 @@ export function AiSeal() {
                 <Award aria-hidden="true" className="size-5" />
               </div>
               <h3 className="relative mt-6 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                {aiSeal.title}
+                {title}
               </h3>
               <div className="relative mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
                 {aiSeal.paragraphs.map((paragraph) => (

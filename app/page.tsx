@@ -45,7 +45,7 @@ export default function Home() {
       <AboutIntro />
       <HomeSolutions />
       <Approach />
-      <AiSeal />
+      <AiSeal title="Recognized for excellence in AI by the Government of Dubai" />
       <HomeCta />
       <Testimonials />
       <HomeFaq />

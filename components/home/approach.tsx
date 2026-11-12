@@ -48,7 +48,7 @@ export function Approach() {
                     </span>
                   </div>
                   <h3 className="relative mt-8 text-xl font-semibold tracking-tight sm:text-2xl">
-                    {step.title}
+                    {step.title.charAt(0) + step.title.slice(1).toLowerCase()}
                   </h3>
                   <p className="relative mt-3 flex-1 text-sm leading-6 text-muted-foreground">
                     {step.text}

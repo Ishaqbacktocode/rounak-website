@@ -19,9 +19,9 @@ export function HomeHero() {
           </Link>
 
           <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
-            Innovative IT Solutions to Empower Your{" "}
+            Innovative IT solutions to empower your{" "}
             <span className="home-hero-accent bg-gradient-to-r from-[var(--brand)] to-[var(--brand-2)] bg-clip-text text-transparent">
-              Business
+              business
             </span>
           </h1>
           <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
@@ -53,7 +53,7 @@ export function HomeHero() {
             href="#home-solutions"
             className="mt-12 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            Explore our services <ArrowDown className="size-4" />
+            Explore services <ArrowDown className="size-4" />
           </Link>
         </div>
 

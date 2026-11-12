@@ -12,13 +12,13 @@ const solutions = [
   {
     slug: "it-services",
     icon: Server,
-    label: "IT Services",
+    label: "IT services",
     description: "Reliable technical support and infrastructure for your everyday operations.",
   },
   {
     slug: "cloud-services",
     icon: Cloud,
-    label: "Cloud Services",
+    label: "Cloud services",
     description: "Secure cloud platforms and expert guidance to help your business scale.",
   },
   {

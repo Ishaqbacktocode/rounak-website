@@ -108,7 +108,7 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
               <a href="#choose-service" className="rounded-lg px-1 py-2 hover:text-foreground sm:px-0">Find your service</a>
               <a href="#approach" className="rounded-lg px-1 py-2 hover:text-foreground sm:px-0">Our approach</a>
               <a href="#process" className="rounded-lg px-1 py-2 hover:text-foreground sm:px-0">Our process</a>
-              <Link href="/contact-us" className="rounded-lg bg-foreground px-1 py-2 font-medium text-background sm:ml-auto sm:rounded-full sm:px-4">Get in touch</Link>
+              <Link href="/contact-us" className="rounded-lg bg-foreground px-1 py-2 font-medium text-background sm:ml-auto sm:rounded-full sm:px-4">Enquire now</Link>
             </div>
           </nav>
 
@@ -223,7 +223,7 @@ export function ServiceCategoryPage({ slug }: { slug: ServiceCategory }) {
           <h2 className="mt-3 text-3xl font-semibold tracking-tight">{isItServices ? "Not sure which IT service you need?" : "Let's find the right solution for your business."}</h2>
           <p className="mx-auto mt-4 max-w-xl leading-7 text-muted-foreground">Tell us what your business needs and our team will help you identify the right next step.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button render={<Link href="/contact-us" />} nativeButton={false} size="lg" className="mt-8 rounded-full">Get in touch <ArrowRight /></Button>
+            <Button render={<Link href="/contact-us" />} nativeButton={false} size="lg" className="mt-8 rounded-full">Enquire now <ArrowRight /></Button>
             {isItServices && (
               <Button render={<a href={getWhatsAppLink("Hello, I'd like to know more about your IT services")} target="_blank" rel="noreferrer" />} nativeButton={false} size="lg" variant="outline" className="mt-8 rounded-full"><MessageCircle /> WhatsApp us</Button>
             )}

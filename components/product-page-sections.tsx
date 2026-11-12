@@ -184,7 +184,7 @@ export function ProductPageSections() {
             href="/contact-us"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
           >
-            Get in touch <ArrowRight className="size-4" />
+            Enquire now <ArrowRight className="size-4" />
           </Link>
         </Reveal>
       </section>

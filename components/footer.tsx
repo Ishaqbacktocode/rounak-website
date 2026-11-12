@@ -35,7 +35,7 @@ export function Footer() {
               size="lg"
               className="rounded-full"
             >
-              Get in touch <ArrowRight />
+              Enquire now <ArrowRight />
             </Button>
             <Button
               render={<a href={contact.whatsapp} target="_blank" rel="noreferrer" />}
