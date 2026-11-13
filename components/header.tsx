@@ -16,20 +16,22 @@ export function Header() {
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY >= 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const active = categoryList.find((c) => c.slug === open);
+  const navLinkClass =
+    "relative flex items-center gap-1 rounded-full px-3 py-1.5 transition-colors hover:text-foreground after:pointer-events-none after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-current after:content-[''] after:transition-transform after:duration-200 hover:after:scale-x-100 focus-visible:after:scale-x-100 motion-reduce:after:transition-none";
 
   return (
     <motion.header
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 120, damping: 18 }}
-      className="site-header fixed inset-x-0 top-4 z-40 flex justify-center px-4"
+      className="site-header sticky inset-x-0 top-4 z-40 flex justify-center px-4"
     >
       <div
         className={`site-header-container relative w-full transition-all duration-300 ${
@@ -39,9 +41,8 @@ export function Header() {
         onMouseLeave={() => setOpen(null)}
       >
         <nav
-          className={`site-header-nav flex items-center justify-between gap-6 border border-foreground/10 bg-background/70 px-5 backdrop-blur-xl transition-all duration-300 ${
-
-            scrolled ? "h-12" : "h-14"
+          className={`site-header-nav flex items-center justify-between gap-6 border border-foreground/10 bg-background/70 px-5 backdrop-blur-md transition-all duration-300 ${
+            scrolled ? "h-12 border-b-foreground/20 backdrop-blur-2xl" : "h-14"
           }`}
         >
           <Link href="/" aria-label="Rounak Computers home">
@@ -53,7 +54,7 @@ export function Header() {
               <li key={c.slug} onMouseEnter={() => setOpen(c.slug)}>
                 <Link
                   href={`/${c.slug}`}
-                  className={`flex items-center gap-1 rounded-full px-3 py-1.5 transition-colors hover:text-foreground ${
+                  className={`${navLinkClass} ${
                     open === c.slug ? "bg-foreground/5 text-foreground" : ""
                   }`}
                 >
@@ -65,12 +66,12 @@ export function Header() {
               </li>
             ))}
             <li onMouseEnter={() => setOpen(null)}>
-              <Link href="/about-us" className="rounded-full px-3 py-1.5 hover:text-foreground">
+              <Link href="/about-us" className={navLinkClass}>
                 About
               </Link>
             </li>
             <li onMouseEnter={() => setOpen(null)}>
-              <Link href="/blog" className="rounded-full px-3 py-1.5 hover:text-foreground">
+              <Link href="/blog" className={navLinkClass}>
                 Blog
               </Link>
             </li>
