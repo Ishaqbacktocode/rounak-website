@@ -91,7 +91,7 @@ export function Header() {
               render={<Link href="/contact-us" />}
               nativeButton={false}
               size="sm"
-              className="rounded-full"
+              className="rounded-full transition-transform duration-300 ease-out active:translate-y-0 active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 motion-reduce:active:translate-y-0"
             >
               Enquire now
             </Button>

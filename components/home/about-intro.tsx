@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { CountUp } from "@/components/count-up";
 import { Reveal } from "@/components/reveal";
 import { aboutText } from "@/lib/home-content";
 
@@ -23,7 +24,9 @@ export function AboutIntro() {
             </p>
           </div>
           <div className="absolute -bottom-5 right-4 rounded-2xl border border-foreground/10 bg-background/95 px-5 py-4 shadow-xl backdrop-blur-xl sm:-right-5">
-            <p className="text-2xl font-semibold tracking-tight">20+ years</p>
+            <p className="text-2xl font-semibold tracking-tight">
+              <CountUp value={20} suffix="+ years" label="20+ years" />
+            </p>
             <p className="mt-1 text-xs text-muted-foreground">supporting businesses in Dubai</p>
           </div>
         </Reveal>
@@ -51,7 +54,11 @@ export function AboutIntro() {
                 key={stat}
                 className="rounded-full border border-foreground/10 bg-background/65 px-4 py-2 text-xs text-muted-foreground backdrop-blur"
               >
-                {stat}
+                {stat === "20+ years" ? (
+                  <CountUp value={20} suffix="+ years" label={stat} />
+                ) : (
+                  stat
+                )}
               </span>
             ))}
           </div>
@@ -64,9 +71,10 @@ export function AboutIntro() {
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
             <Link
               href="/about-us"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-85"
+              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-[opacity,transform] duration-300 ease-out hover:opacity-85 active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100"
             >
-              Learn about us <ArrowRight className="size-4" />
+              Learn about us
+              <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-[3px] motion-reduce:transition-none motion-reduce:translate-x-0" />
             </Link>
             <a
               href={aboutText.sapUrl}

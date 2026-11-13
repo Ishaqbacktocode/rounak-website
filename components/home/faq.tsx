@@ -20,12 +20,12 @@ export function HomeFaq() {
           </p>
           <Link
             href="/contact-us"
-            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-transform hover:translate-y-[-2px]"
+            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-transform duration-300 ease-out active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100"
           >
             Ask us a question
             <ArrowRight
               aria-hidden="true"
-              className="size-4 transition-transform group-hover:translate-x-1"
+              className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-[3px] motion-reduce:transition-none motion-reduce:translate-x-0"
             />
           </Link>
           <p className="mt-8 hidden text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground/70 lg:block">
@@ -35,7 +35,7 @@ export function HomeFaq() {
 
         <div className="space-y-3">
           {homeFaqs.map(({ question, answer }, index) => (
-            <Reveal key={question} delay={Math.min(index * 0.05, 0.2)}>
+            <Reveal key={question} delay={index * 0.08}>
               <details className="faq-item group rounded-2xl border border-foreground/10 bg-card/65 transition-colors open:border-[var(--brand)]/25 open:bg-card/90">
                 <summary className="flex cursor-pointer list-none items-center gap-4 rounded-2xl px-5 py-5 outline-none transition-colors hover:text-[var(--brand)] focus-visible:ring-2 focus-visible:ring-[var(--brand)]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-6">
                   <span className="hidden w-8 shrink-0 text-xs font-semibold tabular-nums text-[var(--brand)]/70 sm:block">

@@ -33,14 +33,14 @@ export function Approach() {
             const Icon = stepIcons[index] ?? Lightbulb;
 
             return (
-              <Reveal key={step.title} delay={index * 0.1} className="h-full">
-                <article className="approach-card group relative flex h-full min-h-72 flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-8">
+              <Reveal key={step.title} delay={index * 0.08} className="h-full">
+                <article className="approach-card group relative flex h-full min-h-72 flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/75 p-7 shadow-sm transition-transform duration-300 ease-out hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:shadow-md motion-reduce:transition-none motion-reduce:translate-y-0 sm:p-8">
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-[var(--brand)] opacity-[0.04] blur-3xl transition-opacity duration-300 group-hover:opacity-[0.12]"
+                    className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-[var(--brand)] opacity-[0.04] blur-3xl transition-opacity duration-300 group-hover:opacity-[0.12] motion-reduce:transition-none"
                   />
                   <div className="relative flex items-center justify-between">
-                    <span className="flex size-12 items-center justify-center rounded-2xl border border-[var(--brand)]/20 bg-[var(--brand)]/5 text-[var(--brand)] transition-transform duration-300 group-hover:scale-105">
+                    <span className="flex size-12 items-center justify-center rounded-2xl border border-[var(--brand)]/20 bg-[var(--brand)]/5 text-[var(--brand)] transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:scale-100">
                       <Icon aria-hidden="true" className="size-5" />
                     </span>
                     <span className="text-sm font-semibold tabular-nums tracking-wider text-[var(--brand)]/70">

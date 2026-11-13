@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/reveal";
 import { partners } from "@/lib/data";
 
 export function Partners() {
@@ -27,12 +28,14 @@ export function Partners() {
       aria-labelledby="partners-heading"
       className="border-y border-foreground/10 py-8"
     >
-      <h2
-        id="partners-heading"
-        className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground"
-      >
-        Technology partners
-      </h2>
+      <Reveal className="mb-5">
+        <h2
+          id="partners-heading"
+          className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground"
+        >
+          Technology partners
+        </h2>
+      </Reveal>
       <div
         role="region"
         aria-label="Technology partners. Scroll horizontally to browse."

@@ -18,7 +18,7 @@ export function HomeCta() {
           render={<Link href="/contact-us" />}
           nativeButton={false}
           size="lg"
-          className="mt-8 rounded-full"
+          className="mt-8 rounded-full transition-transform duration-300 ease-out active:translate-y-0 active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 motion-reduce:active:translate-y-0"
         >
           Enquire now
         </Button>

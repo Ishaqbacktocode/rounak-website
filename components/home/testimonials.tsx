@@ -95,7 +95,7 @@ function ReviewSlider({
         }
       }}
     >
-      <div className="relative overflow-hidden rounded-[2rem] border border-foreground/10 bg-card/75 p-6 shadow-xl shadow-[var(--brand)]/5 backdrop-blur-sm sm:p-10 md:p-12">
+      <div className="relative overflow-hidden rounded-[2rem] border border-foreground/10 bg-card/75 p-6 shadow-xl shadow-[var(--brand)]/5 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl motion-reduce:transition-none motion-reduce:translate-y-0 backdrop-blur-sm sm:p-10 md:p-12">
         <div
           aria-hidden="true"
           className="testimonial-card-glow pointer-events-none absolute -right-24 -top-28 size-80 rounded-full bg-[var(--brand)] opacity-[0.09] blur-[90px]"
