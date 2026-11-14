@@ -52,17 +52,17 @@ export function HomeSolutions() {
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {solutions.map(({ slug, icon: Icon, label, description }, index) => (
-            <Reveal key={slug} delay={index * 0.08} className="h-full">
+            <Reveal key={slug} delay={index * 0.05} className="h-full">
               <Link
                 href={`/${slug}`}
-                className="site-card group relative flex h-full min-h-[19rem] flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/70 p-6 shadow-sm transition-transform duration-300 ease-out hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:bg-card hover:shadow-md motion-reduce:transition-none motion-reduce:translate-y-0 sm:p-7"
+                className="site-card group relative flex h-full min-h-[19rem] flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/70 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/30 hover:bg-card hover:shadow-xl hover:shadow-[var(--brand)]/10 sm:p-7"
               >
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-[var(--brand)] opacity-[0.05] blur-3xl transition-opacity duration-300 group-hover:opacity-[0.14] motion-reduce:transition-none"
+                  className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-[var(--brand)] opacity-[0.05] blur-3xl transition-opacity duration-300 group-hover:opacity-[0.14]"
                 />
                 <div className="relative flex items-center justify-between">
-                  <span className="flex size-12 items-center justify-center rounded-2xl border border-[var(--brand)]/15 bg-[var(--brand)]/5 text-[var(--brand)] group-hover:bg-[var(--brand)]/10">
+                  <span className="flex size-12 items-center justify-center rounded-2xl border border-[var(--brand)]/15 bg-[var(--brand)]/5 text-[var(--brand)] transition-colors group-hover:bg-[var(--brand)]/10">
                     <Icon aria-hidden="true" className="size-5" />
                   </span>
                   <span className="text-xs font-medium tabular-nums text-muted-foreground/70">
@@ -79,7 +79,7 @@ export function HomeSolutions() {
                   Explore {label.toLowerCase()}
                   <ArrowRight
                     aria-hidden="true"
-                    className="size-4 text-[var(--brand)] transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:translate-x-0"
+                    className="size-4 text-[var(--brand)] transition-transform group-hover:translate-x-1"
                   />
                 </span>
               </Link>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, Sparkles } from "lucide-react";
-import { CountUp } from "@/components/count-up";
 import { Reveal } from "@/components/reveal";
 import { aiSeal } from "@/lib/home-content";
 
@@ -49,7 +48,7 @@ export function AiSeal({ title = aiSeal.title }: { title?: string }) {
             </div>
           </Reveal>
 
-          <Reveal delay={0.08} className="h-full">
+          <Reveal delay={0.12} className="h-full">
             <div className="ai-seal-info relative flex h-full min-h-full flex-col overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-card/80 p-7 shadow-xl shadow-[var(--brand)]/5 backdrop-blur-sm sm:rounded-[2rem] sm:p-9 lg:p-10">
               <div
                 aria-hidden="true"
@@ -69,9 +68,7 @@ export function AiSeal({ title = aiSeal.title }: { title?: string }) {
 
               <div className="relative mt-8 grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-2 border-y border-foreground/10 py-5">
                 <p className="text-4xl font-semibold leading-none tracking-[-0.06em] sm:text-5xl">
-                  <CountUp value={9} minimumIntegerDigits={2} label="9" />
-                  <span className="text-[var(--brand)]">/</span>
-                  <CountUp value={325} label="325" />
+                  09<span className="text-[var(--brand)]">/</span>325
                 </p>
                 <p className="text-sm font-medium leading-5">
                   selected companies

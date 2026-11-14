@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BackToTop } from "@/components/back-to-top";
-import { Reveal } from "@/components/reveal";
 import {
   categoryList,
   companyLinks,
@@ -22,24 +21,21 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="site-footer-cta flex flex-col items-start justify-between gap-6 rounded-[2rem] border border-foreground/10 p-8 md:flex-row md:items-center md:p-10">
           <div>
-            <Reveal>
-              <h2 className="text-3xl font-semibold tracking-tight">
-                Ready to simplify your IT?
-              </h2>
-              <p className="mt-2 text-muted-foreground">
-                Talk to a certified engineer. We usually reply within one working day.
-              </p>
-            </Reveal>
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Ready to simplify your IT?
+            </h2>
+            <p className="mt-2 text-muted-foreground">
+              Talk to a certified engineer. We usually reply within one working day.
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button
               render={<Link href="/contact-us" />}
               nativeButton={false}
               size="lg"
-              className="group rounded-full transition-transform duration-300 ease-out active:translate-y-0 active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 motion-reduce:active:translate-y-0"
+              className="rounded-full"
             >
-              Enquire now
-              <ArrowRight className="transition-transform duration-300 ease-out group-hover:translate-x-[3px] motion-reduce:transition-none motion-reduce:translate-x-0" />
+              Enquire now <ArrowRight />
             </Button>
             <Button
               render={<a href={contact.whatsapp} target="_blank" rel="noreferrer" />}
