@@ -35,26 +35,7 @@ export function AboutIntro() {
           <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
             Your trusted IT partner in Dubai
           </h2>
-          <div className="mt-6 space-y-4">
-            {aboutText.who
-              .split(/(?<=\.) (?=Many of our clients|Since 2014,)/)
-              .map((paragraph, index) => (
-                <p key={index} className="text-base leading-7 text-muted-foreground">
-                  {paragraph}
-                </p>
-              ))}
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-2">
-            {["20+ years", "Microsoft Gold Partner", "Since 2014 in cloud"].map((stat) => (
-              <span
-                key={stat}
-                className="rounded-full border border-foreground/10 bg-background/65 px-4 py-2 text-xs text-muted-foreground backdrop-blur"
-              >
-                {stat}
-              </span>
-            ))}
-          </div>
+          <p className="mt-6 text-base leading-7 text-muted-foreground">{aboutText.who}</p>
 
           <div className="mt-8 border-t border-foreground/10 pt-6">
             <h3 className="text-lg font-semibold tracking-tight">Our story</h3>
